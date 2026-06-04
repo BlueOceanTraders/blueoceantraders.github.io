@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue Ocean Traders — Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ocean-deep:   #020e1a;
+      --ocean-mid:    #04233d;
+      --ocean-light:  #0a4a6e;
+      --wave:         #0d7ea8;
+      --foam:         #7dd4f0;
+      --pearl:        #e8f4fb;
+      --gold:         #c9a84c;
+      --gold-light:   #f0d278;
+      --white:        #ffffff;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--ocean-deep);
+      color: var(--pearl);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* ── Animated ocean background ── */
+    .ocean-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .ocean-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 120%, #0d7ea855 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 20% 80%, #0a4a6e44 0%, transparent 60%),
+        radial-gradient(ellipse 50% 30% at 80% 60%, #04233d66 0%, transparent 60%),
+        linear-gradient(180deg, #020e1a 0%, #04233d 40%, #0a4a6e 80%, #0d7ea8 100%);
+    }
+
+    /* Floating particles */
+    .particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(125, 212, 240, 0.15);
+      animation: float linear infinite;
+    }
+
+    @keyframes float {
+      0%   { transform: translateY(110vh) scale(0); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 0.6; }
+      100% { transform: translateY(-20px) scale(1); opacity: 0; }
+    }
+
+    /* Wave layers */
+    .waves {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 180px;
+      pointer-events: none;
+    }
+    .wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C200,120 400,0 600,60 C800,120 1000,0 1200,60 L1200,120 L0,120 Z' fill='%230d7ea8'/%3E%3C/svg%3E") repeat-x bottom/50% 100%;
+    }
+    .wave-1 { opacity: 0.08; animation: wave-move 8s linear infinite; }
+    .wave-2 { opacity: 0.05; animation: wave-move 12s linear infinite reverse; height: 140px; }
+    .wave-3 { opacity: 0.04; animation: wave-move 16s linear infinite; height: 100px; }
+
+    @keyframes wave-move {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── Main content ── */
+    .container {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      width: 100%;
+      max-width: 860px;
+      min-height: 100vh;
+    }
+
+    /* Logo / icon area */
+    .logo-wrap {
+      margin-bottom: 2.8rem;
+      animation: rise 1.2s cubic-bezier(.22,1,.36,1) both;
+    }
+
+    .logo-circle {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 1.2rem;
+      border-radius: 50%;
+      border: 1.5px solid rgba(201,168,76,0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: radial-gradient(circle at 40% 35%, rgba(13,126,168,0.35), rgba(2,14,26,0.7));
+      box-shadow: 0 0 40px rgba(13,126,168,0.25), 0 0 0 8px rgba(13,126,168,0.06);
+    }
+    .logo-circle::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .logo-icon {
+      font-size: 2.8rem;
+      line-height: 1;
+      filter: drop-shadow(0 0 12px rgba(125,212,240,0.6));
+    }
+
+    /* Brand name */
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      line-height: 1.1;
+      animation: rise 1.2s .15s cubic-bezier(.22,1,.36,1) both;
+    }
+    .brand span {
+      color: var(--gold);
+    }
+
+    .tagline-domain {
+      font-size: clamp(0.7rem, 2vw, 0.82rem);
+      letter-spacing: 0.25em;
+      color: rgba(125,212,240,0.6);
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+      font-weight: 400;
+      animation: rise 1.2s .25s cubic-bezier(.22,1,.36,1) both;
+    }
+
+    /* Divider */
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 2.4rem auto;
+      animation: rise 1.2s .3s both;
+    }
+
+    /* Under construction badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 100px;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      font-weight: 500;
+      margin-bottom: 2rem;
+      animation: rise 1.2s .4s both;
+    }
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    /* Headline */
+    .headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 4.5vw, 2.6rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--pearl);
+      line-height: 1.35;
+      max-width: 560px;
+      margin-bottom: 1.2rem;
+      animation: rise 1.2s .5s both;
+    }
+
+    .sub {
+      font-size: clamp(0.82rem, 2.2vw, 0.95rem);
+      color: rgba(232,244,251,0.55);
+      max-width: 420px;
+      line-height: 1.75;
+      font-weight: 300;
+      animation: rise 1.2s .6s both;
+      margin-bottom: 3rem;
+    }
+
+    /* Notify form */
+    .notify-wrap {
+      width: 100%;
+      max-width: 400px;
+      animation: rise 1.2s .7s both;
+    }
+    .notify-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(125,212,240,0.6);
+      margin-bottom: 0.8rem;
+    }
+    .notify-row {
+      display: flex;
+      gap: 0;
+      border: 1px solid rgba(125,212,240,0.25);
+      border-radius: 4px;
+      overflow: hidden;
+      background: rgba(4,35,61,0.6);
+      backdrop-filter: blur(8px);
+      transition: border-color .3s;
+    }
+    .notify-row:focus-within {
+      border-color: rgba(201,168,76,0.55);
+    }
+    .notify-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 0.8rem 1rem;
+      font-size: 0.85rem;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--pearl);
+    }
+    .notify-input::placeholder { color: rgba(232,244,251,0.3); }
+    .notify-btn {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      border: none;
+      cursor: pointer;
+      padding: 0 1.4rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ocean-deep);
+      transition: opacity .25s, transform .2s;
+      white-space: nowrap;
+    }
+    .notify-btn:hover { opacity: 0.88; transform: translateX(1px); }
+
+    .notify-note {
+      font-size: 0.7rem;
+      color: rgba(232,244,251,0.3);
+      margin-top: 0.65rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* Stats row */
+    .stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      animation: rise 1.2s .85s both;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .stat-lbl {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(125,212,240,0.55);
+    }
+    .stat-sep {
+      width: 1px;
+      height: 36px;
+      background: rgba(125,212,240,0.2);
+      align-self: center;
+    }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: rgba(232,244,251,0.2);
+      text-transform: uppercase;
+      animation: rise 1.2s 1s both;
+    }
+    footer a {
+      color: rgba(201,168,76,0.45);
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--gold); }
+
+    /* Keyframes */
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Shimmer on brand */
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    .brand-shine {
+      background: linear-gradient(90deg, var(--white) 30%, var(--gold-light) 50%, var(--white) 70%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 5s linear infinite;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      .stats { gap: 1.4rem; }
+      .stat-sep { display: none; }
+      .notify-btn { padding: 0 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Ocean background -->
+<div class="ocean-bg">
+  <div class="particles" id="particles"></div>
+  <div class="waves">
+    <div class="wave wave-1"></div>
+    <div class="wave wave-2"></div>
+    <div class="wave wave-3"></div>
+  </div>
+</div>
+
+<!-- Main -->
+<div class="container">
+
+  <div class="logo-wrap">
+    <div class="logo-circle">
+      <span class="logo-icon">⚓</span>
+    </div>
+  </div>
+
+  <h1 class="brand">
+    <span class="brand-shine">Blue Ocean</span>
+    <span style="display:block; color: var(--gold); font-style:italic; font-weight:300; font-size:0.65em; letter-spacing:0.15em;">Traders</span>
+  </h1>
+  <p class="tagline-domain">blueoceantraders.co.th</p>
+
+  <div class="divider"></div>
+
+  <div class="badge">
+    <span class="badge-dot"></span>
+    Under Construction
+  </div>
+
+  <h2 class="headline">Something extraordinary<br>is on the horizon.</h2>
+
+  <p class="sub">
+    We're crafting an exceptional trading experience.<br>
+    Our website is currently being built — check back soon.
+  </p>
+
+  <div class="notify-wrap">
+    <p class="notify-label">Notify me when we launch</p>
+    <div class="notify-row">
+      <input class="notify-input" type="email" placeholder="your@email.com" />
+      <button class="notify-btn" onclick="handleNotify(this)">Notify Me</button>
+    </div>
+    <p class="notify-note">No spam. We promise. 🌊</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-num" id="days">—</span>
+      <span class="stat-lbl">Days</span>
+    </div>
+    <div class="stat-sep"></div>
+    <div class="stat">
+      <span class="stat-num" id="hours">—</span>
+      <span class="stat-lbl">Hours</span>
+    </div>
+    <div class="stat-sep"></div>
+    <div class="stat">
+      <span class="stat-num" id="mins">—</span>
+      <span class="stat-lbl">Minutes</span>
+    </div>
+    <div class="stat-sep"></div>
+    <div class="stat">
+      <span class="stat-num" id="secs">—</span>
+      <span class="stat-lbl">Seconds</span>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2025 Blue Ocean Traders Co., Ltd. &nbsp;·&nbsp;
+  <a href="mailto:info@blueoceantraders.co.th">info@blueoceantraders.co.th</a>
+</footer>
+
+<script>
+  /* ── Particles ── */
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 28; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 6 + 2;
+    p.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random()*100}%;
+      animation-duration:${Math.random()*18+10}s;
+      animation-delay:${Math.random()*12}s;
+      opacity:${Math.random()*0.5+0.1};
+    `;
+    container.appendChild(p);
+  }
+
+  /* ── Countdown — target 90 days from today ── */
+  const target = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000);
+  function tick() {
+    const diff = target - Date.now();
+    if (diff <= 0) {
+      document.getElementById('days').textContent  = '00';
+      document.getElementById('hours').textContent = '00';
+      document.getElementById('mins').textContent  = '00';
+      document.getElementById('secs').textContent  = '00';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000)  / 60000);
+    const s = Math.floor((diff % 60000)    / 1000);
+    document.getElementById('days').textContent  = String(d).padStart(2,'0');
+    document.getElementById('hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('mins').textContent  = String(m).padStart(2,'0');
+    document.getElementById('secs').textContent  = String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  /* ── Notify button ── */
+  function handleNotify(btn) {
+    const input = btn.previousElementSibling;
+    if (!input.value || !input.value.includes('@')) {
+      input.style.borderBottom = '1px solid rgba(201,168,76,0.6)';
+      input.focus();
+      return;
+    }
+    btn.textContent = '✓ Noted!';
+    btn.style.background = 'linear-gradient(135deg,#2ecc71,#27ae60)';
+    btn.style.color = '#fff';
+    input.value = '';
+    input.placeholder = 'Thank you! We\'ll be in touch 🌊';
+    setTimeout(() => {
+      btn.textContent = 'Notify Me';
+      btn.style.background = '';
+      btn.style.color = '';
+      input.placeholder = 'your@email.com';
+    }, 4000);
+  }
+</script>
+</body>
+</html>
