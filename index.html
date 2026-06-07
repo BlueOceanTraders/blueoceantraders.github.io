@@ -1,646 +1,418 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Blue Ocean Traders Co., Ltd.</title>
-<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-<style>
-:root{
-  --navy:#0d2b5e;--blue:#1a5fa8;--sky:#3a9bd5;--light:#7ec8e3;
-  --pale:#daeef9;--white:#fff;--off:#f4f9fd;
-  --td:#0d2247;--tm:#3a5070;--tl:#6a8aaa;
-  --sh:0 4px 24px rgba(13,43,94,.10);--shl:0 8px 40px rgba(13,43,94,.16);
-  --r:12px;--rl:20px;--tr:.3s cubic-bezier(.4,0,.2,1)
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Sarabun','Montserrat',sans-serif;color:var(--td);background:var(--white);overflow-x:hidden}
-body.en{font-family:'Montserrat','Sarabun',sans-serif}
-
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,43,94,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px;transition:var(--tr)}
-nav.sc{background:rgba(8,22,56,.99);box-shadow:0 2px 20px rgba(0,0,0,.3)}
-.nlogo{display:flex;align-items:center;gap:11px;text-decoration:none}
-.nlogo svg{width:36px;height:36px}
-.nbrand{color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;letter-spacing:.3px}
-.nsub{font-size:10px;font-weight:400;color:var(--light);letter-spacing:1px}
-.nlinks{display:flex;align-items:center;gap:3px}
-.nlinks a{color:rgba(255,255,255,.8);font-size:13px;font-weight:500;padding:6px 11px;border-radius:8px;text-decoration:none;transition:var(--tr)}
-.nlinks a:hover,.nlinks a.act{color:#fff;background:rgba(255,255,255,.10)}
-.nlinks a.act{color:var(--light)}
-.ncta{background:linear-gradient(135deg,var(--sky),var(--blue)) !important;color:#fff !important;padding:7px 16px !important;border-radius:20px !important;font-weight:700 !important;box-shadow:0 2px 12px rgba(58,155,213,.4)}
-.ncta:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(58,155,213,.55) !important}
-.nright{display:flex;align-items:center;gap:11px}
-.ltog{display:flex;align-items:center;background:rgba(255,255,255,.10);border-radius:20px;padding:3px 4px;cursor:pointer;user-select:none}
-.lbtn{font-size:12px;font-weight:700;padding:4px 10px;border-radius:16px;color:rgba(255,255,255,.5);transition:var(--tr)}
-.lbtn.on{background:var(--sky);color:#fff}
-.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
-.hbg span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:var(--tr)}
-.mob{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(8,22,56,.98);backdrop-filter:blur(16px);padding:12px 5% 20px;z-index:999;border-bottom:1px solid rgba(255,255,255,.07)}
-.mob.open{display:block}
-.mob a{display:block;color:rgba(255,255,255,.85);padding:11px 0;font-size:15px;font-weight:500;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06)}
-.mob a:last-child{border:none}
-
-/* ── SECTIONS ── */
-section{padding:90px 5%}
-.slabel{font-size:11.5px;font-weight:700;letter-spacing:3px;color:var(--sky);text-transform:uppercase;margin-bottom:9px}
-.stitle{font-size:clamp(24px,4vw,38px);font-weight:800;color:var(--navy);line-height:1.2;margin-bottom:13px}
-.ssub{font-size:15px;color:var(--tm);line-height:1.75;max-width:600px}
-.div{width:50px;height:4px;background:linear-gradient(90deg,var(--sky),var(--light));border-radius:4px;margin:11px 0 25px}
-
-/* ── HERO ── */
-#hero{min-height:100vh;padding:0;display:flex;flex-direction:column;background:linear-gradient(135deg,var(--navy) 0%,#1540a0 50%,var(--blue) 100%);position:relative;overflow:hidden}
-.hw{position:absolute;border-radius:50%;animation:wf linear infinite}
-.hw:nth-child(1){width:580px;height:580px;top:-180px;right:-130px;animation-duration:18s;background:rgba(122,200,227,.07)}
-.hw:nth-child(2){width:380px;height:380px;bottom:-90px;left:-70px;animation-duration:22s;animation-delay:-6s;background:rgba(26,95,168,.13)}
-.hw:nth-child(3){width:240px;height:240px;top:38%;right:14%;animation-duration:14s;animation-delay:-3s;background:rgba(201,162,39,.05)}
-@keyframes wf{0%{transform:translate(0,0)rotate(0deg)}33%{transform:translate(18px,-14px)rotate(120deg)}66%{transform:translate(-9px,18px)rotate(240deg)}100%{transform:translate(0,0)rotate(360deg)}}
-.hcont{flex:1;display:flex;align-items:center;padding:118px 5% 76px;max-width:1200px;margin:0 auto;width:100%}
-.htxt{max-width:630px}
-.hbadge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:6px 15px;margin-bottom:24px;font-size:11.5px;font-weight:600;color:var(--light);letter-spacing:1px}
-.hbadge::before{content:'';width:6px;height:6px;background:#5ddf9a;border-radius:50%;animation:pulse 2s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
-.htitle{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(30px,5.5vw,58px);color:#fff;line-height:1.1;margin-bottom:11px}
-.htitle .acc{color:var(--light)}
-.htag{font-size:clamp(13px,1.8vw,16px);color:rgba(255,255,255,.66);margin-bottom:7px;font-weight:300;letter-spacing:.3px}
-.hdesc{font-size:14.5px;color:rgba(255,255,255,.58);line-height:1.75;margin-bottom:32px;max-width:490px}
-.hbtns{display:flex;gap:13px;flex-wrap:wrap}
-.bpri{background:linear-gradient(135deg,var(--sky),var(--blue));color:#fff;padding:13px 27px;border-radius:30px;font-weight:700;font-size:14.5px;text-decoration:none;box-shadow:0 4px 20px rgba(58,155,213,.5);transition:var(--tr);display:inline-flex;align-items:center;gap:7px}
-.bpri:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(58,155,213,.6)}
-.bout{border:1.5px solid rgba(255,255,255,.38);color:#fff;padding:12px 25px;border-radius:30px;font-weight:600;font-size:14.5px;text-decoration:none;transition:var(--tr);display:inline-flex;align-items:center;gap:7px;backdrop-filter:blur(8px)}
-.bout:hover{background:rgba(255,255,255,.11);border-color:rgba(255,255,255,.7);transform:translateY(-2px)}
-.hstats{display:flex;gap:30px;margin-top:44px;flex-wrap:wrap}
-.stat{border-left:2px solid rgba(255,255,255,.17);padding-left:17px}
-.sn{font-family:'Montserrat',sans-serif;font-size:27px;font-weight:800;color:#fff;line-height:1}
-.sl{font-size:11.5px;color:rgba(255,255,255,.5);margin-top:3px}
-.hscroll{text-align:center;padding:20px;color:rgba(255,255,255,.3);font-size:11.5px;letter-spacing:2px;animation:bnc 2.4s ease-in-out infinite}
-@keyframes bnc{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-
-/* ── ABOUT ── */
-#about{background:var(--off)}
-.agrid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1200px;margin:0 auto}
-.avis{border-radius:var(--rl);overflow:hidden;background:linear-gradient(135deg,var(--navy),var(--blue));padding:40px 36px;color:#fff;box-shadow:var(--shl)}
-.alo{text-align:center;margin-bottom:26px}
-.alo svg{width:76px;height:76px}
-.alo .bn{font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px;margin-top:9px;color:#fff}
-.alo .bs{font-size:10.5px;color:var(--light);letter-spacing:2px;margin-top:3px}
-.air{display:flex;align-items:flex-start;gap:11px;margin-bottom:13px;font-size:13px;color:rgba(255,255,255,.82)}
-.aii{width:28px;height:28px;background:rgba(255,255,255,.10);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px}
-.ait{line-height:1.55}
-.atext p{color:var(--tm);font-size:14.5px;line-height:1.8;margin-bottom:14px}
-.apill{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
-.pill{background:var(--white);border-radius:var(--r);padding:14px;border:1px solid rgba(58,155,213,.13);box-shadow:0 2px 10px rgba(13,43,94,.04);transition:var(--tr)}
-.pill:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(--sky)}
-.pi{font-size:19px;margin-bottom:5px}
-.pt{font-weight:700;font-size:13px;color:var(--navy);margin-bottom:2px}
-.pd{font-size:11.5px;color:var(--tl);line-height:1.5}
-
-/* ── PRODUCTS ── */
-#products{background:var(--white)}
-.ph{max-width:1200px;margin:0 auto 42px}
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:20px;max-width:1200px;margin:0 auto}
-.pcard{background:var(--white);border-radius:var(--rl);border:1px solid rgba(58,155,213,.12);overflow:hidden;box-shadow:0 2px 14px rgba(13,43,94,.05);transition:var(--tr)}
-.pcard:hover{transform:translateY(-5px);box-shadow:var(--shl);border-color:var(--sky)}
-.pch{padding:24px 21px 17px;background:linear-gradient(135deg,var(--pale),#eaf6ff);position:relative;overflow:hidden}
-.pch::after{content:'';position:absolute;bottom:-16px;right:-16px;width:68px;height:68px;border-radius:50%;background:rgba(58,155,213,.07)}
-.pic{font-size:32px;display:block;margin-bottom:8px}
-.pname{font-size:16.5px;font-weight:700;color:var(--navy);margin-bottom:3px}
-.pne{font-size:11px;font-weight:600;color:var(--sky);letter-spacing:.3px}
-.pcb{padding:17px 21px 18px}
-.pdesc{font-size:13px;color:var(--tm);line-height:1.7;margin-bottom:13px}
-.ptags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:13px}
-.tag{font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:9px;background:var(--pale);color:var(--blue)}
-.pspecs{border-top:1px solid rgba(58,155,213,.09);padding-top:12px}
-.sr{display:flex;align-items:flex-start;gap:6px;font-size:12px;color:var(--tm);margin-bottom:5px}
-.sd{width:5px;height:5px;background:var(--sky);border-radius:50%;margin-top:4px;flex-shrink:0}
-.pcta{display:flex;align-items:center;justify-content:space-between;padding:12px 21px;border-top:1px solid rgba(58,155,213,.09);background:var(--off)}
-.pcta a{font-size:12.5px;font-weight:700;color:var(--blue);text-decoration:none;transition:var(--tr)}
-.pcta a:hover{color:var(--sky)}
-.pbg{font-size:9.5px;font-weight:700;padding:3px 7px;border-radius:7px;background:linear-gradient(135deg,var(--sky),var(--blue));color:#fff}
-
-/* ── SERVICES ── */
-#services{background:var(--off)}
-.sgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(252px,1fr));gap:20px;max-width:1200px;margin:0 auto}
-.scard{background:var(--white);border-radius:var(--rl);padding:28px 24px;border:1px solid rgba(58,155,213,.11);box-shadow:0 2px 14px rgba(13,43,94,.04);transition:var(--tr);position:relative;overflow:hidden}
-.scard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sky),var(--blue))}
-.scard:hover{transform:translateY(-4px);box-shadow:var(--shl)}
-.sic{font-size:34px;margin-bottom:14px;display:block}
-.stit{font-size:16.5px;font-weight:700;color:var(--navy);margin-bottom:6px}
-.sdesc{font-size:13.5px;color:var(--tm);line-height:1.75}
-.slist{margin-top:12px;list-style:none}
-.slist li{font-size:13px;color:var(--tm);padding:3px 0;display:flex;align-items:flex-start;gap:7px}
-.slist li::before{content:'✦';color:var(--sky);font-size:7.5px;margin-top:5px;flex-shrink:0}
-
-/* ── WHY ── */
-#why{background:linear-gradient(135deg,var(--navy) 0%,#1040a8 58%,var(--blue) 100%);color:#fff}
-#why .slabel{color:var(--light)}
-#why .stitle{color:#fff}
-#why .div{background:linear-gradient(90deg,var(--light),rgba(255,255,255,.18))}
-.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:20px;max-width:1200px;margin:0 auto}
-.wcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:var(--rl);padding:24px 21px;transition:var(--tr);backdrop-filter:blur(8px)}
-.wcard:hover{background:rgba(255,255,255,.10);transform:translateY(-4px)}
-.wn{font-family:'Montserrat',sans-serif;font-size:38px;font-weight:800;color:rgba(255,255,255,.05);line-height:1;margin-bottom:-9px}
-.wic{font-size:27px;margin-bottom:9px;display:block}
-.wt{font-size:15.5px;font-weight:700;color:#fff;margin-bottom:6px}
-.wd{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7}
-
-/* ── SUPPLIERS ── */
-#suppliers{background:var(--white)}
-.supgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(192px,1fr));gap:17px;max-width:1200px;margin:0 auto}
-.supcard{border-radius:var(--r);padding:20px 17px;text-align:center;border:1.5px solid rgba(58,155,213,.11);transition:var(--tr)}
-.supcard:hover{border-color:var(--sky);box-shadow:var(--sh);transform:translateY(-3px)}
-.supic{font-size:28px;margin-bottom:8px}
-.supn{font-weight:700;font-size:13px;color:var(--navy);margin-bottom:3px}
-.supo{font-size:11px;color:var(--tl)}
-.supc{font-size:10.5px;color:var(--sky);font-weight:600;margin-top:5px}
-
-/* ── CONTACT ── */
-#contact{background:var(--off)}
-.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:52px;max-width:1200px;margin:0 auto;align-items:start}
-.cinfo{background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:var(--rl);padding:40px 36px;color:#fff}
-.cinfo h3{font-size:19px;font-weight:700;margin-bottom:24px}
-.crow{display:flex;align-items:flex-start;gap:12px;margin-bottom:18px}
-.cion{width:40px;height:40px;background:rgba(255,255,255,.10);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
-.clb{font-size:10.5px;color:var(--light);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px}
-.cvl{font-size:13px;color:rgba(255,255,255,.87);line-height:1.55}
-.cvl a{color:rgba(255,255,255,.87);text-decoration:none}
-.cvl a:hover{color:var(--light)}
-.csoc{display:flex;gap:8px;margin-top:24px;flex-wrap:wrap}
-.sbtn{padding:9px 16px;border-radius:18px;border:1px solid rgba(255,255,255,.22);color:#fff;font-size:12.5px;font-weight:600;text-decoration:none;transition:var(--tr);display:flex;align-items:center;gap:6px}
-.sbtn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.55)}
-.cform{background:var(--white);border-radius:var(--rl);padding:36px;box-shadow:var(--sh)}
-.cform h3{font-size:19px;font-weight:700;color:var(--navy);margin-bottom:22px}
-.fg{margin-bottom:15px}
-.fl{display:block;font-size:12.5px;font-weight:600;color:var(--tm);margin-bottom:5px}
-.fi{width:100%;padding:11px 14px;border-radius:9px;border:1.5px solid rgba(58,155,213,.18);background:var(--off);font-size:13.5px;font-family:inherit;color:var(--td);transition:var(--tr);outline:none}
-.fi:focus{border-color:var(--sky);background:#fff;box-shadow:0 0 0 3px rgba(58,155,213,.11)}
-.fi::placeholder{color:var(--tl)}
-textarea.fi{resize:vertical;min-height:108px}
-.fsub{width:100%;padding:13px;border-radius:28px;border:none;background:linear-gradient(135deg,var(--sky),var(--navy));color:#fff;font-size:14.5px;font-weight:700;font-family:inherit;cursor:pointer;transition:var(--tr);box-shadow:0 4px 14px rgba(58,155,213,.38)}
-.fsub:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(58,155,213,.5)}
-
-/* ── FOOTER ── */
-footer{background:var(--navy);color:rgba(255,255,255,.65);padding:44px 5% 24px}
-.ft{display:flex;justify-content:space-between;align-items:flex-start;gap:28px;flex-wrap:wrap;margin-bottom:28px}
-.fb .bn{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:#fff;margin-bottom:4px}
-.fb p{font-size:13px;max-width:240px;line-height:1.65}
-.fl2 h4{font-size:12.5px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:10px}
-.fl2 a{display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:6px;transition:var(--tr)}
-.fl2 a:hover{color:var(--light)}
-.fbot{border-top:1px solid rgba(255,255,255,.09);padding-top:17px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:11.5px}
-
-/* ── REVEAL ── */
-.rev{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
-.rev.vis{opacity:1;transform:none}
-
-/* ── RESPONSIVE ── */
-@media(max-width:900px){.nlinks{display:none}.hbg{display:flex}.agrid,.cgrid{grid-template-columns:1fr}section{padding:68px 5%}}
-@media(max-width:600px){.pgrid,.sgrid,.wgrid{grid-template-columns:1fr}.hstats{gap:18px}.apill{grid-template-columns:1fr}.cinfo,.cform{padding:24px 19px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue Ocean Traders Co., Ltd. | Professional Trading Partner</title>
+  <meta name="description" content="Blue Ocean Traders Co., Ltd. — นำเข้า ส่งออก จัดหาสินค้าพิเศษ วัสดุก่อสร้าง และผลิตตามแบบสำหรับลูกค้าและงานโครงการ">
+  <meta name="theme-color" content="#075f9b">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-
-<!-- ═ NAV ═ -->
-<nav id="nav">
-  <a href="#hero" class="nlogo">
-    <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="28" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.18)" stroke-width="1"/><path d="M12 32c4-6 10-10 18-10s14 4 18 10" stroke="#7ec8e3" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M10 38c5-8 12-13 20-13s15 5 20 13" stroke="#3a9bd5" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M14 44c4-6 10-9 16-9s12 3 16 9" stroke="#1a5fa8" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
-    <div><div class="nbrand">BLUE OCEAN TRADERS</div><div class="nsub">CO., LTD.</div></div>
-  </a>
-  <div class="nlinks" id="nl">
-    <a href="#about" data-th="เกี่ยวกับเรา" data-en="About">เกี่ยวกับเรา</a>
-    <a href="#products" data-th="สินค้า" data-en="Products">สินค้า</a>
-    <a href="#services" data-th="บริการ" data-en="Services">บริการ</a>
-    <a href="#why" data-th="ทำไมต้องเรา" data-en="Why Us">ทำไมต้องเรา</a>
-    <a href="#suppliers" data-th="ซัพพลายเออร์" data-en="Suppliers">ซัพพลายเออร์</a>
-    <a href="#contact" class="ncta" data-th="ติดต่อเรา" data-en="Contact Us">ติดต่อเรา</a>
-  </div>
-  <div class="nright">
-    <div class="ltog" id="ltog"><div class="lbtn on" id="lth">TH</div><div class="lbtn" id="len">EN</div></div>
-    <div class="hbg" id="hbg"><span></span><span></span><span></span></div>
-  </div>
-</nav>
-<div class="mob" id="mob">
-  <a href="#about" data-th="เกี่ยวกับเรา" data-en="About">เกี่ยวกับเรา</a>
-  <a href="#products" data-th="สินค้า" data-en="Products">สินค้า</a>
-  <a href="#services" data-th="บริการ" data-en="Services">บริการ</a>
-  <a href="#why" data-th="ทำไมต้องเรา" data-en="Why Us">ทำไมต้องเรา</a>
-  <a href="#suppliers" data-th="ซัพพลายเออร์" data-en="Suppliers">ซัพพลายเออร์</a>
-  <a href="#contact" data-th="ติดต่อเรา" data-en="Contact Us">ติดต่อเรา</a>
-</div>
-
-<!-- ═ HERO ═ -->
-<section id="hero">
-  <div class="hw"></div><div class="hw"></div><div class="hw"></div>
-  <div class="hcont">
-    <div class="htxt">
-      <div class="hbadge">🌊 Professional Trading Partner</div>
-      <h1 class="htitle">
-        <span data-th="สินค้าหายาก" data-en="Rare Products">สินค้าหายาก</span><br>
-        <span class="acc" data-th="เราหาได้" data-en="We Find It">เราหาได้</span>
-      </h1>
-      <p class="htag" data-th="นำเข้า • ส่งออก • จัดหาสินค้าพิเศษ • ผลิตตามแบบ" data-en="Import • Export • Special Sourcing • Custom Manufacturing">นำเข้า • ส่งออก • จัดหาสินค้าพิเศษ • ผลิตตามแบบ</p>
-      <p class="hdesc" data-th="บริษัท บลูโอเชียน เทรดเดอร์ จำกัด — พันธมิตรทางธุรกิจครบวงจร ด้วยเครือข่ายซัพพลายเออร์ทั่วโลก เราพร้อมจัดหาสินค้าคุณภาพและผลิตตามแบบที่คุณต้องการ" data-en="Blue Ocean Traders Co., Ltd. — your comprehensive business partner. With our global supplier network, we source quality products and manufacture custom items to your exact specifications.">บริษัท บลูโอเชียน เทรดเดอร์ จำกัด — พันธมิตรทางธุรกิจครบวงจร ด้วยเครือข่ายซัพพลายเออร์ทั่วโลก เราพร้อมจัดหาสินค้าคุณภาพและผลิตตามแบบที่คุณต้องการ</p>
-      <div class="hbtns">
-        <a href="#products" class="bpri" data-th="🏬 ดูสินค้าทั้งหมด" data-en="🏬 View Products">🏬 ดูสินค้าทั้งหมด</a>
-        <a href="#contact" class="bout" data-th="📞 ติดต่อเรา" data-en="📞 Contact Us">📞 ติดต่อเรา</a>
-      </div>
-      <div class="hstats">
-        <div class="stat"><div class="sn">12+</div><div class="sl" data-th="กลุ่มสินค้า" data-en="Product Groups">กลุ่มสินค้า</div></div>
-        <div class="stat"><div class="sn">60+</div><div class="sl" data-th="ประเทศที่ครอบคลุม" data-en="Countries Covered">ประเทศที่ครอบคลุม</div></div>
-        <div class="stat"><div class="sn">360°</div><div class="sl" data-th="บริการครบวงจร" data-en="Full Service">บริการครบวงจร</div></div>
+  <a class="skip-link" href="#main" data-th="ข้ามไปยังเนื้อหา" data-en="Skip to content">ข้ามไปยังเนื้อหา</a>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Blue Ocean Traders home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="brand-text"><strong>BLUE OCEAN TRADERS</strong><small>CO., LTD.</small></span>
+      </a>
+      <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#about" data-th="เกี่ยวกับเรา" data-en="About">เกี่ยวกับเรา</a>
+        <a href="#products" data-th="สินค้าและบริการ" data-en="Products">สินค้าและบริการ</a>
+        <a href="#services" data-th="บริการ" data-en="Services">บริการ</a>
+        <a href="#why" data-th="จุดเด่น" data-en="Why Us">จุดเด่น</a>
+        <a href="#contact" data-th="ติดต่อ" data-en="Contact">ติดต่อ</a>
+      </nav>
+      <div class="language-switch" aria-label="Language switcher">
+        <button type="button" class="lang-btn active" data-lang="th">TH</button>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
       </div>
     </div>
-  </div>
-  <div class="hscroll" data-th="▼ เลื่อนดูเพิ่มเติม" data-en="▼ SCROLL TO EXPLORE">▼ เลื่อนดูเพิ่มเติม</div>
-</section>
+  </header>
 
-<!-- ═ ABOUT ═ -->
-<section id="about">
-  <div class="agrid">
-    <div class="avis rev">
-      <div class="alo">
-        <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="38" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.14)" stroke-width="1.5"/><path d="M14 44c6-9 14-15 26-15s20 6 26 15" stroke="#7ec8e3" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M11 52c7-12 16-19 29-19s22 7 29 19" stroke="#3a9bd5" stroke-width="4" stroke-linecap="round" fill="none"/><path d="M17 60c6-9 13-14 23-14s17 5 23 14" stroke="#1a5fa8" stroke-width="4" stroke-linecap="round" fill="none"/></svg>
-        <div class="bn">BLUE OCEAN TRADERS</div><div class="bs">CO., LTD.</div>
-      </div>
-      <div class="air"><div class="aii">📍</div><div class="ait">Somerset Sukhumvit 71, 1015/29 Room 316,<br>Sukhumvit 71 Rd., Khlong Tan Nuea,<br>Watthana, Bangkok 10110</div></div>
-      <div class="air"><div class="aii">☎</div><div class="ait">083-834-8686 / 064-661-8569</div></div>
-      <div class="air"><div class="aii">✉</div><div class="ait">admin@blueoceantraders.co.th<br>oceantradersblue@gmail.com</div></div>
-      <div class="air"><div class="aii">🔖</div><div class="ait">Tax ID: 0-1055-66179-01-0</div></div>
-    </div>
-    <div class="atext rev">
-      <div class="slabel" data-th="เกี่ยวกับเรา" data-en="About Us">เกี่ยวกับเรา</div>
-      <h2 class="stitle" data-th="พันธมิตรทางธุรกิจที่คุณไว้วางใจ" data-en="Your Trusted Business Partner">พันธมิตรทางธุรกิจที่คุณไว้วางใจ</h2>
-      <div class="div"></div>
-      <p data-th="บริษัท บลูโอเชียน เทรดเดอร์ จำกัด เป็นบริษัทเทรดดิ้งมืออาชีพที่มีความเชี่ยวชาญในการจัดหาสินค้า วัสดุก่อสร้าง และสินค้าพิเศษ ทั้งภายในประเทศและนำเข้าจากต่างประเทศ" data-en="Blue Ocean Traders Co., Ltd. is a professional trading company specializing in construction materials, specialty items, and hard-to-find products — both domestic and internationally imported.">บริษัท บลูโอเชียน เทรดเดอร์ จำกัด เป็นบริษัทเทรดดิ้งมืออาชีพที่มีความเชี่ยวชาญในการจัดหาสินค้า วัสดุก่อสร้าง และสินค้าพิเศษ ทั้งภายในประเทศและนำเข้าจากต่างประเทศ</p>
-      <p data-th="ด้วยเครือข่ายพันธมิตรกว่า 60 ประเทศทั่วโลก เราพร้อมตอบสนองทุกความต้องการ ตั้งแต่การหาสินค้า นำเข้า จัดส่ง ติดตั้ง ไปจนถึงบริการหลังการขาย" data-en="With our partner network spanning 60+ countries, we deliver end-to-end solutions — from sourcing and import, through delivery and installation, to after-sales support.">ด้วยเครือข่ายพันธมิตรกว่า 60 ประเทศทั่วโลก เราพร้อมตอบสนองทุกความต้องการ ตั้งแต่การหาสินค้า นำเข้า จัดส่ง ติดตั้ง ไปจนถึงบริการหลังการขาย</p>
-      <div class="apill">
-        <div class="pill"><div class="pi">🌏</div><div class="pt" data-th="เครือข่ายทั่วโลก" data-en="Global Network">เครือข่ายทั่วโลก</div><div class="pd" data-th="พันธมิตรใน 60+ ประเทศ" data-en="Partners in 60+ countries">พันธมิตรใน 60+ ประเทศ</div></div>
-        <div class="pill"><div class="pi">💎</div><div class="pt" data-th="สินค้าหายาก" data-en="Rare Sourcing">สินค้าหายาก</div><div class="pd" data-th="จัดหาสินค้าที่หาได้ยาก" data-en="Source hard-to-find items">จัดหาสินค้าที่หาได้ยาก</div></div>
-        <div class="pill"><div class="pi">⚙️</div><div class="pt" data-th="ผลิตตามแบบ" data-en="Custom Mfg.">ผลิตตามแบบ</div><div class="pd" data-th="งาน Bespoke ทุกประเภท" data-en="All Bespoke types">งาน Bespoke ทุกประเภท</div></div>
-        <div class="pill"><div class="pi">✅</div><div class="pt" data-th="บริการครบวงจร" data-en="Full Service">บริการครบวงจร</div><div class="pd" data-th="จัดหา→ส่ง→ติดตั้ง→หลังขาย" data-en="Source→Ship→Install→Support">จัดหา→ส่ง→ติดตั้ง→หลังขาย</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═ PRODUCTS ═ -->
-<section id="products">
-  <div class="ph rev">
-    <div class="slabel" data-th="สินค้าของเรา" data-en="Our Products">สินค้าของเรา</div>
-    <h2 class="stitle" data-th="12 กลุ่มสินค้าครบวงจร" data-en="12 Complete Product Groups">12 กลุ่มสินค้าครบวงจร</h2>
-    <div class="div"></div>
-    <p class="ssub" data-th="ครอบคลุมวัสดุก่อสร้าง พลังงาน ระบบประตู-หน้าต่าง สุขภัณฑ์ ไปจนถึงงานตกแต่งพื้นและผนัง" data-en="Covering construction materials, energy solutions, door & window systems, sanitary ware, and interior flooring & finishes.">ครอบคลุมวัสดุก่อสร้าง พลังงาน ระบบประตู-หน้าต่าง สุขภัณฑ์ ไปจนถึงงานตกแต่งพื้นและผนัง</p>
-  </div>
-  <div class="pgrid">
-
-    <div class="pcard rev">
-      <div class="pch"><span class="pic">🔩</span><div class="pname" data-th="เหล็กทุกชนิด" data-en="Steel Products">เหล็กทุกชนิด</div><div class="pne">STEEL PRODUCTS</div></div>
-      <div class="pcb">
-        <p class="pdesc" data-th="จำหน่ายเหล็กครบทุกประเภท ทั้งเหล็กเส้น เหล็กโครงสร้าง เหล็กรูปพรรณ เหล็กแผ่น และเหล็กท่อ สำหรับงานก่อสร้างทุกขนาด" data-en="Complete steel range: rebar, structural steel, profiles, plates and pipes — for all construction scales.">จำหน่ายเหล็กครบทุกประเภท ทั้งเหล็กเส้น เหล็กโครงสร้าง เหล็กรูปพรรณ เหล็กแผ่น และเหล็กท่อ</p>
-        <div class="ptags"><span class="tag">Rebar</span><span class="tag">H-Beam</span><span class="tag">I-Beam</span><span class="tag">Steel Plate</span><span class="tag">Pipe</span></div>
-        <div class="pspecs">
-          <div class="sr"><div class="sd"></div><span data-th="เหล็กเส้น Rebar SD30–SD50 ทุกขนาด" data-en="Rebar SD30–SD50 all sizes">เหล็กเส้น Rebar SD30–SD50</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="เหล็กโครงสร้าง H-Beam / I-Beam" data-en="Structural H-Beam / I-Beam">เหล็กโครงสร้าง H-Beam / I-Beam</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="เหล็กรูปพรรณ Angle, Channel, Flat Bar" data-en="Profiles: Angle, Channel, Flat Bar">Angle / Channel / Flat Bar</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="เหล็กแผ่น / เหล็กท่อ / ตะแกรง" data-en="Plates / Pipes / Mesh">เหล็กแผ่น / ท่อ / ตะแกรง</span></div>
+  <main id="main">
+    <section class="hero section-pad" aria-labelledby="hero-title">
+      <div class="ocean-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-th="Your Professional Trading Partner" data-en="Your Professional Trading Partner">Your Professional Trading Partner</p>
+          <h1 id="hero-title" data-th="นำเข้า • ส่งออก • จัดหาสินค้าพิเศษ • ผลิตตามแบบ" data-en="Import • Export • Special Sourcing • Custom Manufacturing">นำเข้า • ส่งออก • จัดหาสินค้าพิเศษ • ผลิตตามแบบ</h1>
+          <p class="hero-text" data-th="Blue Ocean Traders Co., Ltd. ให้บริการจัดหาวัสดุก่อสร้าง สินค้าโครงการ และสินค้าสั่งผลิตพิเศษ พร้อมประสานงานตั้งแต่การคัดเลือกแหล่งสินค้า การนำเข้า การจัดส่ง ไปจนถึงการติดตั้งตามความต้องการของลูกค้า" data-en="Blue Ocean Traders Co., Ltd. provides sourcing services for construction materials, project supplies and custom-made products, supporting customers from supplier selection and import coordination to delivery and installation.">Blue Ocean Traders Co., Ltd. ให้บริการจัดหาวัสดุก่อสร้าง สินค้าโครงการ และสินค้าสั่งผลิตพิเศษ พร้อมประสานงานตั้งแต่การคัดเลือกแหล่งสินค้า การนำเข้า การจัดส่ง ไปจนถึงการติดตั้งตามความต้องการของลูกค้า</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#contact" data-th="ขอใบเสนอราคา" data-en="Request a Quotation">ขอใบเสนอราคา</a>
+            <a class="btn secondary" href="#products" data-th="ดูสินค้าและบริการ" data-en="View Products">ดูสินค้าและบริการ</a>
+          </div>
+          <dl class="hero-stats">
+            <div><dt>12</dt><dd data-th="กลุ่มสินค้าและบริการหลัก" data-en="Main product &amp; service groups">กลุ่มสินค้าและบริการหลัก</dd></div>
+            <div><dt>360°</dt><dd data-th="ดูแลตั้งแต่จัดหาถึงส่งมอบ" data-en="Sourcing to delivery support">ดูแลตั้งแต่จัดหาถึงส่งมอบ</dd></div>
+            <div><dt>OEM</dt><dd data-th="รองรับงานผลิตตามแบบ" data-en="Custom manufacturing support">รองรับงานผลิตตามแบบ</dd></div>
+          </dl>
+        </div>
+        <div class="hero-visual" aria-label="Product examples">
+          <img class="hero-main-img" src="assets/images/hero-products.jpg" alt="Product packaging and building material examples">
+          <div class="hero-mini hero-mini-a"><img src="assets/images/actual-door-system.jpg" alt="Door system example"></div>
+          <div class="hero-mini hero-mini-b"><img src="assets/images/catalog-window.jpg" alt="Aluminum window catalog example"></div>
         </div>
       </div>
-      <div class="pcta"><a href="#contact" data-th="ขอใบเสนอราคา →" data-en="Request Quote →">ขอใบเสนอราคา →</a><span class="pbg" data-th="นำเข้า" data-en="Import">นำเข้า</span></div>
-    </div>
+    </section>
 
-    <div class="pcard rev">
-      <div class="pch"><span class="pic">🏗️</span><div class="pname" data-th="Wave Board & Plate" data-en="Wave Board & Plate">Wave Board & Plate</div><div class="pne">WAVE BOARD & PLATE</div></div>
-      <div class="pcb">
-        <p class="pdesc" data-th="แผ่นลูกฟัก กันสาด Checkered Plate หลังคาสเตนเลส และ Wave Board ตามแบบ สั่งผลิตขนาดพิเศษ" data-en="Corrugated sheets, Checkered Plate, stainless roofing, and custom Wave Board. Special sizes on order.">แผ่นลูกฟัก กันสาด Checkered Plate หลังคาสเตนเลส และ Wave Board ตามแบบ</p>
-        <div class="ptags"><span class="tag">Corrugated</span><span class="tag">Checkered Plate</span><span class="tag">SS Roof</span><span class="tag">Custom</span></div>
-        <div class="pspecs">
-          <div class="sr"><div class="sd"></div><span data-th="แผ่นลูกฟัก / กันสาด ทุกประเภท" data-en="Corrugated / canopy all types">แผ่นลูกฟัก / กันสาด</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="Checkered Plate แผ่นพื้นกันลื่น" data-en="Anti-slip Checkered Plate">Checkered Plate กันลื่น</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="หลังคาสเตนเลส ทนทาน ไม่เป็นสนิม" data-en="Stainless roofing — rust-free">หลังคาสเตนเลส ทนทาน</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="สั่งผลิตขนาดพิเศษตามต้องการ" data-en="Custom-size production on demand">สั่งผลิตขนาดพิเศษ</span></div>
+    <section class="section-pad about" id="about" aria-labelledby="about-title">
+      <div class="container split-grid">
+        <div class="section-copy">
+          <p class="section-kicker" data-th="เกี่ยวกับเรา" data-en="About Us">เกี่ยวกับเรา</p>
+          <h2 id="about-title" data-th="พันธมิตรจัดหาสินค้า สำหรับงานบ้าน อาคาร และโครงการ" data-en="A sourcing partner for residential, building and project needs">พันธมิตรจัดหาสินค้า สำหรับงานบ้าน อาคาร และโครงการ</h2>
+          <p data-th="บริษัท บลูโอเชียน เทรดเดอร์ จำกัด เป็นบริษัทเทรดดิ้งที่ช่วยลูกค้าจัดหาสินค้า วัสดุก่อสร้าง สินค้านำเข้า และสินค้าสั่งผลิตพิเศษ โดยเน้นความถูกต้องของสเปก ความคุ้มค่า และการประสานงานที่ชัดเจน" data-en="Blue Ocean Traders Co., Ltd. is a trading company that helps customers source products, construction materials, imported goods and custom-made items with a focus on specification accuracy, value and clear coordination.">บริษัท บลูโอเชียน เทรดเดอร์ จำกัด เป็นบริษัทเทรดดิ้งที่ช่วยลูกค้าจัดหาสินค้า วัสดุก่อสร้าง สินค้านำเข้า และสินค้าสั่งผลิตพิเศษ โดยเน้นความถูกต้องของสเปก ความคุ้มค่า และการประสานงานที่ชัดเจน</p>
+          <div class="feature-row">
+            <div><strong data-th="วัสดุก่อสร้าง" data-en="Construction Materials">วัสดุก่อสร้าง</strong><span data-th="จัดหาสินค้าครบวงจรทั้งในและต่างประเทศ" data-en="Domestic and international sourcing">จัดหาสินค้าครบวงจรทั้งในและต่างประเทศ</span></div>
+            <div><strong data-th="ผลิตตามแบบ" data-en="Custom Made">ผลิตตามแบบ</strong><span data-th="รองรับงาน bespoke และ OEM ตามสเปก" data-en="Bespoke and OEM support">รองรับงาน bespoke และ OEM ตามสเปก</span></div>
+            <div><strong data-th="นำเข้า-ส่งออก" data-en="Import &amp; Export">นำเข้า-ส่งออก</strong><span data-th="ประสานงานซัพพลายเออร์และการส่งมอบ" data-en="Supplier and delivery coordination">ประสานงานซัพพลายเออร์และการส่งมอบ</span></div>
+          </div>
+        </div>
+        <div class="about-panel">
+          <img src="assets/images/actual-packaging.jpg" alt="Packaged product examples">
+          <div class="about-note"><strong data-th="สินค้าหายาก เราหาได้" data-en="Hard-to-source products, made possible">สินค้าหายาก เราหาได้</strong><span data-th="สินค้าพิเศษ เราช่วยผลิตตามแบบได้" data-en="Special products can be custom-made to specification">สินค้าพิเศษ เราช่วยผลิตตามแบบได้</span></div>
         </div>
       </div>
-      <div class="pcta"><a href="#contact" data-th="ขอใบเสนอราคา →" data-en="Request Quote →">ขอใบเสนอราคา →</a><span class="pbg" data-th="สั่งทำ" data-en="Custom">สั่งทำ</span></div>
-    </div>
+    </section>
 
-    <div class="pcard rev">
-      <div class="pch"><span class="pic">💡</span><div class="pname" data-th="LED ในและนอกอาคาร" data-en="LED Indoor / Outdoor">LED ในและนอกอาคาร</div><div class="pne">LED DISPLAY & LIGHTING</div></div>
-      <div class="pcb">
-        <p class="pdesc" data-th="LED Display Wall ทุกขนาด ป้ายไฟ LED Smart LED ควบคุมผ่าน App Floodlight และงานโปรเจกต์พิเศษ" data-en="LED Display Walls, LED signage, Smart LED (App-controlled), Floodlights and special project lighting.">LED Display Wall ทุกขนาด ป้ายไฟ LED Smart LED ควบคุมผ่าน App และงานโปรเจกต์</p>
-        <div class="ptags"><span class="tag">LED Display</span><span class="tag">Floodlight</span><span class="tag">Smart LED</span><span class="tag">LED Strip</span></div>
-        <div class="pspecs">
-          <div class="sr"><div class="sd"></div><span data-th="LED Display Wall ใน-นอกอาคาร" data-en="Indoor & outdoor LED Display Wall">LED Display Wall ใน-นอก</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="ป้ายไฟ LED ทุกขนาด สั่งทำได้" data-en="LED signage all sizes, custom available">ป้ายไฟ LED ทุกขนาด</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="LED Strip & Floodlight ครบชุด" data-en="LED Strip & Floodlight complete sets">LED Strip & Floodlight</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="Smart LED ควบคุมผ่านแอปมือถือ" data-en="App-controlled Smart LED">Smart LED ควบคุมผ่านแอป</span></div>
+    <section class="section-pad products" id="products" aria-labelledby="products-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="section-kicker" data-th="สินค้าและบริการหลัก" data-en="Products &amp; Services">สินค้าและบริการหลัก</p>
+          <h2 id="products-title" data-th="ครอบคลุม 12 กลุ่มสินค้า พร้อมตัวอย่างสินค้าในแต่ละกลุ่ม" data-en="12 main categories with product examples">ครอบคลุม 12 กลุ่มสินค้า พร้อมตัวอย่างสินค้าในแต่ละกลุ่ม</h2>
+          <p data-th="เลือกกลุ่มสินค้าที่ต้องการ แล้วส่งรายละเอียดสเปก จำนวน งบประมาณ และกำหนดส่ง เพื่อให้ทีมงานช่วยประเมินทางเลือกที่เหมาะสม" data-en="Select a product category and send the required specifications, quantity, budget and timeline so the team can propose suitable options.">เลือกกลุ่มสินค้าที่ต้องการ แล้วส่งรายละเอียดสเปก จำนวน งบประมาณ และกำหนดส่ง เพื่อให้ทีมงานช่วยประเมินทางเลือกที่เหมาะสม</p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card" id="product-01">
+          <div class="product-media">
+            <img src="assets/images/category-01-steel.jpg" alt="Steel Products" loading="lazy">
+            <span class="product-no">01</span>
+          </div>
+          <div class="product-body">
+            <h3 data-th="เหล็กทุกชนิด" data-en="Steel Products">เหล็กทุกชนิด</h3>
+            <p data-th="จัดหาเหล็กสำหรับงานก่อสร้าง งานโครงสร้าง และงานโครงการ พร้อมเทียบสเปกตามความต้องการของลูกค้า" data-en="Sourcing steel products for construction, structural work and project supply with specification matching support.">จัดหาเหล็กสำหรับงานก่อสร้าง งานโครงสร้าง และงานโครงการ พร้อมเทียบสเปกตามความต้องการของลูกค้า</p>
+            <ul class="product-list"><li data-th="เหล็กเส้น (Rebar)" data-en="Rebar">เหล็กเส้น (Rebar)</li><li data-th="H-Beam / I-Beam" data-en="H-Beam / I-Beam">H-Beam / I-Beam</li><li data-th="Angle / Channel" data-en="Angle / Channel">Angle / Channel</li><li data-th="เหล็กแผ่น / เหล็กท่อ" data-en="Steel plate / Steel pipe">เหล็กแผ่น / เหล็กท่อ</li><li data-th="เหล็กตะแกรง" data-en="Steel mesh">เหล็กตะแกรง</li></ul>
+            <a class="text-link" href="#contact" data-th="สอบถามสินค้าในกลุ่มนี้" data-en="Ask about this category">สอบถามสินค้าในกลุ่มนี้</a>
+          </div>
+        </article>
+<article class="product-card" id="product-02">
+          <div class="product-media">
+            <img src="assets/images/category-02-wave-board.jpg" alt="Wave Board &amp; Plate" loading="lazy">
+            <span class="product-no">02</span>
+          </div>
+          <div class="product-body">
+            <h3 data-th="Wave Board &amp; Plate" data-en="Wave Board &amp; Plate">Wave Board &amp; Plate</h3>
+            <p data-th="แผ่นลูกฟูก แผ่นพื้น และแผ่นสั่งผลิตสำหรับงานอาคาร งานตกแต่ง และงานโครงการพิเศษ" data-en="Corrugated boards, floor plates and custom-made plates for building, interior and special project use.">แผ่นลูกฟูก แผ่นพื้น และแผ่นสั่งผลิตสำหรับงานอาคาร งานตกแต่ง และงานโครงการพิเศษ</p>
+            <ul class="product-list"><li data-th="แผ่นลูกฟูก / กันสาด" data-en="Corrugated / awning sheets">แผ่นลูกฟูก / กันสาด</li><li data-th="Checkered Plate" data-en="Checkered plate">Checkered Plate</li><li data-th="Wave Board ตามแบบ" data-en="Custom wave board">Wave Board ตามแบบ</li><li data-th="หลังคาสเตนเลส" data-en="Stainless roof sheet">หลังคาสเตนเลส</li><li data-th="สั่งผลิตขนาดพิเศษ" data-en="Special-size production">สั่งผลิตขนาดพิเศษ</li></ul>
+            <a class="text-link" href="#contact" data-th="สอบถามสินค้าในกลุ่มนี้" data-en="Ask about this category">สอบถามสินค้าในกลุ่มนี้</a>
+          </div>
+        </article>
+<article class="product-card" id="product-03">
+          <div class="product-media">
+            <img src="assets/images/category-03-led-display.jpg" alt="LED Indoor / Outdoor" loading="lazy">
+            <span class="product-no">03</span>
+          </div>
+          <div class="product-body">
+            <h3 data-th="LED Indoor / Outdoor" data-en="LED Indoor / Outdoor">LED Indoor / Outdoor</h3>
+            <p data-th="โซลูชันจอและป้ายไฟ LED สำหรับอาคาร ร้านค้า งานอีเวนต์ และพื้นที่โฆษณา" data-en="LED display and signage solutions for buildings, retail spaces, events and advertising areas.">โซลูชันจอและป้ายไฟ LED สำหรับอาคาร ร้านค้า งานอีเวนต์ และพื้นที่โฆษณา</p>
+            <ul class="product-list"><li data-th="LED Display Wall" data-en="LED display wall">LED Display Wall</li><li data-th="ป้ายไฟ LED ทุกขนาด" data-en="LED signage">ป้ายไฟ LED ทุกขนาด</li><li data-th="LED Strip" data-en="LED strip">LED Strip</li><li data-th="Flood Light" data-en="Flood light">Flood Light</li><li data-th="Smart LED ควบคุมผ่าน App" data-en="App-controlled smart LED">Smart LED ควบคุมผ่าน App</li></ul>
+            <a class="text-link" href="#contact" data-th="สอบถามสินค้าในกลุ่มนี้" data-en="Ask about this category">สอบถามสินค้าในกลุ่มนี้</a>
+          </div>
+        </article>
+<article class="product-card" id="product-04">
+          <div class="product-media">
+            <img src="assets/images/category-04-led-lamps.jpg" alt="LED Lamps" loading="lazy">
+            <span class="product-no">04</span>
+          </div>
+          <div class="product-body">
+            <h3 data-th="หลอดไฟ LED ทุกประเภท" data-en="LED Lamps">หลอดไฟ LED ทุกประเภท</h3>
+            <p data-th="หลอดไฟและโคม LED สำหรับบ้าน อาคาร สำนักงาน โรงงาน และงานโครงการ" data-en="LED lamps and lighting fixtures for homes, buildings, offices, factories and project work.">หลอดไฟและโคม LED สำหรับบ้าน อาคาร สำนักงาน โรงงาน และงานโครงการ</p>
+            <ul class="product-list"><li data-th="T5 / T8 / T9 Batten" data-en="T5 / T8 / T9 batten">T5 / T8 / T9 Batten</li><li data-th="Tri-proof / Waterproof" data-en="Tri-proof / Waterproof">Tri-proof / Waterproof</li><li data-th="Panel Light" data-en="Panel light">Panel Light</li><li data-th="LED Bulb" data-en="LED bulb">LED Bulb</li><li data-th="Retrofit / Circular Lamp" data-en="Retrofit / Circular lamp">Retrofit / Circular Lamp</li></ul>
+            <a class="text-link" href="#contact" data-th="สอบถามสินค้าในกลุ่มนี้" data-en="Ask about this category">สอบถามสินค้าในกลุ่มนี้</a>
+          </div>
+        </article>
+<article class="product-card" id="product-05">
+          <div class="product-media">
+            <img src="assets/images/category-05-ev-charger.jpg" alt="EV Charging Station" loading="lazy">
+            <span class="product-no">05</span>
+          </div>
+          <div class="product-body">
+            <h3 data-th="สถานีชาร์จ EV" data-en="EV Charging Station">สถานีชาร์จ EV</h3>
+            <p data-th="อุปกรณ์ชาร์จรถไฟฟ้าและบริการประสานงานติดตั้งสำหรับลานจอดรถ อาคาร และโครงการเชิงพาณิชย์" data-en="EV charging equipment and installation coordination for parking areas, buildings and commercial projects.">อุปกรณ์ชาร์จรถไฟฟ้าและบริการประสานงานติดตั้งสำหรับลานจอดรถ อาคาร และโครงการเชิงพาณิชย์</p>
+            <ul class="product-list"><li data-th="AC Charger สำหรับที่จอดรถ" data-en="AC charger for parking areas">AC Charger สำหรับที่จอดรถ</li><li data-th="DC Fast Charger" data-en="DC fast charger">DC Fast Charger</li><li data-th="ติดตั้งครบวงจร" data-en="End-to-end installation">ติดตั้งครบวงจร</li><li data-th="CSD-R3 Series" data-en="CSD-R3 series">CSD-R3 Series</li><li data-th="รองรับหลายแบรนด์รถ EV" data-en="Multi-brand EV support">รองรับหลายแบรนด์รถ EV</li></ul>
+            <a class="text-link" href="#contact" data-th="สอบถามสินค้าในกลุ่มนี้" data-en="Ask about this category">สอบถามสินค้าในกลุ่มนี้</a>
+          </div>
+        </article>
+<article class="product-card" id="product-06">
+          <div class="product-media">
+            <img src="assets/images/category-06-window-door.jpg" alt="Aluminum Windows &amp; Doors" loading="lazy">
+            <span class="product-no">06</span>
+          </div>
+          <div class="product-body">
+            <h3 data-th="ประตู-หน้าต่างอลูมิเนียม" data-en="Aluminum Windows &amp; Doors">ประตู-หน้าต่างอลูมิเนียม</h3>
+            <p data-th="ประตูและหน้าต่างอลูมิเนียมสำหรับบ้าน อาคาร และโครงการ พร้อมตัวเลือกกระจกและอุปกรณ์ครบชุด" data-en="Aluminum window and door systems for residences, buildings and projects with glass and hardware options.">ประตูและหน้าต่างอลูมิเนียมสำหรับบ้าน อาคาร และโครงการ พร้อมตัวเลือกกระจกและอุปกรณ์ครบชุด</p>
+            <ul class="product-list"><li data-th="หน้าต่างอลูมิเนียมบานเลื่อน" data-en="Aluminum sliding windows">หน้าต่างอลูมิเนียมบานเลื่อน</li><li data-th="ประตูอลูมิเนียมทุกแบบ" data-en="Aluminum door systems">ประตูอลูมิเนียมทุกแบบ</li><li data-th="System Window ประหยัดพลังงาน" data-en="Energy-saving system windows">System Window ประหยัดพลังงาน</li><li data-th="กระจกนิรภัย / กระจกฉนวน" data-en="Safety / Insulated glass">กระจกนิรภัย / กระจกฉนวน</li><li data-th="ติดตั้งพร้อมอุปกรณ์" data-en="Installation with hardware">ติดตั้งพร้อมอุปกรณ์</li></ul>
+            <a class="text-link" href="#contact" data-th="สอบถามสินค้าในกลุ่มนี้" data-en="Ask about this category">สอบถามสินค้าในกลุ่มนี้</a>
+          </div>
+        </article>
+<article class="product-card" id="product-07">
+          <div class="product-media">
+            <img src="assets/images/category-07-sanitary.jpg" alt="Sanitary Ware" loading="lazy">
+            <span class="product-no">07</span>
+          </div>
+          <div class="product-body">
+            <h3 data-th="สุขภัณฑ์" data-en="Sanitary Ware">สุขภัณฑ์</h3>
+            <p data-th="จัดหาสุขภัณฑ์และอุปกรณ์ห้องน้ำสำหรับโรงแรม คอนโด บ้านพักอาศัย และงานโครงการ" data-en="Sanitary ware and bathroom supply for hotels, condominiums, residences and project procurement.">จัดหาสุขภัณฑ์และอุปกรณ์ห้องน้ำสำหรับโรงแรม คอนโด บ้านพักอาศัย และงานโครงการ</p>
+            <ul class="product-list"><li data-th="สุขภัณฑ์แบรนด์ชั้นนำ" data-en="Leading sanitary brands">สุขภัณฑ์แบรนด์ชั้นนำ</li><li data-th="ฝักบัว / อ่างล้างมือ" data-en="Showers / basins">ฝักบัว / อ่างล้างมือ</li><li data-th="สุขภัณฑ์ไทยและนำเข้า" data-en="Local and imported sanitary ware">สุขภัณฑ์ไทยและนำเข้า</li><li data-th="ชุดครัว / ห้องน้ำ" data-en="Kitchen / bathroom sets">ชุดครัว / ห้องน้ำ</li><li data-th="ราคาพิเศษสำหรับโครงการ" data-en="Project pricing support">ราคาพิเศษสำหรับโครงการ</li></ul>
+            <a class="text-link" href="#contact" data-th="สอบถามสินค้าในกลุ่มนี้" data-en="Ask about this category">สอบถามสินค้าในกลุ่มนี้</a>
+          </div>
+        </article>
+<article class="product-card" id="product-08">
+          <div class="product-media">
+            <img src="assets/images/category-08-stainless.jpg" alt="Custom Stainless" loading="lazy">
+            <span class="product-no">08</span>
+          </div>
+          <div class="product-body">
+            <h3 data-th="สแตนเลสสั่งทำ" data-en="Custom Stainless">สแตนเลสสั่งทำ</h3>
+            <p data-th="งานสแตนเลสผลิตตามแบบสำหรับครัว ร้านค้า โรงงาน และพื้นที่ใช้งานเฉพาะ" data-en="Custom stainless fabrication for kitchens, retail spaces, factories and specialized work areas.">งานสแตนเลสผลิตตามแบบสำหรับครัว ร้านค้า โรงงาน และพื้นที่ใช้งานเฉพาะ</p>
+            <ul class="product-list"><li data-th="เคาน์เตอร์ครัวสแตนเลส" data-en="Stainless kitchen counter">เคาน์เตอร์ครัวสแตนเลส</li><li data-th="ชั้นวางสินค้า / Rack" data-en="Shelving / rack">ชั้นวางสินค้า / Rack</li><li data-th="ตู้สแตนเลสทุกแบบ" data-en="Stainless cabinets">ตู้สแตนเลสทุกแบบ</li><li data-th="อุปกรณ์อาหารและโรงงาน" data-en="Food and factory equipment">อุปกรณ์อาหารและโรงงาน</li><li data-th="งานออกแบบพิเศษ Custom" data-en="Custom design and fabrication">งานออกแบบพิเศษ Custom</li></ul>
+            <a class="text-link" href="#contact" data-th="สอบถามสินค้าในกลุ่มนี้" data-en="Ask about this category">สอบถามสินค้าในกลุ่มนี้</a>
+          </div>
+        </article>
+<article class="product-card" id="product-09">
+          <div class="product-media">
+            <img src="assets/images/category-09-special-door.jpg" alt="Special Doors" loading="lazy">
+            <span class="product-no">09</span>
+          </div>
+          <div class="product-body">
+            <h3 data-th="ประตูพิเศษ" data-en="Special Doors">ประตูพิเศษ</h3>
+            <p data-th="ประตูสั่งทำและงาน bespoke สำหรับบ้าน อาคาร และงานตกแต่งที่ต้องการเอกลักษณ์เฉพาะ" data-en="Custom and bespoke door solutions for residences, buildings and design-focused projects.">ประตูสั่งทำและงาน bespoke สำหรับบ้าน อาคาร และงานตกแต่งที่ต้องการเอกลักษณ์เฉพาะ</p>
+            <ul class="product-list"><li data-th="ประตูไม้แกะสลัก" data-en="Carved wooden doors">ประตูไม้แกะสลัก</li><li data-th="ประตูกระจก Frameless" data-en="Frameless glass doors">ประตูกระจก Frameless</li><li data-th="ประตูเหล็กดัด Custom" data-en="Custom steel doors">ประตูเหล็กดัด Custom</li><li data-th="ประตู Pivot Door" data-en="Pivot doors">ประตู Pivot Door</li><li data-th="งาน Bespoke ตามแบบ" data-en="Bespoke production">งาน Bespoke ตามแบบ</li></ul>
+            <a class="text-link" href="#contact" data-th="สอบถามสินค้าในกลุ่มนี้" data-en="Ask about this category">สอบถามสินค้าในกลุ่มนี้</a>
+          </div>
+        </article>
+<article class="product-card" id="product-10">
+          <div class="product-media">
+            <img src="assets/images/category-10-solid-wood.jpg" alt="Solid Wood" loading="lazy">
+            <span class="product-no">10</span>
+          </div>
+          <div class="product-body">
+            <h3 data-th="ไม้แท้" data-en="Solid Wood">ไม้แท้</h3>
+            <p data-th="สินค้าไม้แท้และงานไม้สั่งผลิตสำหรับเฟอร์นิเจอร์ ประตู หน้าต่าง และพื้นไม้" data-en="Solid wood products and made-to-order woodwork for furniture, doors, windows and flooring.">สินค้าไม้แท้และงานไม้สั่งผลิตสำหรับเฟอร์นิเจอร์ ประตู หน้าต่าง และพื้นไม้</p>
+            <ul class="product-list"><li data-th="ไม้แท้สั่งผลิต" data-en="Custom solid wood">ไม้แท้สั่งผลิต</li><li data-th="โต๊ะไม้ทุกรูปแบบ" data-en="Wooden tables">โต๊ะไม้ทุกรูปแบบ</li><li data-th="หน้าต่างไม้" data-en="Wooden windows">หน้าต่างไม้</li><li data-th="ไม้ปาร์เก้" data-en="Parquet flooring">ไม้ปาร์เก้</li><li data-th="Solid Wood ทุกชนิด" data-en="All types of solid wood">Solid Wood ทุกชนิด</li></ul>
+            <a class="text-link" href="#contact" data-th="สอบถามสินค้าในกลุ่มนี้" data-en="Ask about this category">สอบถามสินค้าในกลุ่มนี้</a>
+          </div>
+        </article>
+<article class="product-card" id="product-11">
+          <div class="product-media">
+            <img src="assets/images/category-11-spc.jpg" alt="SPC / LVT Flooring" loading="lazy">
+            <span class="product-no">11</span>
+          </div>
+          <div class="product-body">
+            <h3 data-th="กระเบื้องยาง SPC / LVT" data-en="SPC / LVT Flooring">กระเบื้องยาง SPC / LVT</h3>
+            <p data-th="พื้น SPC และ LVT สำหรับบ้าน คอนโด สำนักงาน และงานโครงการ มีลายไม้และลายหินให้เลือก" data-en="SPC and LVT flooring for residences, condominiums, offices and projects with wood and stone patterns.">พื้น SPC และ LVT สำหรับบ้าน คอนโด สำนักงาน และงานโครงการ มีลายไม้และลายหินให้เลือก</p>
+            <ul class="product-list"><li data-th="SPC Flooring Premium" data-en="Premium SPC flooring">SPC Flooring Premium</li><li data-th="กันน้ำ 100%" data-en="100% waterproof">กันน้ำ 100%</li><li data-th="ลาย Wood &amp; Stone" data-en="Wood &amp; stone patterns">ลาย Wood &amp; Stone</li><li data-th="ติดตั้งง่าย Click System" data-en="Easy click-system installation">ติดตั้งง่าย Click System</li><li data-th="รองรับงานโครงการ" data-en="Project supply support">รองรับงานโครงการ</li></ul>
+            <a class="text-link" href="#contact" data-th="สอบถามสินค้าในกลุ่มนี้" data-en="Ask about this category">สอบถามสินค้าในกลุ่มนี้</a>
+          </div>
+        </article>
+<article class="product-card" id="product-12">
+          <div class="product-media">
+            <img src="assets/images/category-12-stone.jpg" alt="Natural &amp; Engineered Stone" loading="lazy">
+            <span class="product-no">12</span>
+          </div>
+          <div class="product-body">
+            <h3 data-th="หินธรรมชาติและหินวิศวกรรม" data-en="Natural &amp; Engineered Stone">หินธรรมชาติและหินวิศวกรรม</h3>
+            <p data-th="หินสำหรับพื้น ผนัง เคาน์เตอร์ และงานตกแต่งภายใน รองรับทั้งงานบ้านและโครงการ" data-en="Stone materials for flooring, walls, countertops and interior decoration for residential and project use.">หินสำหรับพื้น ผนัง เคาน์เตอร์ และงานตกแต่งภายใน รองรับทั้งงานบ้านและโครงการ</p>
+            <ul class="product-list"><li data-th="หินอ่อน Marble" data-en="Marble">หินอ่อน Marble</li><li data-th="หินแกรนิต" data-en="Granite">หินแกรนิต</li><li data-th="Quartzite / Onyx" data-en="Quartzite / Onyx">Quartzite / Onyx</li><li data-th="หินประดับผนัง" data-en="Wall decoration stone">หินประดับผนัง</li><li data-th="Engineered Stone" data-en="Engineered stone">Engineered Stone</li></ul>
+            <a class="text-link" href="#contact" data-th="สอบถามสินค้าในกลุ่มนี้" data-en="Ask about this category">สอบถามสินค้าในกลุ่มนี้</a>
+          </div>
+        </article>
         </div>
       </div>
-      <div class="pcta"><a href="#contact" data-th="ขอใบเสนอราคา →" data-en="Request Quote →">ขอใบเสนอราคา →</a><span class="pbg">Smart</span></div>
-    </div>
+    </section>
 
-    <div class="pcard rev">
-      <div class="pch"><span class="pic">🔦</span><div class="pname" data-th="หลอดไฟ LED ทุกประเภท" data-en="LED Lamps — All Types">หลอดไฟ LED ทุกประเภท</div><div class="pne">LED LAMPS</div></div>
-      <div class="pcb">
-        <p class="pdesc" data-th="หลอด T5 T8 T9 Batten, Tri-proof/Waterproof, Panel Light, LED Bulb, Retrofit Lamp ครบทุกประเภท" data-en="T5/T8/T9 Batten, Tri-proof/Waterproof, Panel Light, LED Bulb, and Retrofit Lamp — all types covered.">หลอด T5 T8 T9 Batten, Tri-proof, Panel Light, LED Bulb, Retrofit Lamp ครบทุกประเภท</p>
-        <div class="ptags"><span class="tag">T5/T8/T9</span><span class="tag">Waterproof</span><span class="tag">Panel Light</span><span class="tag">Retrofit</span></div>
-        <div class="pspecs">
-          <div class="sr"><div class="sd"></div><span data-th="หลอด T5, T8, T9 Batten ทุกขนาด" data-en="T5, T8, T9 Batten all sizes">หลอด T5, T8, T9 Batten</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="Tri-proof / Waterproof IP65+" data-en="Tri-proof / Waterproof IP65+">Tri-proof / Waterproof IP65+</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="หลอดกลม Panel Light เพดาน" data-en="Round ceiling Panel Light">หลอดกลม Panel Light</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="LED Bulb / Retrofit / Circular" data-en="LED Bulb / Retrofit / Circular">LED Bulb / Retrofit / Circular</span></div>
+    <section class="section-pad services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker" data-th="บริการของเรา" data-en="Our Services">บริการของเรา</p>
+          <h2 id="services-title" data-th="บริการจัดหา นำเข้า ผลิตตามแบบ และประสานงานโครงการ" data-en="Sourcing, import, custom manufacturing and project coordination">บริการจัดหา นำเข้า ผลิตตามแบบ และประสานงานโครงการ</h2>
+          <p data-th="ออกแบบกระบวนการทำงานให้ลูกค้าเห็นภาพชัดเจน ตั้งแต่รับความต้องการจนถึงการส่งมอบสินค้า" data-en="A clear workflow from requirement gathering to product delivery.">ออกแบบกระบวนการทำงานให้ลูกค้าเห็นภาพชัดเจน ตั้งแต่รับความต้องการจนถึงการส่งมอบสินค้า</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+          <span class="service-icon">↔</span>
+          <h3 data-th="นำเข้า-ส่งออก" data-en="Import &amp; Export">นำเข้า-ส่งออก</h3>
+          <p data-th="ประสานงานจัดหาสินค้าทั้งในประเทศและต่างประเทศ พร้อมดูแลเอกสารและการขนส่งตามเงื่อนไขโครงการ" data-en="Coordinate domestic and international sourcing with documentation and logistics support based on project requirements.">ประสานงานจัดหาสินค้าทั้งในประเทศและต่างประเทศ พร้อมดูแลเอกสารและการขนส่งตามเงื่อนไขโครงการ</p>
+        </article>
+<article class="service-card">
+          <span class="service-icon">◇</span>
+          <h3 data-th="จัดหาสินค้าพิเศษ" data-en="Special Sourcing">จัดหาสินค้าพิเศษ</h3>
+          <p data-th="ค้นหาและคัดเลือกสินค้าที่หาได้ยากหรือมีเงื่อนไขเฉพาะ เพื่อให้เหมาะกับงบประมาณและสเปกของลูกค้า" data-en="Find and screen hard-to-source or special-condition products to match customer specifications and budgets.">ค้นหาและคัดเลือกสินค้าที่หาได้ยากหรือมีเงื่อนไขเฉพาะ เพื่อให้เหมาะกับงบประมาณและสเปกของลูกค้า</p>
+        </article>
+<article class="service-card">
+          <span class="service-icon">✦</span>
+          <h3 data-th="ผลิตตามแบบ" data-en="Custom Manufacturing">ผลิตตามแบบ</h3>
+          <p data-th="รองรับงาน bespoke, OEM และงานสั่งผลิตตามขนาด แบบ วัสดุ และคุณสมบัติที่ต้องการ" data-en="Support bespoke, OEM and custom manufacturing based on required sizes, designs, materials and specifications.">รองรับงาน bespoke, OEM และงานสั่งผลิตตามขนาด แบบ วัสดุ และคุณสมบัติที่ต้องการ</p>
+        </article>
+<article class="service-card">
+          <span class="service-icon">▦</span>
+          <h3 data-th="จัดหาเพื่อโครงการ" data-en="Project Procurement">จัดหาเพื่อโครงการ</h3>
+          <p data-th="ช่วยเทียบสเปก ราคา ระยะเวลาผลิต และเงื่อนไขส่งมอบ เพื่อให้ลูกค้าตัดสินใจได้ง่ายขึ้น" data-en="Compare specifications, pricing, production lead time and delivery terms to support decision-making.">ช่วยเทียบสเปก ราคา ระยะเวลาผลิต และเงื่อนไขส่งมอบ เพื่อให้ลูกค้าตัดสินใจได้ง่ายขึ้น</p>
+        </article>
+<article class="service-card">
+          <span class="service-icon">⌁</span>
+          <h3 data-th="ประสานงานติดตั้ง" data-en="Installation Coordination">ประสานงานติดตั้ง</h3>
+          <p data-th="ประสานทีมติดตั้งและผู้เชี่ยวชาญตามประเภทสินค้า เพื่อช่วยให้การส่งมอบงานราบรื่น" data-en="Coordinate installation teams and specialists according to product type for smoother project delivery.">ประสานทีมติดตั้งและผู้เชี่ยวชาญตามประเภทสินค้า เพื่อช่วยให้การส่งมอบงานราบรื่น</p>
+        </article>
+<article class="service-card">
+          <span class="service-icon">✓</span>
+          <h3 data-th="บริการหลังการขาย" data-en="After-Sales Support">บริการหลังการขาย</h3>
+          <p data-th="ติดตามงานหลังส่งมอบ ประสานการแก้ไข และดูแลคำถามด้านสินค้าอย่างต่อเนื่อง" data-en="Follow up after delivery, coordinate issue resolution and provide ongoing product support.">ติดตามงานหลังส่งมอบ ประสานการแก้ไข และดูแลคำถามด้านสินค้าอย่างต่อเนื่อง</p>
+        </article>
         </div>
       </div>
-      <div class="pcta"><a href="#contact" data-th="ขอใบเสนอราคา →" data-en="Request Quote →">ขอใบเสนอราคา →</a><span class="pbg" data-th="พร้อมส่ง" data-en="In Stock">พร้อมส่ง</span></div>
-    </div>
+    </section>
 
-    <div class="pcard rev">
-      <div class="pch"><span class="pic">⚡</span><div class="pname" data-th="สถานีชาร์จ EV" data-en="EV Charging Stations">สถานีชาร์จ EV</div><div class="pne">EV CHARGING STATIONS</div></div>
-      <div class="pcb">
-        <p class="pdesc" data-th="DC Fast Charger 480–960kW, AC Charger รองรับทุกแบรนด์ EV ซีรีส์ CSD-R3 พร้อมติดตั้งครบวงจร" data-en="DC Fast Charger 480–960kW, AC Charger for all EV brands, CSD-R3 Series — turnkey installation included.">DC Fast Charger 480–960kW, AC Charger รองรับทุกแบรนด์ EV พร้อมติดตั้งครบวงจร</p>
-        <div class="ptags"><span class="tag">DC Fast</span><span class="tag">AC Charger</span><span class="tag">CSD-R3</span><span class="tag">All Brands</span></div>
-        <div class="pspecs">
-          <div class="sr"><div class="sd"></div><span data-th="DC Fast Charger 480–960 kW" data-en="DC Fast Charger 480–960 kW">DC Fast Charger 480–960 kW</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="AC Charger บ้าน / อาคาร" data-en="AC Charger for home / commercial">AC Charger บ้าน / อาคาร</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="CSD-R3 Series / All EV Brands" data-en="CSD-R3 Series / All EV Brands">CSD-R3 / All EV Brands</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="ติดตั้งครบวงจร + Warranty" data-en="Turnkey installation + Warranty">ติดตั้งครบวงจร + Warranty</span></div>
+    <section class="section-pad workflow" aria-labelledby="workflow-title">
+      <div class="container workflow-grid">
+        <div>
+          <p class="section-kicker" data-th="กระบวนการทำงาน" data-en="Workflow">กระบวนการทำงาน</p>
+          <h2 id="workflow-title" data-th="จาก Requirement ถึงการส่งมอบ" data-en="From requirement to delivery">จาก Requirement ถึงการส่งมอบ</h2>
+          <ol class="timeline">
+            <li><strong data-th="รับข้อมูลสินค้า" data-en="Requirement Intake">รับข้อมูลสินค้า</strong><span data-th="ประเภทสินค้า สเปก ขนาด จำนวน งบประมาณ และกำหนดส่ง" data-en="Product type, specifications, size, quantity, budget and timeline">ประเภทสินค้า สเปก ขนาด จำนวน งบประมาณ และกำหนดส่ง</span></li>
+            <li><strong data-th="คัดเลือกแหล่งสินค้า" data-en="Supplier Screening">คัดเลือกแหล่งสินค้า</strong><span data-th="ค้นหา supplier และเปรียบเทียบทางเลือกที่เหมาะสม" data-en="Find suppliers and compare suitable options">ค้นหา supplier และเปรียบเทียบทางเลือกที่เหมาะสม</span></li>
+            <li><strong data-th="เสนอทางเลือก" data-en="Proposal">เสนอทางเลือก</strong><span data-th="สรุปสเปก ราคา ระยะเวลาผลิต และเงื่อนไขส่งมอบ" data-en="Summarize specifications, pricing, lead time and delivery terms">สรุปสเปก ราคา ระยะเวลาผลิต และเงื่อนไขส่งมอบ</span></li>
+            <li><strong data-th="ผลิต / นำเข้า / จัดส่ง" data-en="Manufacture / Import / Delivery">ผลิต / นำเข้า / จัดส่ง</strong><span data-th="ประสานงานการผลิต การนำเข้า และการจัดส่งตามแผน" data-en="Coordinate production, import and delivery according to plan">ประสานงานการผลิต การนำเข้า และการจัดส่งตามแผน</span></li>
+            <li><strong data-th="ติดตามหลังส่งมอบ" data-en="After-Sales Follow-up">ติดตามหลังส่งมอบ</strong><span data-th="ดูแลคำถาม ปัญหา และการประสานงานหลังการส่งมอบ" data-en="Support questions, issues and coordination after delivery">ดูแลคำถาม ปัญหา และการประสานงานหลังการส่งมอบ</span></li>
+          </ol>
+        </div>
+        <div class="workflow-image">
+          <img src="assets/images/actual-roller-blinds.jpg" alt="Installed product example" loading="lazy">
+          <img src="assets/images/catalog-panel.jpg" alt="Sandwich panel examples" loading="lazy">
         </div>
       </div>
-      <div class="pcta"><a href="#contact" data-th="ขอใบเสนอราคา →" data-en="Request Quote →">ขอใบเสนอราคา →</a><span class="pbg" data-th="พลังงาน" data-en="Energy">พลังงาน</span></div>
-    </div>
+    </section>
 
-    <div class="pcard rev">
-      <div class="pch"><span class="pic">🚪</span><div class="pname" data-th="ประตู-หน้าต่างอลูมิเนียม" data-en="Aluminum Doors & Windows">ประตู-หน้าต่างอลูมิเนียม</div><div class="pne">ALUMINUM DOORS & WINDOWS</div></div>
-      <div class="pcb">
-        <p class="pdesc" data-th="หน้าต่าง-ประตูอลูมิเนียมครบแบบ System Window Thermal Break ประหยัดพลังงาน กระจกนิรภัย/ฉนวน" data-en="Full aluminum door & window range, Thermal Break System Windows, safety/insulated glass with all hardware.">หน้าต่าง-ประตูอลูมิเนียมครบแบบ System Window ประหยัดพลังงาน กระจกนิรภัย/ฉนวน</p>
-        <div class="ptags"><span class="tag">Sliding</span><span class="tag">Casement</span><span class="tag">Thermal Break</span><span class="tag">Safety Glass</span></div>
-        <div class="pspecs">
-          <div class="sr"><div class="sd"></div><span data-th="หน้าต่างบานเลื่อน / บานกระทุ้ง" data-en="Sliding / casement windows">บานเลื่อน / บานกระทุ้ง</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="ประตูอลูมิเนียมทุกสไตล์" data-en="Aluminum doors all styles">ประตูอลูมิเนียมทุกสไตล์</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="System Window Thermal Break" data-en="Thermal Break System Window">Thermal Break System Window</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="กระจกนิรภัย / กระจกฉนวน" data-en="Safety / Insulated glass">กระจกนิรภัย / กระจกฉนวน</span></div>
+    <section class="section-pad gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-head center">
+          <p class="section-kicker" data-th="ภาพสินค้า" data-en="Product Gallery">ภาพสินค้า</p>
+          <h2 id="gallery-title" data-th="ตัวอย่างสินค้าและวัสดุที่สามารถจัดหาได้" data-en="Examples of products and materials available for sourcing">ตัวอย่างสินค้าและวัสดุที่สามารถจัดหาได้</h2>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+          <img src="assets/images/actual-profile.jpg" alt="Aluminum profile sample" loading="lazy">
+          <figcaption data-th="ตัวอย่างโปรไฟล์อลูมิเนียม" data-en="Aluminum Profile">ตัวอย่างโปรไฟล์อลูมิเนียม</figcaption>
+        </figure>
+<figure class="gallery-item">
+          <img src="assets/images/actual-door-system.jpg" alt="Large sliding door system" loading="lazy">
+          <figcaption data-th="ตัวอย่างระบบประตูขนาดใหญ่" data-en="Door System">ตัวอย่างระบบประตูขนาดใหญ่</figcaption>
+        </figure>
+<figure class="gallery-item">
+          <img src="assets/images/actual-roller-blinds.jpg" alt="Roller blinds installation" loading="lazy">
+          <figcaption data-th="ตัวอย่างม่านกันแดดภายในอาคาร" data-en="Roller Blinds">ตัวอย่างม่านกันแดดภายในอาคาร</figcaption>
+        </figure>
+<figure class="gallery-item">
+          <img src="assets/images/actual-panel-sample.jpg" alt="Panel profile sample" loading="lazy">
+          <figcaption data-th="ตัวอย่างแผ่นโปรไฟล์" data-en="Panel Sample">ตัวอย่างแผ่นโปรไฟล์</figcaption>
+        </figure>
+<figure class="gallery-item">
+          <img src="assets/images/catalog-acoustic.jpg" alt="Fabric acoustic panel catalog" loading="lazy">
+          <figcaption data-th="แผ่นซับเสียงหุ้มผ้า" data-en="Acoustic Panel">แผ่นซับเสียงหุ้มผ้า</figcaption>
+        </figure>
+<figure class="gallery-item">
+          <img src="assets/images/catalog-pipe.jpg" alt="Piping system catalog" loading="lazy">
+          <figcaption data-th="ท่อและอุปกรณ์งานระบบ" data-en="Pipe System">ท่อและอุปกรณ์งานระบบ</figcaption>
+        </figure>
+<figure class="gallery-item">
+          <img src="assets/images/catalog-wpc.jpg" alt="WPC decking catalog" loading="lazy">
+          <figcaption data-th="พื้นไม้สังเคราะห์ WPC" data-en="WPC Decking">พื้นไม้สังเคราะห์ WPC</figcaption>
+        </figure>
+<figure class="gallery-item">
+          <img src="assets/images/catalog-container.jpg" alt="Container and steel structure catalog" loading="lazy">
+          <figcaption data-th="Container House / Steel Structure" data-en="Prefab / Steel Structure">Container House / Steel Structure</figcaption>
+        </figure>
         </div>
       </div>
-      <div class="pcta"><a href="#contact" data-th="ขอใบเสนอราคา →" data-en="Request Quote →">ขอใบเสนอราคา →</a><span class="pbg" data-th="นำเข้า" data-en="Import">นำเข้า</span></div>
-    </div>
+    </section>
 
-    <div class="pcard rev">
-      <div class="pch"><span class="pic">🛁</span><div class="pname" data-th="สุขภัณฑ์" data-en="Sanitary Ware">สุขภัณฑ์</div><div class="pne">SANITARY WARE</div></div>
-      <div class="pcb">
-        <p class="pdesc" data-th="สุขภัณฑ์แบรนด์ชั้นนำ ฝักบัว อ่างล้างมือ ชุดครัว-ห้องน้ำ ราคาพิเศษสำหรับโรงแรม คอนโด โปรเจกต์" data-en="Premium sanitary brands, showers, basins, kitchen & bathroom sets — special project pricing for hotels and condos.">สุขภัณฑ์แบรนด์ชั้นนำ ฝักบัว อ่างล้างมือ ชุดครัว-ห้องน้ำ ราคาพิเศษสำหรับโปรเจกต์</p>
-        <div class="ptags"><span class="tag">Premium</span><span class="tag">Hotel</span><span class="tag">Condo</span><span class="tag">Project Price</span></div>
-        <div class="pspecs">
-          <div class="sr"><div class="sd"></div><span data-th="สุขภัณฑ์แบรนด์ชั้นนำ ไทย-นำเข้า" data-en="Premium Thai & imported brands">สุขภัณฑ์ชั้นนำ ไทย-นำเข้า</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="ฝักบัว / อ่างล้างมือ ทุกรูปแบบ" data-en="Showers / basins all styles">ฝักบัว / อ่างล้างมือ</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="ชุดครัว / ห้องน้ำ ครบชุด" data-en="Complete kitchen / bathroom sets">ชุดครัว / ห้องน้ำ ครบชุด</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="ราคาพิเศษโรงแรม คอนโด" data-en="Special pricing for hotels, condos">ราคาพิเศษโรงแรม / คอนโด</span></div>
+    <section class="section-pad why" id="why" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-head center light">
+          <p class="section-kicker" data-th="จุดเด่น" data-en="Why Choose Us">จุดเด่น</p>
+          <h2 id="why-title" data-th="เหตุผลที่ลูกค้าเลือก Blue Ocean Traders" data-en="Why customers choose Blue Ocean Traders">เหตุผลที่ลูกค้าเลือก Blue Ocean Traders</h2>
+        </div>
+        <div class="why-grid">
+          <article class="why-card">
+          <span>01</span>
+          <h3 data-th="เครือข่ายซัพพลายเออร์" data-en="Supplier Network">เครือข่ายซัพพลายเออร์</h3>
+          <p data-th="มีเครือข่ายผู้ผลิตและซัพพลายเออร์หลายกลุ่มสินค้า ช่วยเพิ่มทางเลือกให้ลูกค้า" data-en="Access to manufacturers and suppliers across product categories, giving customers more sourcing options.">มีเครือข่ายผู้ผลิตและซัพพลายเออร์หลายกลุ่มสินค้า ช่วยเพิ่มทางเลือกให้ลูกค้า</p>
+        </article>
+<article class="why-card">
+          <span>02</span>
+          <h3 data-th="จัดหาได้ตามสเปก" data-en="Specification Matching">จัดหาได้ตามสเปก</h3>
+          <p data-th="ช่วยตรวจสอบความต้องการ เทียบสินค้า และคัดเลือกตัวเลือกที่เหมาะกับงานจริง" data-en="Requirement review, product comparison and selection support for practical project use.">ช่วยตรวจสอบความต้องการ เทียบสินค้า และคัดเลือกตัวเลือกที่เหมาะกับงานจริง</p>
+        </article>
+<article class="why-card">
+          <span>03</span>
+          <h3 data-th="รองรับสินค้าพิเศษ" data-en="Special Product Capability">รองรับสินค้าพิเศษ</h3>
+          <p data-th="เหมาะสำหรับงานที่ต้องการสินค้าเฉพาะทาง สินค้าหายาก หรืองานผลิตตามแบบ" data-en="Suitable for special, hard-to-source and custom-made products.">เหมาะสำหรับงานที่ต้องการสินค้าเฉพาะทาง สินค้าหายาก หรืองานผลิตตามแบบ</p>
+        </article>
+<article class="why-card">
+          <span>04</span>
+          <h3 data-th="สื่อสารชัดเจน" data-en="Clear Communication">สื่อสารชัดเจน</h3>
+          <p data-th="สรุปข้อมูลสินค้า ราคา เงื่อนไข และความคืบหน้าให้เข้าใจง่าย" data-en="Clear summaries of product information, pricing, terms and progress updates.">สรุปข้อมูลสินค้า ราคา เงื่อนไข และความคืบหน้าให้เข้าใจง่าย</p>
+        </article>
+<article class="why-card">
+          <span>05</span>
+          <h3 data-th="ทำงานแบบครบวงจร" data-en="End-to-End Service">ทำงานแบบครบวงจร</h3>
+          <p data-th="ดูแลตั้งแต่ sourcing, import, delivery, installation coordination และ after-sales support" data-en="Support from sourcing, import, delivery and installation coordination through after-sales support.">ดูแลตั้งแต่ sourcing, import, delivery, installation coordination และ after-sales support</p>
+        </article>
+<article class="why-card">
+          <span>06</span>
+          <h3 data-th="เหมาะกับงานโครงการ" data-en="Project-Ready">เหมาะกับงานโครงการ</h3>
+          <p data-th="รองรับการจัดซื้อสำหรับบ้าน อาคาร โรงแรม คอนโด สำนักงาน และงานก่อสร้าง" data-en="Procurement support for homes, buildings, hotels, condominiums, offices and construction projects.">รองรับการจัดซื้อสำหรับบ้าน อาคาร โรงแรม คอนโด สำนักงาน และงานก่อสร้าง</p>
+        </article>
         </div>
       </div>
-      <div class="pcta"><a href="#contact" data-th="ขอใบเสนอราคา →" data-en="Request Quote →">ขอใบเสนอราคา →</a><span class="pbg" data-th="โปรเจกต์" data-en="Project">โปรเจกต์</span></div>
-    </div>
+    </section>
 
-    <div class="pcard rev">
-      <div class="pch"><span class="pic">🔧</span><div class="pname" data-th="สแตนเลสสั่งทำ" data-en="Custom Stainless Steel">สแตนเลสสั่งทำ</div><div class="pne">CUSTOM STAINLESS STEEL</div></div>
-      <div class="pcb">
-        <p class="pdesc" data-th="เคาน์เตอร์ครัว Rack ตู้สแตนเลส Food Grade อุปกรณ์โรงงาน และงาน Custom Bespoke ออกแบบตามแบบ" data-en="Kitchen counters, shelving racks, Food Grade cabinets, factory equipment, and fully custom Bespoke fabrication.">เคาน์เตอร์ครัว Rack ตู้สแตนเลส Food Grade อุปกรณ์โรงงาน งาน Bespoke ออกแบบตามแบบ</p>
-        <div class="ptags"><span class="tag">Kitchen</span><span class="tag">Rack</span><span class="tag">Food Grade</span><span class="tag">Bespoke</span></div>
-        <div class="pspecs">
-          <div class="sr"><div class="sd"></div><span data-th="เคาน์เตอร์ครัวสแตนเลสทุกขนาด" data-en="Stainless counters all sizes">เคาน์เตอร์ครัวทุกขนาด</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="ชั้นวาง / Rack โรงงาน-ร้านค้า" data-en="Shelving / Racks for factory & retail">Rack โรงงาน / ร้านค้า</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="ตู้สแตนเลส Food Grade" data-en="Food Grade stainless cabinets">ตู้สแตนเลส Food Grade</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="Custom Bespoke ออกแบบตามแบบ" data-en="Custom Bespoke to specification">Custom Bespoke ตามแบบ</span></div>
+    <section class="section-pad contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="section-kicker" data-th="ติดต่อเรา" data-en="Contact Us">ติดต่อเรา</p>
+          <h2 id="contact-title" data-th="ส่งรายละเอียดสินค้า เพื่อให้ทีมงานช่วยประเมินทางเลือก" data-en="Send product requirements for sourcing support">ส่งรายละเอียดสินค้า เพื่อให้ทีมงานช่วยประเมินทางเลือก</h2>
+          <p data-th="กรุณาระบุประเภทสินค้า สเปก จำนวน รูปตัวอย่าง งบประมาณ และระยะเวลาที่ต้องการ เพื่อให้ทีมงานช่วยตรวจสอบความเป็นไปได้และเสนอทางเลือกที่เหมาะสม" data-en="Please include product type, specifications, quantity, reference images, budget and timeline so the team can assess feasibility and propose suitable options.">กรุณาระบุประเภทสินค้า สเปก จำนวน รูปตัวอย่าง งบประมาณ และระยะเวลาที่ต้องการ เพื่อให้ทีมงานช่วยตรวจสอบความเป็นไปได้และเสนอทางเลือกที่เหมาะสม</p>
+          <div class="contact-list">
+            <a href="tel:0646618569"><strong data-th="โทรศัพท์" data-en="Phone">โทรศัพท์</strong><span>064-661-8569</span></a>
+            <a href="tel:0838348686"><strong data-th="โทรศัพท์สำรอง" data-en="Alternate Phone">โทรศัพท์สำรอง</strong><span>083-834-8686</span></a>
+            <a href="mailto:admin@blueoceantraders.co.th"><strong>Email</strong><span>admin@blueoceantraders.co.th</span></a>
+            <div><strong data-th="ที่อยู่" data-en="Address">ที่อยู่</strong><span data-th="อาคารซัมเมอร์เซท สุขุมวิท 71 ห้อง 316 ถนนสุขุมวิท 71 แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร 10110" data-en="Somerset Sukhumvit 71, Room 316, Sukhumvit 71 Road, Khlong Tan Nuea, Watthana, Bangkok 10110">อาคารซัมเมอร์เซท สุขุมวิท 71 ห้อง 316 ถนนสุขุมวิท 71 แขวงคลองตันเหนือ เขตวัฒนา กรุงเทพมหานคร 10110</span></div>
+          </div>
         </div>
+        <form class="contact-form" id="inquiry-form">
+          <label><span data-th="ชื่อ / บริษัท" data-en="Name / Company">ชื่อ / บริษัท</span><input id="form-name" type="text" name="name" autocomplete="name" data-placeholder-th="ชื่อหรือชื่อบริษัท" data-placeholder-en="Name or company" placeholder="ชื่อหรือชื่อบริษัท" required></label>
+          <label><span data-th="อีเมลหรือเบอร์โทร" data-en="Email or Phone">อีเมลหรือเบอร์โทร</span><input id="form-contact" type="text" name="contact" autocomplete="email" data-placeholder-th="อีเมลหรือเบอร์โทรสำหรับติดต่อกลับ" data-placeholder-en="Email or phone for follow-up" placeholder="อีเมลหรือเบอร์โทรสำหรับติดต่อกลับ" required></label>
+          <label><span data-th="รายละเอียดสินค้า" data-en="Product Requirement">รายละเอียดสินค้า</span><textarea id="form-message" name="message" rows="6" data-placeholder-th="ระบุสินค้า สเปก จำนวน งบประมาณ รูปตัวอย่าง หรือกำหนดส่ง" data-placeholder-en="Product, specifications, quantity, budget, reference image or timeline" placeholder="ระบุสินค้า สเปก จำนวน งบประมาณ รูปตัวอย่าง หรือกำหนดส่ง" required></textarea></label>
+          <button class="btn primary full" type="submit" data-th="ส่งคำขอทางอีเมล" data-en="Send Inquiry by Email">ส่งคำขอทางอีเมล</button>
+        </form>
       </div>
-      <div class="pcta"><a href="#contact" data-th="ขอใบเสนอราคา →" data-en="Request Quote →">ขอใบเสนอราคา →</a><span class="pbg" data-th="สั่งทำ" data-en="Custom">สั่งทำ</span></div>
-    </div>
+    </section>
+  </main>
 
-    <div class="pcard rev">
-      <div class="pch"><span class="pic">🏠</span><div class="pname" data-th="ประตูพิเศษ" data-en="Specialty Doors">ประตูพิเศษ</div><div class="pne">SPECIALTY DOORS</div></div>
-      <div class="pcb">
-        <p class="pdesc" data-th="ประตูไม้แกะสลัก กระจก Frameless เหล็กดัด Pivot Door และงาน Bespoke ระดับ Luxury" data-en="Hand-carved wood, Frameless glass, custom wrought iron, Pivot Doors, and Luxury Bespoke door work.">ประตูไม้แกะสลัก กระจก Frameless เหล็กดัด Pivot Door งาน Bespoke ระดับ Luxury</p>
-        <div class="ptags"><span class="tag">Wood Carved</span><span class="tag">Frameless</span><span class="tag">Pivot</span><span class="tag">Bespoke</span></div>
-        <div class="pspecs">
-          <div class="sr"><div class="sd"></div><span data-th="ประตูไม้แกะสลักทุกลาย" data-en="Hand-carved wood all patterns">ประตูไม้แกะสลักทุกลาย</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="ประตูกระจก Frameless โมเดิร์น" data-en="Modern Frameless glass doors">กระจก Frameless โมเดิร์น</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="ประตูเหล็กดัด Custom" data-en="Custom wrought iron doors">เหล็กดัด Custom</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="Pivot Door / Luxury Bespoke" data-en="Pivot Door / Luxury Bespoke">Pivot Door / Luxury Bespoke</span></div>
-        </div>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>BLUE OCEAN TRADERS CO., LTD.</strong>
+        <p data-th="Your Professional Trading Partner" data-en="Your Professional Trading Partner">Your Professional Trading Partner</p>
       </div>
-      <div class="pcta"><a href="#contact" data-th="ขอใบเสนอราคา →" data-en="Request Quote →">ขอใบเสนอราคา →</a><span class="pbg">Premium</span></div>
+      <p data-th="นำเข้า • ส่งออก • จัดหาสินค้าพิเศษ • ผลิตตามแบบ" data-en="Import • Export • Special Sourcing • Custom Manufacturing">นำเข้า • ส่งออก • จัดหาสินค้าพิเศษ • ผลิตตามแบบ</p>
+      <a href="#top" data-th="กลับขึ้นด้านบน ↑" data-en="Back to top ↑">กลับขึ้นด้านบน ↑</a>
     </div>
+  </footer>
 
-    <div class="pcard rev">
-      <div class="pch"><span class="pic">🌳</span><div class="pname" data-th="ไม้แท้ (โต๊ะ ประตู หน้าต่าง)" data-en="Solid Wood Products">ไม้แท้ (โต๊ะ ประตู หน้าต่าง)</div><div class="pne">SOLID WOOD</div></div>
-      <div class="pcb">
-        <p class="pdesc" data-th="ไม้แท้สั่งผลิตทุกชนิด โต๊ะไม้ หน้าต่างไม้ ไม้ปาร์เก้ Solid Wood ผลิตตามแบบและขนาดที่ต้องการ" data-en="All-species solid wood: tables, windows, parquet, and any custom Solid Wood item made to specification.">ไม้แท้สั่งผลิตทุกชนิด โต๊ะไม้ หน้าต่างไม้ ปาร์เก้ Solid Wood ตามขนาดที่ต้องการ</p>
-        <div class="ptags"><span class="tag">Solid Wood</span><span class="tag">Custom Table</span><span class="tag">Parquet</span><span class="tag">Teak</span></div>
-        <div class="pspecs">
-          <div class="sr"><div class="sd"></div><span data-th="ไม้แท้ทุกชนิด สัก ยาง มะฮอกกานี" data-en="All species: Teak, Rubber, Mahogany">สัก / ยาง / มะฮอกกานี</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="โต๊ะไม้ทุกรูปแบบ สั่งตามขนาด" data-en="Wood tables all styles, made to size">โต๊ะไม้สั่งตามขนาด</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="ไม้ปาร์เก้ / Solid Wood Floor" data-en="Parquet / Solid Wood flooring">ปาร์เก้ / Solid Wood Floor</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="หน้าต่างไม้ทุกสไตล์" data-en="Wooden windows all styles">หน้าต่างไม้ทุกสไตล์</span></div>
-        </div>
-      </div>
-      <div class="pcta"><a href="#contact" data-th="ขอใบเสนอราคา →" data-en="Request Quote →">ขอใบเสนอราคา →</a><span class="pbg" data-th="สั่งทำ" data-en="Custom">สั่งทำ</span></div>
-    </div>
-
-    <div class="pcard rev">
-      <div class="pch"><span class="pic">🏢</span><div class="pname" data-th="กระเบื้องยาง SPC / LVT" data-en="SPC / LVT Flooring">กระเบื้องยาง SPC / LVT</div><div class="pne">SPC / LVT FLOORING</div></div>
-      <div class="pcb">
-        <p class="pdesc" data-th="SPC กันน้ำ 100% Click System รับประกัน 25 ปี LVT Self-adhesive & Dry Back ลาย Wood & Stone" data-en="SPC 100% waterproof, Click System, 25-yr warranty. LVT Self-adhesive & Dry Back — Wood & Stone designs.">SPC กันน้ำ 100% Click System รับประกัน 25 ปี LVT Self-adhesive & Dry Back ลาย Wood & Stone</p>
-        <div class="ptags"><span class="tag">SPC Premium</span><span class="tag">100% Waterproof</span><span class="tag">Click</span><span class="tag">25yr</span></div>
-        <div class="pspecs">
-          <div class="sr"><div class="sd"></div><span data-th="SPC Premium กันน้ำ 100%" data-en="SPC Premium 100% waterproof">SPC กันน้ำ 100%</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="Click System ติดตั้งง่าย รวดเร็ว" data-en="Easy Click System installation">Click System ติดตั้งง่าย</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="รับประกัน 25 ปี" data-en="25-year warranty">รับประกัน 25 ปี</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="LVT Self-adhesive & Dry Back" data-en="LVT Self-adhesive & Dry Back">LVT Self-adhesive & Dry Back</span></div>
-        </div>
-      </div>
-      <div class="pcta"><a href="#contact" data-th="ขอใบเสนอราคา →" data-en="Request Quote →">ขอใบเสนอราคา →</a><span class="pbg" data-th="นำเข้า" data-en="Import">นำเข้า</span></div>
-    </div>
-
-    <div class="pcard rev">
-      <div class="pch"><span class="pic">💠</span><div class="pname" data-th="หินธรรมชาติ & หินวิศวกรรม" data-en="Natural & Engineered Stone">หินธรรมชาติ & หินวิศวกรรม</div><div class="pne">NATURAL & ENGINEERED STONE</div></div>
-      <div class="pcb">
-        <p class="pdesc" data-th="หินอ่อน แกรนิต Quartzite Onyx หินประดับผนัง และ Engineered Stone สำหรับงานตกแต่งระดับ Premium" data-en="Marble, Granite, Quartzite, Onyx, wall cladding, and Engineered Stone for premium interior & exterior finishes.">หินอ่อน แกรนิต Quartzite Onyx หินประดับผนัง และ Engineered Stone ระดับ Premium</p>
-        <div class="ptags"><span class="tag">Marble</span><span class="tag">Granite</span><span class="tag">Quartzite</span><span class="tag">Onyx</span><span class="tag">Engineered</span></div>
-        <div class="pspecs">
-          <div class="sr"><div class="sd"></div><span data-th="หินอ่อน Marble คัดพิเศษ" data-en="Premium selected Marble">หินอ่อน Marble คัดพิเศษ</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="หินแกรนิต / Quartzite / Onyx" data-en="Granite / Quartzite / Onyx">แกรนิต / Quartzite / Onyx</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="หินประดับผนัง ใน-นอกอาคาร" data-en="Wall cladding indoor & outdoor">หินประดับผนัง ใน-นอก</span></div>
-          <div class="sr"><div class="sd"></div><span data-th="Engineered Stone ทนทาน ดูแลง่าย" data-en="Durable, easy-care Engineered Stone">Engineered Stone ทนทาน</span></div>
-        </div>
-      </div>
-      <div class="pcta"><a href="#contact" data-th="ขอใบเสนอราคา →" data-en="Request Quote →">ขอใบเสนอราคา →</a><span class="pbg">Premium</span></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ═ SERVICES ═ -->
-<section id="services">
-  <div class="rev" style="max-width:1200px;margin:0 auto 42px">
-    <div class="slabel" data-th="บริการของเรา" data-en="Our Services">บริการของเรา</div>
-    <h2 class="stitle" data-th="บริการครบวงจร ตั้งแต่ต้นจนจบ" data-en="End-to-End Complete Services">บริการครบวงจร ตั้งแต่ต้นจนจบ</h2>
-    <div class="div"></div>
-  </div>
-  <div class="sgrid">
-    <div class="scard rev"><span class="sic">🌐</span><div class="stit" data-th="นำเข้า-ส่งออก" data-en="Import & Export">นำเข้า-ส่งออก</div><div class="sdesc" data-th="เครือข่ายพันธมิตรทั่วโลก นำเข้าสินค้าคุณภาพและส่งออกสินค้าไทย" data-en="Global partner network — quality imports and Thai product exports.">เครือข่ายพันธมิตรทั่วโลก นำเข้าและส่งออกมืออาชีพ</div><ul class="slist"><li data-th="นำเข้าจากจีน ยุโรป ทั่วโลก" data-en="Import from China, Europe, worldwide">นำเข้าจากจีน ยุโรป ทั่วโลก</li><li data-th="พิธีการศุลกากรครบวงจร" data-en="Full customs clearance">พิธีการศุลกากรครบวงจร</li><li data-th="ส่งออกสินค้าไทยต่างประเทศ" data-en="Export Thai goods internationally">ส่งออกสินค้าไทยต่างประเทศ</li></ul></div>
-    <div class="scard rev"><span class="sic">🔍</span><div class="stit" data-th="จัดหาสินค้าพิเศษ" data-en="Special Sourcing">จัดหาสินค้าพิเศษ</div><div class="sdesc" data-th="เชี่ยวชาญจัดหาสินค้าหายาก หรือสั่งผลิตตามแบบเฉพาะ" data-en="Expertise in rare product sourcing and custom-spec manufacturing.">เชี่ยวชาญจัดหาสินค้าหายาก หรือสั่งผลิตตามแบบ</div><ul class="slist"><li data-th="ค้นหาสินค้าหายากในตลาดโลก" data-en="Global rare product search">ค้นหาสินค้าหายากทั่วโลก</li><li data-th="ประสานงานผู้ผลิตโดยตรง" data-en="Direct manufacturer coordination">ประสานงานผู้ผลิตโดยตรง</li><li data-th="ตอบสนองรวดเร็ว มืออาชีพ" data-en="Fast, professional response">ตอบสนองรวดเร็ว มืออาชีพ</li></ul></div>
-    <div class="scard rev"><span class="sic">⚙️</span><div class="stit" data-th="ผลิตตามแบบ Custom/Bespoke" data-en="Custom & Bespoke Mfg.">ผลิตตามแบบ Custom/Bespoke</div><div class="sdesc" data-th="รับออกแบบและผลิตตามความต้องการลูกค้า ทั้ง Custom และ Bespoke" data-en="Design and manufacture to client requirements — Custom and Bespoke.">รับออกแบบและผลิตตามความต้องการ</div><ul class="slist"><li data-th="ออกแบบตามแบบของลูกค้า" data-en="Design to client specification">ออกแบบตามแบบของลูกค้า</li><li data-th="ผลิตสินค้าพิเศษ OEM" data-en="OEM special manufacturing">ผลิตสินค้าพิเศษ OEM</li><li data-th="QC ก่อนส่งมอบทุกครั้ง" data-en="QC before every delivery">QC ก่อนส่งมอบทุกครั้ง</li></ul></div>
-    <div class="scard rev"><span class="sic">🚚</span><div class="stit" data-th="จัดส่งและติดตั้ง" data-en="Delivery & Installation">จัดส่งและติดตั้ง</div><div class="sdesc" data-th="จัดส่งตรงเวลา ระบบติดตาม ทีมติดตั้งมืออาชีพ" data-en="On-time delivery, real-time tracking, professional installation team.">จัดส่งตรงเวลา ระบบติดตาม ทีมติดตั้งมืออาชีพ</div><ul class="slist"><li data-th="ระบบติดตาม Real-time" data-en="Real-time tracking">ระบบติดตาม Real-time</li><li data-th="จัดส่งทั่วไทยและต่างประเทศ" data-en="Nationwide & international delivery">จัดส่งทั่วไทยและต่างประเทศ</li><li data-th="ทีมติดตั้งมืออาชีพ" data-en="Professional install team">ทีมติดตั้งมืออาชีพ</li></ul></div>
-    <div class="scard rev"><span class="sic">🏗️</span><div class="stit" data-th="โปรเจกต์ขนาดใหญ่" data-en="Large-Scale Projects">โปรเจกต์ขนาดใหญ่</div><div class="sdesc" data-th="รองรับโรงแรม คอนโด โรงงาน ราคาพิเศษและบริหารโครงการมือโปร" data-en="Hotels, condos, factories — volume pricing and professional project management.">รองรับโรงแรม คอนโด โรงงาน ราคาพิเศษ</div><ul class="slist"><li data-th="ราคาพิเศษปริมาณมาก" data-en="Volume discount pricing">ราคาพิเศษปริมาณมาก</li><li data-th="บริหารโครงการครบวงจร" data-en="Full project management">บริหารโครงการครบวงจร</li><li data-th="รายงานความคืบหน้า" data-en="Progress reporting">รายงานความคืบหน้า</li></ul></div>
-    <div class="scard rev"><span class="sic">🛡️</span><div class="stit" data-th="บริการหลังการขาย" data-en="After-Sales Service">บริการหลังการขาย</div><div class="sdesc" data-th="ดูแลหลังการขาย รับประกัน และคำแนะนำด้านเทคนิค" data-en="Post-sale care, product warranty, and ongoing technical support.">ดูแลหลังการขาย รับประกัน คำแนะนำเทคนิค</div><ul class="slist"><li data-th="รับประกันสินค้าทุกรายการ" data-en="Warranty on all products">รับประกันสินค้าทุกรายการ</li><li data-th="คำแนะนำด้านเทคนิค" data-en="Technical advice">คำแนะนำด้านเทคนิค</li><li data-th="ทีมงานพร้อมช่วยตลอด" data-en="Support always available">ทีมงานพร้อมช่วยตลอด</li></ul></div>
-  </div>
-</section>
-
-<!-- ═ WHY ═ -->
-<section id="why">
-  <div style="max-width:1200px;margin:0 auto">
-    <div class="slabel rev" data-th="ทำไมต้องเลือกเรา" data-en="Why Choose Us">ทำไมต้องเลือกเรา</div>
-    <h2 class="stitle rev" data-th="6 เหตุผลที่ทำให้เราแตกต่าง" data-en="6 Reasons We Stand Apart">6 เหตุผลที่ทำให้เราแตกต่าง</h2>
-    <div class="div rev"></div>
-    <div class="wgrid">
-      <div class="wcard rev"><div class="wn">01</div><span class="wic">🌏</span><div class="wt" data-th="เครือข่ายทั่วโลก" data-en="Global Network">เครือข่ายทั่วโลก</div><div class="wd" data-th="พันธมิตรใน 60+ ประเทศ พร้อมนำเข้าคุณภาพ" data-en="Partners in 60+ countries, ready to source.">พันธมิตรใน 60+ ประเทศ</div></div>
-      <div class="wcard rev"><div class="wn">02</div><span class="wic">💰</span><div class="wt" data-th="ราคายุติธรรม" data-en="Fair Pricing">ราคายุติธรรม</div><div class="wd" data-th="ไม่มีคนกลางหลายชั้น ลูกค้าได้ราคาคุ้มค่า" data-en="No multi-layer middlemen — best pricing for clients.">ไม่มีคนกลางหลายชั้น คุ้มค่า</div></div>
-      <div class="wcard rev"><div class="wn">03</div><span class="wic">💎</span><div class="wt" data-th="สินค้าหายาก" data-en="Rare Items">สินค้าหายาก</div><div class="wd" data-th="เชี่ยวชาญจัดหาสินค้าที่หาได้ยาก" data-en="Expertise in hard-to-find specialty products.">เชี่ยวชาญสินค้าหายาก / พิเศษ</div></div>
-      <div class="wcard rev"><div class="wn">04</div><span class="wic">🔄</span><div class="wt" data-th="บริการ 360°" data-en="360° Service">บริการ 360°</div><div class="wd" data-th="จัดหา → นำเข้า → จัดส่ง → ติดตั้ง → หลังขาย" data-en="Source → Import → Deliver → Install → Support">จัดหา→นำเข้า→ส่ง→ติดตั้ง→หลังขาย</div></div>
-      <div class="wcard rev"><div class="wn">05</div><span class="wic">⚡</span><div class="wt" data-th="รวดเร็ว เชื่อถือได้" data-en="Fast & Reliable">รวดเร็ว เชื่อถือได้</div><div class="wd" data-th="ตอบไว ส่งตรงเวลา ระบบติดตามสินค้า" data-en="Fast response, on-time delivery, shipment tracking.">ตอบไว ส่งตรงเวลา ติดตามได้</div></div>
-      <div class="wcard rev"><div class="wn">06</div><span class="wic">🎨</span><div class="wt" data-th="ผลิตตามแบบ" data-en="Besp      <div class="wcard rev"><div class="wn">06</div><span class="wic">🎨</span><div class="wt" data-th="ผลิตตามแบบ" data-en="Bespoke">ผลิตตามแบบ</div><div class="wd" data-th="งาน Bespoke และ Custom ตามความต้องการ" data-en="Bespoke and Custom to any requirement.">งาน Bespoke & Custom ทุกประเภท</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═ SUPPLIERS ═ -->
-<section id="suppliers">
-  <div class="rev" style="max-width:1200px;margin:0 auto 40px">
-    <div class="slabel" data-th="ซัพพลายเออร์ของเรา" data-en="Our Suppliers">ซัพพลายเออร์ของเรา</div>
-    <h2 class="stitle" data-th="พันธมิตรผู้ผลิตระดับโลก" data-en="World-Class Partners">พันธมิตรผู้ผลิตระดับโลก</h2>
-    <div class="div"></div>
-  </div>
-  <div class="supgrid" style="max-width:1200px;margin:0 auto">
-    <div class="supcard rev"><div class="supic">🪵</div><div class="supn">GAMIER FLOOR</div><div class="supo">🇨🇳 Foshan / Zhongshan</div><div class="supc">SPC / LVT Flooring</div></div>
-    <div class="supcard rev"><div class="supic">🪟</div><div class="supn">GOLDEN FLOWER</div><div class="supo">🇨🇳 China (CE/ISO9001)</div><div class="supc">Windows & Doors</div></div>
-    <div class="supcard rev"><div class="supic">🚪</div><div class="supn">SUNGYE</div><div class="supo">🌏 International</div><div class="supc">Aluminum Windows</div></div>
-    <div class="supcard rev"><div class="supic">🌲</div><div class="supn">WPC MANUFACTURER</div><div class="supo">🇨🇳 China</div><div class="supc">WPC Products</div></div>
-    <div class="supcard rev"><div class="supic">🔊</div><div class="supn">MQ ACOUSTICS</div><div class="supo">🌏 International</div><div class="supc">Acoustic Panels</div></div>
-    <div class="supcard rev"><div class="supic">🏠</div><div class="supn">CONTAINER & STEEL</div><div class="supo">🇨🇳 China</div><div class="supc">Container House</div></div>
-    <div class="supcard rev"><div class="supic">🔩</div><div class="supn">PIPE SYSTEM CO.</div><div class="supo">🇨🇳 Guangdong</div><div class="supc">Pipe Systems</div></div>
-    <div class="supcard rev"><div class="supic">🧱</div><div class="supn">SILICATE MATERIALS</div><div class="supo">🇨🇳 China</div><div class="supc">Silicate Board</div></div>
-  </div>
-</section>
-
-<!-- ═ CONTACT ═ -->
-<section id="contact">
-  <div class="rev" style="max-width:1200px;margin:0 auto 44px">
-    <div class="slabel" data-th="ติดต่อเรา" data-en="Contact Us">ติดต่อเรา</div>
-    <h2 class="stitle" data-th="พร้อมช่วยเหลือคุณทุกวัน" data-en="Ready to Help Every Day">พร้อมช่วยเหลือคุณทุกวัน</h2>
-    <div class="div"></div>
-  </div>
-  <div class="cgrid">
-    <div class="cinfo rev">
-      <h3 data-th="ข้อมูลติดต่อ" data-en="Contact Information">ข้อมูลติดต่อ</h3>
-      <div class="crow"><div class="cion">📍</div><div><div class="clb" data-th="ที่อยู่" data-en="Address">ที่อยู่</div><div class="cvl">Somerset Sukhumvit 71, 1015/29 Room 316,<br>Sukhumvit 71 Rd., Khlong Tan Nuea,<br>Watthana, Bangkok 10110</div></div></div>
-      <div class="crow"><div class="cion">📞</div><div><div class="clb" data-th="โทรศัพท์" data-en="Phone">โทรศัพท์</div><div class="cvl"><a href="tel:0838348686">083-834-8686</a><br><a href="tel:0646618569">064-661-8569</a></div></div></div>
-      <div class="crow"><div class="cion">✉️</div><div><div class="clb">Email</div><div class="cvl"><a href="mailto:admin@blueoceantraders.co.th">admin@blueoceantraders.co.th</a><br><a href="mailto:oceantradersblue@gmail.com">oceantradersblue@gmail.com</a></div></div></div>
-      <div class="crow"><div class="cion">🏛️</div><div><div class="clb">Tax ID</div><div class="cvl">0-1055-66179-01-0</div></div></div>
-      <div class="csoc">
-        <a href="tel:0838348686" class="sbtn">📞 <span data-th="โทร" data-en="Call">โทร</span></a>
-        <a href="mailto:admin@blueoceantraders.co.th" class="sbtn">✉️ Email</a>
-        <a href="#" class="sbtn">💬 Line</a>
-      </div>
-    </div>
-    <div class="cform rev">
-      <h3 data-th="ส่งข้อความหาเรา" data-en="Send Us a Message">ส่งข้อความหาเรา</h3>
-      <div class="fg"><label class="fl" data-th="ชื่อ-นามสกุล / บริษัท" data-en="Full Name / Company">ชื่อ-นามสกุล / บริษัท</label><input type="text" class="fi" id="n" data-pth="กรอกชื่อของคุณ" data-pen="Enter your name" placeholder="กรอกชื่อของคุณ"></div>
-      <div class="fg"><label class="fl" data-th="เบอร์โทร / Line ID" data-en="Phone / Line ID">เบอร์โทร / Line ID</label><input type="text" class="fi" id="p" data-pth="เบอร์โทรหรือ Line ID" data-pen="Phone or Line ID" placeholder="เบอร์โทรหรือ Line ID"></div>
-      <div class="fg"><label class="fl" data-th="อีเมล" data-en="Email">อีเมล</label><input type="email" class="fi" id="e" placeholder="example@email.com"></div>
-      <div class="fg"><label class="fl" data-th="สินค้าหรือบริการที่สนใจ" data-en="Product / Service of Interest">สินค้าหรือบริการที่สนใจ</label>
-        <select class="fi" id="pr">
-          <option data-th="-- เลือกกลุ่มสินค้า --" data-en="-- Select product group --">-- เลือกกลุ่มสินค้า --</option>
-          <option>เหล็กทุกชนิด</option><option>Wave Board & Plate</option>
-          <option>LED / หลอดไฟ</option><option>EV Charger</option>
-          <option>ประตู-หน้าต่างอลูมิเนียม</option><option>สุขภัณฑ์</option>
-          <option>สแตนเลสสั่งทำ</option><option>ประตูพิเศษ / ไม้แท้</option>
-          <option>พื้น SPC / LVT</option><option>หินธรรมชาติ</option>
-          <option>บริการจัดหาสินค้าพิเศษ</option><option>อื่นๆ</option>
-        </select>
-      </div>
-      <div class="fg"><label class="fl" data-th="รายละเอียดเพิ่มเติม" data-en="Additional Details">รายละเอียดเพิ่มเติม</label><textarea class="fi" id="m" data-pth="ระบุรายละเอียดสินค้า ขนาด ปริมาณที่ต้องการ..." data-pen="Specify product, dimensions, quantity..." placeholder="ระบุรายละเอียดสินค้า ขนาด ปริมาณที่ต้องการ..."></textarea></div>
-      <button class="fsub" onclick="doSend()" data-th="📩 ส่งข้อความ / ขอใบเสนอราคา" data-en="📩 Send / Request Quote">📩 ส่งข้อความ / ขอใบเสนอราคา</button>
-    </div>
-  </div>
-</section>
-
-<!-- ═ FOOTER ═ -->
-<footer>
-  <div class="ft">
-    <div class="fb">
-      <div class="bn">BLUE OCEAN TRADERS</div>
-      <div style="font-size:10px;color:var(--light);letter-spacing:2px;margin-bottom:8px">CO., LTD.</div>
-      <p data-th="พันธมิตรทางธุรกิจที่คุณไว้วางใจ เชี่ยวชาญนำเข้า-ส่งออก จัดหาสินค้าพิเศษ" data-en="Your trusted partner — import/export, special sourcing & custom manufacturing.">พันธมิตรทางธุรกิจที่คุณไว้วางใจ เชี่ยวชาญนำเข้า-ส่งออก</p>
-    </div>
-    <div class="fl2">
-      <h4 data-th="ลิงก์ด่วน" data-en="Quick Links">ลิงก์ด่วน</h4>
-      <a href="#about" data-th="เกี่ยวกับเรา" data-en="About Us">เกี่ยวกับเรา</a>
-      <a href="#products" data-th="สินค้า" data-en="Products">สินค้า</a>
-      <a href="#services" data-th="บริการ" data-en="Services">บริการ</a>
-      <a href="#contact" data-th="ติดต่อเรา" data-en="Contact">ติดต่อเรา</a>
-    </div>
-    <div class="fl2">
-      <h4 data-th="ติดต่อ" data-en="Contact">ติดต่อ</h4>
-      <a href="tel:0838348686">083-834-8686</a>
-      <a href="tel:0646618569">064-661-8569</a>
-      <a href="mailto:admin@blueoceantraders.co.th">admin@blueoceantraders.co.th</a>
-    </div>
-  </div>
-  <div class="fbot">
-    <span data-th="© 2026 Blue Ocean Traders Co., Ltd. สงวนลิขสิทธิ์" data-en="© 2026 Blue Ocean Traders Co., Ltd. All rights reserved.">© 2026 Blue Ocean Traders Co., Ltd. สงวนลิขสิทธิ์</span>
-    <span>blueoceantraders.co.th</span>
-  </div>
-</footer>
-
-<script>
-let lang='th';
-function setLang(l){
-  lang=l;
-  document.getElementById('lth').classList.toggle('on',l==='th');
-  document.getElementById('len').classList.toggle('on',l==='en');
-  document.querySelectorAll('[data-th]').forEach(el=>{
-    const v=el.getAttribute('data-'+l);
-    if(!v)return;
-    if(el.tagName==='OPTION')el.textContent=v;
-    else el.textContent=v;
-  });
-  document.querySelectorAll('[data-pth]').forEach(el=>{el.placeholder=el.getAttribute(l==='th'?'data-pth':'data-pen')});
-  document.documentElement.lang=l;
-  l==='en'?document.body.classList.add('en'):document.body.classList.remove('en');
-}
-document.getElementById('ltog').addEventListener('click',()=>setLang(lang==='th'?'en':'th'));
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('sc',scrollY>60);
-  const ids=['hero','about','products','services','why','suppliers','contact'];
-  let cur='hero';
-  ids.forEach(id=>{const e=document.getElementById(id);if(e&&scrollY>=e.offsetTop-120)cur=id});
-  document.querySelectorAll('.nlinks a').forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+cur));
-});
-document.getElementById('hbg').addEventListener('click',()=>document.getElementById('mob').classList.toggle('open'));
-document.querySelectorAll('.mob a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mob').classList.remove('open')));
-const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}}),{threshold:.1});
-document.querySelectorAll('.rev').forEach(el=>obs.observe(el));
-function doSend(){
-  const nm=document.getElementById('n').value.trim();
-  const ph=document.getElementById('p').value.trim();
-  if(!nm||!ph){alert(lang==='th'?'กรุณากรอกชื่อและเบอร์โทรก่อนนะคะ':'Please fill in name and phone.');return}
-  const em=document.getElementById('e').value.trim();
-  const pr=document.getElementById('pr').value;
-  const ms=document.getElementById('m').value.trim();
-  window.location.href='mailto:admin@blueoceantraders.co.th?subject=Inquiry from website&body=Name: '+encodeURIComponent(nm)+'%0APhone: '+encodeURIComponent(ph)+'%0AEmail: '+encodeURIComponent(em)+'%0AProduct: '+encodeURIComponent(pr)+'%0AMessage: '+encodeURIComponent(ms);
-}
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',ev=>{
-  const t=document.querySelector(a.getAttribute('href'));
-  if(t){ev.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
-}));
-</script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
