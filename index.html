@@ -1,384 +1,822 @@
 <!DOCTYPE html>
-
 <html lang="th">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Blue Ocean Traders Co., Ltd. | Import, Export &amp; Project Sourcing</title>
-<meta content="Blue Ocean Traders Co., Ltd. provides import, export, special sourcing and made-to-spec supply for construction materials, building products and project requirements." name="description"/>
-<link href="assets/images/favicon.png" rel="icon" type="image/png"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="assets/css/styles.css" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue Ocean Traders Co., Ltd. | Professional Trading Partner</title>
+  <meta name="description" content="Blue Ocean Traders Co., Ltd. provides sourcing, import-export, project supply and made-to-spec products for construction, interiors, MEP, lighting, EV charging, sanitary ware, teak wood and special sourcing." />
+  <link rel="icon" type="image/png" href="assets/logo-mark.png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-<a class="skip-link" data-en="Skip to content" data-th="ข้ามไปยังเนื้อหา" href="#main">ข้ามไปยังเนื้อหา</a>
-<header class="site-header">
-<div class="container nav-wrap">
-<a aria-label="Blue Ocean Traders" class="brand" href="#home"><img alt="Blue Ocean Traders Co., Ltd." src="assets/images/logo-blue-ocean.png"/></a>
-<button aria-expanded="false" aria-label="Open navigation" class="menu-button" type="button"><span></span><span></span><span></span></button>
-<nav aria-label="Main navigation" class="site-nav">
-<a data-en="About" data-th="เกี่ยวกับเรา" href="#about">เกี่ยวกับเรา</a>
-<a data-en="Products" data-th="สินค้าและบริการ" href="#products">สินค้าและบริการ</a>
-<a data-en="Process" data-th="ขั้นตอนการทำงาน" href="#process">ขั้นตอนการทำงาน</a>
+<body data-lang="th">
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand" aria-label="Blue Ocean Traders home">
+        <img src="assets/logo-blue-ocean.png" alt="Blue Ocean Traders Co., Ltd. logo" />
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open navigation" />
+      <label for="nav-toggle" class="nav-button" data-i18n="menu">เมนู</label>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home" data-i18n="nav.home">หน้าแรก</a>
+        <a href="#about" data-i18n="nav.about">เกี่ยวกับเรา</a>
+        <a href="#products" data-i18n="nav.products">สินค้า</a>
+        <a href="#process" data-i18n="nav.process">ขั้นตอน</a>
+        <a href="#why-us" data-i18n="nav.why">ทำไมต้องเรา</a>
+        <a href="#contact" data-i18n="nav.contact">ติดต่อเรา</a>
+      </nav>
+      <div class="language-switch" aria-label="Language switch">
+        <button type="button" class="lang-btn is-active" data-lang-switch="th">TH</button>
+        <span></span>
+        <button type="button" class="lang-btn" data-lang-switch="en">EN</button>
+      </div>
+    </div>
+  </header>
 
-<a data-en="Contact" data-th="ติดต่อเรา" href="#contact">ติดต่อเรา</a>
-</nav>
-<div aria-label="Language switcher" class="language-switch">
-<button class="lang-btn active" data-lang="th" type="button">TH</button>
-<button class="lang-btn" data-lang="en" type="button">EN</button>
-</div>
-</div>
-</header>
-<main id="main">
-<section class="hero section-pad" id="home">
-<div class="container hero-grid">
-<div class="hero-content">
-<p class="eyebrow" data-en="Blue Ocean Traders Co., Ltd." data-th="Blue Ocean Traders Co., Ltd.">Blue Ocean Traders Co., Ltd.</p>
-<h1 data-en="Your trusted partner for sourcing, import, export and made-to-spec supply" data-th="พันธมิตรด้านการจัดหา นำเข้า ส่งออก และผลิตสินค้าตามแบบ">พันธมิตรด้านการจัดหา นำเข้า ส่งออก และผลิตสินค้าตามแบบ</h1>
-<p class="hero-text" data-en="We source construction materials, project products and special items based on specifications, coordinating from requirement review through delivery." data-th="จัดหาวัสดุก่อสร้าง สินค้าโครงการ และสินค้าพิเศษตามสเปก พร้อมประสานงานตั้งแต่การรับ Requirement จนถึงการส่งมอบ">จัดหาวัสดุก่อสร้าง สินค้าโครงการ และสินค้าพิเศษตามสเปก พร้อมประสานงานตั้งแต่การรับ Requirement จนถึงการส่งมอบ</p>
-<div class="hero-actions">
-<a class="btn primary" data-en="Send project details" data-th="ส่งรายละเอียดเพื่อขอใบเสนอราคา" href="#contact">ส่งรายละเอียดเพื่อขอใบเสนอราคา</a>
-<a class="btn secondary" data-en="View products &amp; services" data-th="ดูสินค้าและบริการ" href="#products">ดูสินค้าและบริการ</a>
-</div>
-<div aria-label="Core services" class="service-strip">
-<span data-en="Import" data-th="นำเข้า">นำเข้า</span>
-<span data-en="Export" data-th="ส่งออก">ส่งออก</span>
-<span data-en="Special sourcing" data-th="จัดหาสินค้าพิเศษ">จัดหาสินค้าพิเศษ</span>
-<span data-en="Made to specification" data-th="ผลิตตามแบบ">ผลิตตามแบบ</span>
-</div>
-</div>
-<div aria-hidden="true" class="hero-visual">
-<img alt="Project products and materials" class="hero-main-img" src="assets/images/hero-products.jpg"/>
-<div class="hero-mini"><img alt="Site installation example" src="assets/images/hero-site-installation.jpg"/></div>
-<div class="floating-card">
-<strong data-en="Project Sourcing" data-th="Project Sourcing">Project Sourcing</strong>
-<span data-en="Matching products with specification, budget and project timeline" data-th="เลือกสินค้าให้ตรงสเปก งบประมาณ และกำหนดเวลาของงาน">เลือกสินค้าให้ตรงสเปก งบประมาณ และกำหนดเวลาของงาน</span>
-</div>
-</div>
-</div>
-</section>
-<section class="section-pad" id="about">
-<div class="container split-grid">
-<div class="section-copy">
-<p class="section-kicker" data-en="About us" data-th="เกี่ยวกับเรา">เกี่ยวกับเรา</p>
-<h2 data-en="End-to-end sourcing from standard products to custom-made project requirements" data-th="ดูแลงานจัดหาสินค้าให้ครบ ตั้งแต่สินค้ามาตรฐานจนถึงงานสั่งผลิตเฉพาะทาง">ดูแลงานจัดหาสินค้าให้ครบ ตั้งแต่สินค้ามาตรฐานจนถึงงานสั่งผลิตเฉพาะทาง</h2>
-<p data-en="Blue Ocean Traders Co., Ltd. is a trading company providing sourcing, import, export and made-to-spec supply services, with focus on practical use, quality, budget and project lead time." data-th="Blue Ocean Traders Co., Ltd. เป็นบริษัทเทรดดิ้งที่ให้บริการจัดหา นำเข้า ส่งออก และผลิตสินค้าตามแบบ โดยเน้นการคัดเลือกสินค้าที่เหมาะสมกับการใช้งานจริง คุณภาพ งบประมาณ และระยะเวลาของโครงการ">Blue Ocean Traders Co., Ltd. เป็นบริษัทเทรดดิ้งที่ให้บริการจัดหา นำเข้า ส่งออก และผลิตสินค้าตามแบบ โดยเน้นการคัดเลือกสินค้าที่เหมาะสมกับการใช้งานจริง คุณภาพ งบประมาณ และระยะเวลาของโครงการ</p>
-<div class="feature-row">
-<div><strong data-en="Spec-based sourcing" data-th="จัดหาตามสเปก">จัดหาตามสเปก</strong><span data-en="Based on drawings, size, quantity or reference images" data-th="รับข้อมูลจากแบบ ขนาด จำนวน หรือภาพตัวอย่าง">รับข้อมูลจากแบบ ขนาด จำนวน หรือภาพตัวอย่าง</span></div>
-<div><strong data-en="Option comparison" data-th="เทียบตัวเลือก">เทียบตัวเลือก</strong><span data-en="Matching products with budget and usage conditions" data-th="ช่วยเลือกสินค้าให้เหมาะกับงบประมาณและเงื่อนไขใช้งาน">ช่วยเลือกสินค้าให้เหมาะกับงบประมาณและเงื่อนไขใช้งาน</span></div>
-<div><strong data-en="Delivery coordination" data-th="ประสานส่งมอบ">ประสานส่งมอบ</strong><span data-en="Coordinating with factories, partners and destination" data-th="ดูแลการประสานงานกับผู้ผลิต คู่ค้า และปลายทาง">ดูแลการประสานงานกับผู้ผลิต คู่ค้า และปลายทาง</span></div>
-</div>
-</div>
-<div class="about-panel">
-<img alt="Project product sourcing reference" loading="lazy" src="assets/images/about-trading-support.jpg"/>
-<div class="about-note">
-<strong data-en="Your Professional Trading Partner" data-th="Your Professional Trading Partner">Your Professional Trading Partner</strong>
-<span data-en="Import • Export • Special Sourcing • Made to Specification" data-th="นำเข้า • ส่งออก • จัดหาสินค้าพิเศษ • ผลิตตามแบบ">นำเข้า • ส่งออก • จัดหาสินค้าพิเศษ • ผลิตตามแบบ</span>
-</div>
-</div>
-</div>
-</section>
-<section class="section-pad products" id="products">
-<div class="container">
-<div class="section-head center">
-<p class="section-kicker" data-en="Products &amp; services" data-th="สินค้าและบริการ">สินค้าและบริการ</p>
-<h2 data-en="Materials and product solutions for construction, interior and project work" data-th="วัสดุและสินค้าสำหรับงานก่อสร้าง ตกแต่ง และงานโครงการ">วัสดุและสินค้าสำหรับงานก่อสร้าง ตกแต่ง และงานโครงการ</h2>
-<p data-en="Share specifications, dimensions, quantity, reference drawings or sample images to assess suitable products and sourcing options for real project use." data-th="ส่งสเปก ขนาด จำนวน แบบอ้างอิง หรือภาพตัวอย่าง เพื่อประเมินสินค้าและแนวทางจัดหาที่เหมาะสมกับงานจริง">ส่งสเปก ขนาด จำนวน แบบอ้างอิง หรือภาพตัวอย่าง เพื่อประเมินสินค้าและแนวทางจัดหาที่เหมาะสมกับงานจริง</p>
-</div>
-<div class="product-grid">
-<article class="product-card">
-<div class="product-media">
-<img alt="Steel &amp; Structural Materials" loading="lazy" src="assets/images/product-01-steel-structure.jpg"/>
-<span class="product-no">01</span>
-</div>
-<div class="product-body">
-<h3 data-en="Steel &amp; Structural Materials" data-th="เหล็กและวัสดุโครงสร้าง">เหล็กและวัสดุโครงสร้าง</h3>
-<p data-en="Sourcing structural steel materials for construction, extension, and made-to-spec fabrication with specification matching for real project use." data-th="จัดหาวัสดุเหล็กสำหรับงานโครงสร้าง งานต่อเติม และงานประกอบตามแบบ พร้อมช่วยเทียบสเปกให้เหมาะกับหน้างาน">จัดหาวัสดุเหล็กสำหรับงานโครงสร้าง งานต่อเติม และงานประกอบตามแบบ พร้อมช่วยเทียบสเปกให้เหมาะกับหน้างาน</p>
-<ul class="product-list">
-<li data-en="Rebar, steel sections, plates and profiles" data-th="เหล็กเส้น เหล็กรูปพรรณ แผ่นเหล็ก">เหล็กเส้น เหล็กรูปพรรณ แผ่นเหล็ก</li>
-<li data-en="Materials for structural and fabrication work" data-th="วัสดุสำหรับงานโครงสร้างและงานประกอบ">วัสดุสำหรับงานโครงสร้างและงานประกอบ</li>
-<li data-en="Sourcing by size, quantity and required specification" data-th="จัดหาตามขนาด จำนวน และสเปกที่กำหนด">จัดหาตามขนาด จำนวน และสเปกที่กำหนด</li>
-</ul>
-<div class="card-actions"><a class="chip-link" data-en="Send Inquiry" data-th="สอบถามสินค้า" href="#contact">สอบถามสินค้า</a></div>
-</div>
-</article>
-<article class="product-card">
-<div class="product-media">
-<img alt="Wall, Roofing &amp; Board Systems" loading="lazy" src="assets/images/product-02-wall-roof-board.jpg"/>
-<span class="product-no">02</span>
-</div>
-<div class="product-body">
-<h3 data-en="Wall, Roofing &amp; Board Systems" data-th="แผ่นผนัง หลังคา และวัสดุแผ่น">แผ่นผนัง หลังคา และวัสดุแผ่น</h3>
-<p data-en="Panel solutions for walls, roofing, clean rooms, prefabricated buildings, and interior applications that require lightweight and fast installation." data-th="โซลูชันวัสดุแผ่นสำหรับผนัง หลังคา ห้องคลีนรูม อาคารสำเร็จรูป และงานตกแต่งที่ต้องการน้ำหนักเบาและติดตั้งเร็ว">โซลูชันวัสดุแผ่นสำหรับผนัง หลังคา ห้องคลีนรูม อาคารสำเร็จรูป และงานตกแต่งที่ต้องการน้ำหนักเบาและติดตั้งเร็ว</p>
-<ul class="product-list">
-<li data-en="Sandwich panels and roofing panels" data-th="Sandwich panel / roofing panel">Sandwich panel / roofing panel</li>
-<li data-en="Calcium silicate board and board materials" data-th="Calcium silicate board และวัสดุแผ่น">Calcium silicate board และวัสดุแผ่น</li>
-<li data-en="Selectable thickness, size and surface finish" data-th="เลือกความหนา ขนาด และผิววัสดุตามงาน">เลือกความหนา ขนาด และผิววัสดุตามงาน</li>
-</ul>
-<div class="card-actions"><a class="chip-link" data-en="Send Inquiry" data-th="สอบถามสินค้า" href="#contact">สอบถามสินค้า</a></div>
-</div>
-</article>
-<article class="product-card">
-<div class="product-media">
-<img alt="Pipe Systems, Valves &amp; Fittings" loading="lazy" src="assets/images/product-03-pipe-valve-fitting.jpg"/>
-<span class="product-no">03</span>
-</div>
-<div class="product-body">
-<h3 data-en="Pipe Systems, Valves &amp; Fittings" data-th="งานระบบท่อ วาล์ว และฟิตติ้ง">งานระบบท่อ วาล์ว และฟิตติ้ง</h3>
-<p data-en="System materials for water, industrial, building and factory applications, including pipes, fittings, flanges, valves and related components." data-th="วัสดุงานระบบสำหรับน้ำ อุตสาหกรรม อาคาร และโรงงาน ตั้งแต่ท่อ ฟิตติ้ง หน้าแปลน วาล์ว ไปจนถึงอุปกรณ์ประกอบระบบ">วัสดุงานระบบสำหรับน้ำ อุตสาหกรรม อาคาร และโรงงาน ตั้งแต่ท่อ ฟิตติ้ง หน้าแปลน วาล์ว ไปจนถึงอุปกรณ์ประกอบระบบ</p>
-<ul class="product-list">
-<li data-en="Stainless steel pipes, steel pipes, flanges and fittings" data-th="ท่อสแตนเลส ท่อเหล็ก หน้าแปลน ฟิตติ้ง">ท่อสแตนเลส ท่อเหล็ก หน้าแปลน ฟิตติ้ง</li>
-<li data-en="Water valves, industrial valves and system components" data-th="วาล์วน้ำ วาล์วอุตสาหกรรม และอุปกรณ์ระบบ">วาล์วน้ำ วาล์วอุตสาหกรรม และอุปกรณ์ระบบ</li>
-<li data-en="Sourcing by project standards and conditions" data-th="จัดหาตามมาตรฐานและเงื่อนไขงานโครงการ">จัดหาตามมาตรฐานและเงื่อนไขงานโครงการ</li>
-</ul>
-<div class="card-actions"><a class="chip-link" data-en="Send Inquiry" data-th="สอบถามสินค้า" href="#contact">สอบถามสินค้า</a></div>
-</div>
-</article>
-<article class="product-card">
-<div class="product-media">
-<img alt="Aluminum Windows &amp; Doors" loading="lazy" src="assets/images/product-04-window-door.jpg"/>
-<span class="product-no">04</span>
-</div>
-<div class="product-body">
-<h3 data-en="Aluminum Windows &amp; Doors" data-th="ประตูและหน้าต่างอลูมิเนียม">ประตูและหน้าต่างอลูมิเนียม</h3>
-<p data-en="Aluminum doors, windows and systems for homes, offices, retail spaces and projects that require clean installation quality." data-th="ประตู หน้าต่าง และระบบอลูมิเนียมสำหรับบ้าน อาคารสำนักงาน ร้านค้า และงานโครงการที่ต้องการความเรียบร้อยของงานติดตั้ง">ประตู หน้าต่าง และระบบอลูมิเนียมสำหรับบ้าน อาคารสำนักงาน ร้านค้า และงานโครงการที่ต้องการความเรียบร้อยของงานติดตั้ง</p>
-<ul class="product-list">
-<li data-en="Casement, sliding, folding and pivot systems" data-th="Casement / Sliding / Folding / Pivot">Casement / Sliding / Folding / Pivot</li>
-<li data-en="Glass, insulation and hardware options" data-th="กระจก ฉนวน และฮาร์ดแวร์ตามแบบ">กระจก ฉนวน และฮาร์ดแวร์ตามแบบ</li>
-<li data-en="Made-to-size support for site conditions" data-th="รองรับงานสั่งผลิตตามขนาดหน้างาน">รองรับงานสั่งผลิตตามขนาดหน้างาน</li>
-</ul>
-<div class="card-actions"><a class="chip-link" data-en="Send Inquiry" data-th="สอบถามสินค้า" href="#contact">สอบถามสินค้า</a></div>
-</div>
-</article>
-<article class="product-card">
-<div class="product-media">
-<img alt="SPC &amp; LVT Flooring" loading="lazy" src="assets/images/product-05-spc-lvt-flooring.jpg"/>
-<span class="product-no">05</span>
-</div>
-<div class="product-body">
-<h3 data-en="SPC &amp; LVT Flooring" data-th="พื้น SPC / LVT">พื้น SPC / LVT</h3>
-<p data-en="Decorative flooring for homes, condominiums, retail spaces and offices, with selectable colors, wood patterns, thickness and wear layers." data-th="พื้นตกแต่งสำหรับบ้าน คอนโด ร้านค้า และสำนักงาน มีตัวเลือกสี ลายไม้ ความหนา และชั้นผิวสำหรับการใช้งานหลายรูปแบบ">พื้นตกแต่งสำหรับบ้าน คอนโด ร้านค้า และสำนักงาน มีตัวเลือกสี ลายไม้ ความหนา และชั้นผิวสำหรับการใช้งานหลายรูปแบบ</p>
-<ul class="product-list">
-<li data-en="SPC flooring and LVT flooring" data-th="SPC Flooring และ LVT Flooring">SPC Flooring และ LVT Flooring</li>
-<li data-en="Options for size, thickness and surface pattern" data-th="ตัวเลือกขนาด ความหนา และลายผิว">ตัวเลือกขนาด ความหนา และลายผิว</li>
-<li data-en="Suitable for renovation and new installation work" data-th="เหมาะกับงานปรับปรุงและงานติดตั้งใหม่">เหมาะกับงานปรับปรุงและงานติดตั้งใหม่</li>
-</ul>
-<div class="card-actions"><a class="chip-link" data-en="Send Inquiry" data-th="สอบถามสินค้า" href="#contact">สอบถามสินค้า</a></div>
-</div>
-</article>
-<article class="product-card">
-<div class="product-media">
-<img alt="WPC Decking &amp; Composite Materials" loading="lazy" src="assets/images/product-06-wpc-decking.jpg"/>
-<span class="product-no">06</span>
-</div>
-<div class="product-body">
-<h3 data-en="WPC Decking &amp; Composite Materials" data-th="WPC Decking และวัสดุคอมโพสิต">WPC Decking และวัสดุคอมโพสิต</h3>
-<p data-en="Wood-plastic composite and composite materials for outdoor decking, wall cladding, battens and durable low-maintenance areas." data-th="วัสดุไม้สังเคราะห์และคอมโพสิตสำหรับพื้นภายนอก ผนัง ระแนง และพื้นที่ที่ต้องการความทนทาน ดูแลง่าย">วัสดุไม้สังเคราะห์และคอมโพสิตสำหรับพื้นภายนอก ผนัง ระแนง และพื้นที่ที่ต้องการความทนทาน ดูแลง่าย</p>
-<ul class="product-list">
-<li data-en="WPC decking and 3D embossing decking" data-th="พื้น WPC / 3D embossing decking">พื้น WPC / 3D embossing decking</li>
-<li data-en="Cladding, battens and installation accessories" data-th="ผนัง ระแนง และอุปกรณ์ติดตั้ง">ผนัง ระแนง และอุปกรณ์ติดตั้ง</li>
-<li data-en="Color and model selection by design requirement" data-th="เลือกสีและรุ่นตามดีไซน์ของงาน">เลือกสีและรุ่นตามดีไซน์ของงาน</li>
-</ul>
-<div class="card-actions"><a class="chip-link" data-en="Send Inquiry" data-th="สอบถามสินค้า" href="#contact">สอบถามสินค้า</a></div>
-</div>
-</article>
-<article class="product-card">
-<div class="product-media">
-<img alt="Acoustic &amp; Interior Panels" loading="lazy" src="assets/images/product-07-acoustic-panel.jpg"/>
-<span class="product-no">07</span>
-</div>
-<div class="product-body">
-<h3 data-en="Acoustic &amp; Interior Panels" data-th="แผงอะคูสติกและวัสดุตกแต่งภายใน">แผงอะคูสติกและวัสดุตกแต่งภายใน</h3>
-<p data-en="Sound absorption and interior materials for meeting rooms, studios, restaurants, offices and areas that require echo control." data-th="วัสดุซับเสียงและตกแต่งสำหรับห้องประชุม สตูดิโอ ร้านอาหาร สำนักงาน และพื้นที่ที่ต้องควบคุมเสียงสะท้อน">วัสดุซับเสียงและตกแต่งสำหรับห้องประชุม สตูดิโอ ร้านอาหาร สำนักงาน และพื้นที่ที่ต้องควบคุมเสียงสะท้อน</p>
-<ul class="product-list">
-<li data-en="Fabric wrapped acoustic panels" data-th="Fabric wrapped acoustic panel">Fabric wrapped acoustic panel</li>
-<li data-en="Options for fabric, color, edge and thickness" data-th="ตัวเลือกผ้า สี ขอบ และความหนา">ตัวเลือกผ้า สี ขอบ และความหนา</li>
-<li data-en="Supports interior design and acoustic control" data-th="รองรับงานตกแต่งและงานควบคุมเสียง">รองรับงานตกแต่งและงานควบคุมเสียง</li>
-</ul>
-<div class="card-actions"><a class="chip-link" data-en="Send Inquiry" data-th="สอบถามสินค้า" href="#contact">สอบถามสินค้า</a></div>
-</div>
-</article>
-<article class="product-card">
-<div class="product-media">
-<img alt="Container House &amp; Steel Structure" loading="lazy" src="assets/images/product-08-container-structure.jpg"/>
-<span class="product-no">08</span>
-</div>
-<div class="product-body">
-<h3 data-en="Container House &amp; Steel Structure" data-th="Container House และ Steel Structure">Container House และ Steel Structure</h3>
-<p data-en="Prefabricated buildings, steel structures, container houses and space solutions that require fast assembly and practical deployment." data-th="อาคารสำเร็จรูป โครงสร้างเหล็ก บ้านตู้คอนเทนเนอร์ และโซลูชันพื้นที่ใช้งานที่ต้องการความรวดเร็วในการประกอบ">อาคารสำเร็จรูป โครงสร้างเหล็ก บ้านตู้คอนเทนเนอร์ และโซลูชันพื้นที่ใช้งานที่ต้องการความรวดเร็วในการประกอบ</p>
-<ul class="product-list">
-<li data-en="Container houses and prefabricated houses" data-th="Container house / prefab house">Container house / prefab house</li>
-<li data-en="Steel structures and structural assembly" data-th="Steel structure และงานประกอบโครงสร้าง">Steel structure และงานประกอบโครงสร้าง</li>
-<li data-en="Suitable for job sites, temporary offices and dedicated spaces" data-th="เหมาะกับไซต์งาน สำนักงานชั่วคราว และพื้นที่ใช้งานเฉพาะ">เหมาะกับไซต์งาน สำนักงานชั่วคราว และพื้นที่ใช้งานเฉพาะ</li>
-</ul>
-<div class="card-actions"><a class="chip-link" data-en="Send Inquiry" data-th="สอบถามสินค้า" href="#contact">สอบถามสินค้า</a></div>
-</div>
-</article>
-<article class="product-card">
-<div class="product-media">
-<img alt="Sanitary Ware &amp; Bathroom Fixtures" loading="lazy" src="assets/images/product-09-sanitary-ware.jpg"/>
-<span class="product-no">09</span>
-</div>
-<div class="product-body">
-<h3 data-en="Sanitary Ware &amp; Bathroom Fixtures" data-th="สุขภัณฑ์และอุปกรณ์ห้องน้ำ">สุขภัณฑ์และอุปกรณ์ห้องน้ำ</h3>
-<p data-en="Sourcing sanitary ware, faucets, basins, bathroom accessories and related materials for homes, buildings, retail spaces and projects." data-th="จัดหาสุขภัณฑ์ ก๊อกน้ำ อ่างล้างหน้า อุปกรณ์ห้องน้ำ และวัสดุประกอบสำหรับบ้าน อาคาร ร้านค้า และงานโครงการ">จัดหาสุขภัณฑ์ ก๊อกน้ำ อ่างล้างหน้า อุปกรณ์ห้องน้ำ และวัสดุประกอบสำหรับบ้าน อาคาร ร้านค้า และงานโครงการ</p>
-<ul class="product-list">
-<li data-en="Toilets, basins, faucets and showers" data-th="สุขภัณฑ์ อ่างล้างหน้า ก๊อกน้ำ ฝักบัว">สุขภัณฑ์ อ่างล้างหน้า ก๊อกน้ำ ฝักบัว</li>
-<li data-en="Accessories and materials for bathroom work" data-th="อุปกรณ์ประกอบและวัสดุสำหรับห้องน้ำ">อุปกรณ์ประกอบและวัสดุสำหรับห้องน้ำ</li>
-<li data-en="Model selection by design, budget and installation conditions" data-th="คัดรุ่นตามดีไซน์ งบประมาณ และเงื่อนไขติดตั้ง">คัดรุ่นตามดีไซน์ งบประมาณ และเงื่อนไขติดตั้ง</li>
-</ul>
-<div class="card-actions"><a class="chip-link" data-en="Send Inquiry" data-th="สอบถามสินค้า" href="#contact">สอบถามสินค้า</a></div>
-</div>
-</article>
-<article class="product-card">
-<div class="product-media">
-<img alt="Custom Stainless Fabrication" loading="lazy" src="assets/images/product-10-custom-stainless.jpg"/>
-<span class="product-no">10</span>
-</div>
-<div class="product-body">
-<h3 data-en="Custom Stainless Fabrication" data-th="สแตนเลสสั่งทำ">สแตนเลสสั่งทำ</h3>
-<p data-en="Custom stainless fabrication for kitchens, counters, sinks, shelves, railings and made-to-measure parts based on drawings or real site conditions." data-th="งานสแตนเลสสำหรับครัว เคาน์เตอร์ ซิงก์ ชั้นวาง ราวกันตก และชิ้นงานสั่งผลิตตามแบบหรือตามพื้นที่ใช้งานจริง">งานสแตนเลสสำหรับครัว เคาน์เตอร์ ซิงก์ ชั้นวาง ราวกันตก และชิ้นงานสั่งผลิตตามแบบหรือตามพื้นที่ใช้งานจริง</p>
-<ul class="product-list">
-<li data-en="Sinks, counters, shelves and stainless components" data-th="ซิงก์ เคาน์เตอร์ ชั้นวาง และอุปกรณ์สแตนเลส">ซิงก์ เคาน์เตอร์ ชั้นวาง และอุปกรณ์สแตนเลส</li>
-<li data-en="Made to drawing, size and site condition" data-th="ผลิตตามแบบ ขนาด และเงื่อนไขหน้างาน">ผลิตตามแบบ ขนาด และเงื่อนไขหน้างาน</li>
-<li data-en="Suitable for homes, shops, factories and commercial kitchens" data-th="เหมาะกับงานบ้าน ร้านค้า โรงงาน และครัวเชิงพาณิชย์">เหมาะกับงานบ้าน ร้านค้า โรงงาน และครัวเชิงพาณิชย์</li>
-</ul>
-<div class="card-actions"><a class="chip-link" data-en="Send Inquiry" data-th="สอบถามสินค้า" href="#contact">สอบถามสินค้า</a></div>
-</div>
-</article>
-<article class="product-card">
-<div class="product-media">
-<img alt="LED Display &amp; Lighting Solutions" loading="lazy" src="assets/images/product-11-led-lighting.jpg"/>
-<span class="product-no">11</span>
-</div>
-<div class="product-body">
-<h3 data-en="LED Display &amp; Lighting Solutions" data-th="LED Display และ Lighting Solutions">LED Display และ Lighting Solutions</h3>
-<p data-en="LED displays, signage, indoor and outdoor lighting solutions for buildings, retail spaces, sales areas and decorative applications." data-th="จอ LED ป้ายไฟ ระบบไฟภายใน ภายนอก และโซลูชันแสงสว่างสำหรับอาคาร ร้านค้า พื้นที่ขาย และงานตกแต่ง">จอ LED ป้ายไฟ ระบบไฟภายใน ภายนอก และโซลูชันแสงสว่างสำหรับอาคาร ร้านค้า พื้นที่ขาย และงานตกแต่ง</p>
-<ul class="product-list">
-<li data-en="LED display walls and signage" data-th="LED display wall และป้ายไฟ">LED display wall และป้ายไฟ</li>
-<li data-en="Multiple LED lighting formats" data-th="หลอดไฟ LED หลายรูปแบบ">หลอดไฟ LED หลายรูปแบบ</li>
-<li data-en="Selection by area size, brightness and installation type" data-th="เลือกตามขนาดพื้นที่ ความสว่าง และรูปแบบติดตั้ง">เลือกตามขนาดพื้นที่ ความสว่าง และรูปแบบติดตั้ง</li>
-</ul>
-<div class="card-actions"><a class="chip-link" data-en="Send Inquiry" data-th="สอบถามสินค้า" href="#contact">สอบถามสินค้า</a></div>
-</div>
-</article>
-<article class="product-card">
-<div class="product-media">
-<img alt="Special Sourcing &amp; Made-to-Spec Supply" loading="lazy" src="assets/images/product-12-special-sourcing.jpg"/>
-<span class="product-no">12</span>
-</div>
-<div class="product-body">
-<h3 data-en="Special Sourcing &amp; Made-to-Spec Supply" data-th="จัดหาสินค้าพิเศษและผลิตตามแบบ">จัดหาสินค้าพิเศษและผลิตตามแบบ</h3>
-<p data-en="For items outside standard lists, customers can share drawings, reference images, specifications or use requirements for sourcing and production assessment." data-th="สำหรับสินค้าที่ไม่มีในรายการทั่วไป สามารถส่งแบบ ภาพอ้างอิง สเปก หรือความต้องการใช้งาน เพื่อประเมินแนวทางจัดหาและผลิต">สำหรับสินค้าที่ไม่มีในรายการทั่วไป สามารถส่งแบบ ภาพอ้างอิง สเปก หรือความต้องการใช้งาน เพื่อประเมินแนวทางจัดหาและผลิต</p>
-<ul class="product-list">
-<li data-en="Special doors, decorative materials and custom parts" data-th="ประตูพิเศษ วัสดุตกแต่ง และชิ้นงานเฉพาะทาง">ประตูพิเศษ วัสดุตกแต่ง และชิ้นงานเฉพาะทาง</li>
-<li data-en="Import, sourcing or made-to-spec production" data-th="นำเข้า จัดหา หรือผลิตตามแบบ">นำเข้า จัดหา หรือผลิตตามแบบ</li>
-<li data-en="Option comparison by budget and timeline" data-th="ช่วยเทียบตัวเลือกให้เหมาะกับงบประมาณและระยะเวลา">ช่วยเทียบตัวเลือกให้เหมาะกับงบประมาณและระยะเวลา</li>
-</ul>
-<div class="card-actions"><a class="chip-link" data-en="Send Inquiry" data-th="สอบถามสินค้า" href="#contact">สอบถามสินค้า</a></div>
-</div>
-</article>
-</div>
-</div>
-</section>
-<section class="section-pad process" id="process">
-<div class="container">
-<div class="section-head center">
-<p class="section-kicker" data-en="Work process" data-th="ขั้นตอนการทำงาน">ขั้นตอนการทำงาน</p>
-<h2 data-en="From requirement to delivery" data-th="จาก Requirement ถึงการส่งมอบ">จาก Requirement ถึงการส่งมอบ</h2>
-<p data-en="The workflow is designed to clarify product details, specifications, pricing and lead time before production or import begins." data-th="กระบวนการทำงานถูกออกแบบให้ข้อมูลสินค้า สเปก ราคา และระยะเวลาชัดเจนก่อนเริ่มสั่งผลิตหรือนำเข้า">กระบวนการทำงานถูกออกแบบให้ข้อมูลสินค้า สเปก ราคา และระยะเวลาชัดเจนก่อนเริ่มสั่งผลิตหรือนำเข้า</p>
-</div>
-<div class="process-grid">
-<article class="process-card">
-<img alt="Requirement &amp; Scope Review" loading="lazy" src="assets/images/process-requirement.jpg"/>
-<div class="process-copy">
-<span>01</span>
-<h3 data-en="Requirement &amp; Scope Review" data-th="รับ Requirement และขอบเขตงาน">รับ Requirement และขอบเขตงาน</h3>
-<p data-en="Review use case, dimensions, quantity, reference drawings, installation area and key project conditions." data-th="รับรายละเอียดการใช้งาน ขนาด จำนวน แบบอ้างอิง พื้นที่ติดตั้ง และเงื่อนไขสำคัญของงาน">รับรายละเอียดการใช้งาน ขนาด จำนวน แบบอ้างอิง พื้นที่ติดตั้ง และเงื่อนไขสำคัญของงาน</p>
-</div>
-</article>
-<article class="process-card">
-<img alt="Specification &amp; Material Matching" loading="lazy" src="assets/images/process-spec-sample.jpg"/>
-<div class="process-copy">
-<span>02</span>
-<h3 data-en="Specification &amp; Material Matching" data-th="เทียบสเปกและตัวอย่างวัสดุ">เทียบสเปกและตัวอย่างวัสดุ</h3>
-<p data-en="Match models, materials, colors, finishes and options with budget, quality and design direction." data-th="คัดรุ่น วัสดุ สี ผิว และตัวเลือกที่เหมาะกับงบประมาณ คุณภาพ และภาพรวมงานออกแบบ">คัดรุ่น วัสดุ สี ผิว และตัวเลือกที่เหมาะกับงบประมาณ คุณภาพ และภาพรวมงานออกแบบ</p>
-</div>
-</article>
-<article class="process-card">
-<img alt="Sourcing, Import &amp; Options" loading="lazy" src="assets/images/process-sourcing.jpg"/>
-<div class="process-copy">
-<span>03</span>
-<h3 data-en="Sourcing, Import &amp; Options" data-th="จัดหา นำเข้า และเสนอทางเลือก">จัดหา นำเข้า และเสนอทางเลือก</h3>
-<p data-en="Coordinate factories or suppliers, checking availability, pricing, lead time and delivery conditions." data-th="ประสานแหล่งผลิตหรือคู่ค้า ตรวจความพร้อมสินค้า ราคา ระยะเวลา และเงื่อนไขการส่งมอบ">ประสานแหล่งผลิตหรือคู่ค้า ตรวจความพร้อมสินค้า ราคา ระยะเวลา และเงื่อนไขการส่งมอบ</p>
-</div>
-</article>
-<article class="process-card">
-<img alt="Confirmation &amp; Production" loading="lazy" src="assets/images/process-production.jpg"/>
-<div class="process-copy">
-<span>04</span>
-<h3 data-en="Confirmation &amp; Production" data-th="ยืนยันแบบและดำเนินการผลิต">ยืนยันแบบและดำเนินการผลิต</h3>
-<p data-en="Confirm details before production or import so that size, model, color and quantity match the actual project." data-th="สรุปรายละเอียดก่อนสั่งผลิตหรือนำเข้า เพื่อให้ขนาด รุ่น สี และจำนวนตรงกับงานจริง">สรุปรายละเอียดก่อนสั่งผลิตหรือนำเข้า เพื่อให้ขนาด รุ่น สี และจำนวนตรงกับงานจริง</p>
-</div>
-</article>
-<article class="process-card">
-<img alt="Delivery &amp; Site Coordination" loading="lazy" src="assets/images/process-delivery.jpg"/>
-<div class="process-copy">
-<span>05</span>
-<h3 data-en="Delivery &amp; Site Coordination" data-th="ส่งมอบและประสานงานปลายทาง">ส่งมอบและประสานงานปลายทาง</h3>
-<p data-en="Prepare products, documents and delivery coordination in line with the project schedule." data-th="จัดเตรียมสินค้า เอกสาร และการประสานงานส่งมอบให้สอดคล้องกับกำหนดการของงาน">จัดเตรียมสินค้า เอกสาร และการประสานงานส่งมอบให้สอดคล้องกับกำหนดการของงาน</p>
-</div>
-</article>
-</div>
-</div>
-</section>
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-wave" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.kicker">Your Professional Trading Partner</p>
+          <h1 data-i18n="hero.title">พันธมิตรด้านการจัดหา นำเข้า ส่งออก และผลิตสินค้าตามแบบ</h1>
+          <p class="lead" data-i18n="hero.desc">จัดหาวัสดุก่อสร้าง สินค้าโครงการ และสินค้าพิเศษตามสเปก พร้อมประสานงานตั้งแต่การรับ Requirement จนถึงการส่งมอบ</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#products" data-i18n="hero.cta1">ดูสินค้าและบริการ</a>
+            <a class="btn secondary" href="#contact" data-i18n="hero.cta2">ส่ง Requirement</a>
+          </div>
+          <div class="hero-pills" aria-label="Core services">
+            <span data-i18n="hero.pill1">นำเข้า</span>
+            <span data-i18n="hero.pill2">ส่งออก</span>
+            <span data-i18n="hero.pill3">จัดหาสินค้าพิเศษ</span>
+            <span data-i18n="hero.pill4">ผลิตตามแบบ</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="brand-card">
+            <img src="assets/logo-mark.png" alt="Blue Ocean logo mark" />
+            <strong>Blue Ocean Traders Co., Ltd.</strong>
+            <span>Your Professional Trading Partner</span>
+          </div>
+          <div class="catalog-collage">
+            <img src="assets/hero-collage.jpg" alt="Project products and materials" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="section-pad why">
-<div class="container split-grid reverse">
-<div class="why-visual"><img alt="Sourcing coordination" loading="lazy" src="assets/images/why-coordination.jpg"/></div>
-<div class="section-copy">
-<p class="section-kicker" data-en="Why Blue Ocean Traders" data-th="ทำไมต้อง Blue Ocean Traders">ทำไมต้อง Blue Ocean Traders</p>
-<h2 data-en="Reduce time spent searching, comparing and coordinating products" data-th="ช่วยลดเวลาในการค้นหา เปรียบเทียบ และประสานงานสินค้า">ช่วยลดเวลาในการค้นหา เปรียบเทียบ และประสานงานสินค้า</h2>
-<div class="why-list">
-<div><span>1</span><strong data-en="Practical specification review" data-th="เข้าใจสเปกงานจริง">เข้าใจสเปกงานจริง</strong><p data-en="We consider actual use, area size, installation conditions and project constraints." data-th="พิจารณาการใช้งาน ขนาดพื้นที่ เงื่อนไขติดตั้ง และข้อจำกัดของโครงการ">พิจารณาการใช้งาน ขนาดพื้นที่ เงื่อนไขติดตั้ง และข้อจำกัดของโครงการ</p></div>
-<div><span>2</span><strong data-en="Multiple sourcing options" data-th="มีตัวเลือกหลากหลาย">มีตัวเลือกหลากหลาย</strong><p data-en="We source from trusted partners, standard product options or made-to-spec production depending on fit." data-th="คัดเลือกจากคู่ค้า สินค้ามาตรฐาน หรือการผลิตตามแบบตามความเหมาะสม">คัดเลือกจากคู่ค้า สินค้ามาตรฐาน หรือการผลิตตามแบบตามความเหมาะสม</p></div>
-<div><span>3</span><strong data-en="Clear communication" data-th="สื่อสารง่ายและชัดเจน">สื่อสารง่ายและชัดเจน</strong><p data-en="Required details are summarized before quotation to reduce mismatch during sourcing and delivery." data-th="สรุปรายละเอียดที่จำเป็นก่อนเสนอราคา เพื่อช่วยลดความคลาดเคลื่อนระหว่างจัดหาและส่งมอบ">สรุปรายละเอียดที่จำเป็นก่อนเสนอราคา เพื่อช่วยลดความคลาดเคลื่อนระหว่างจัดหาและส่งมอบ</p></div>
-</div>
-</div>
-</div>
-</section>
-<section class="section-pad contact" id="contact">
-<div class="container contact-grid">
-<div>
-<p class="section-kicker" data-en="Contact us" data-th="ติดต่อเรา">ติดต่อเรา</p>
-<h2 data-en="Send product details or project requirements" data-th="ส่งรายละเอียดสินค้า หรือ Requirement ของงานที่ต้องการจัดหา">ส่งรายละเอียดสินค้า หรือ Requirement ของงานที่ต้องการจัดหา</h2>
-<p data-en="Please include product type, size, quantity, reference drawings, approximate budget and required timeline to help our team assess sourcing options faster." data-th="ระบุประเภทสินค้า ขนาด จำนวน แบบอ้างอิง งบประมาณโดยประมาณ และกำหนดเวลาที่ต้องการ เพื่อให้ทีมงานประเมินแนวทางจัดหาได้รวดเร็วขึ้น">ระบุประเภทสินค้า ขนาด จำนวน แบบอ้างอิง งบประมาณโดยประมาณ และกำหนดเวลาที่ต้องการ เพื่อให้ทีมงานประเมินแนวทางจัดหาได้รวดเร็วขึ้น</p>
-<div class="contact-cards">
-<a href="mailto:admin@blueoceantraders.co.th"><strong>Email</strong><span>admin@blueoceantraders.co.th</span></a>
-<a href="tel:+66838348686"><strong>Tel</strong><span>083-8348686</span></a>
-<div><strong>Address</strong><span>Somerset Sukhumvit 71, 1015/29 Room 316, Sukhumvit 71 Road, Khlong Tan Nuea, Watthana, Bangkok 10110</span></div>
-</div>
-</div>
-<form class="contact-form" id="quoteForm">
-<label><span data-en="Name / Company" data-th="ชื่อ / บริษัท">ชื่อ / บริษัท</span><input name="name" required="" type="text"/></label>
-<label><span data-en="Email or phone" data-th="อีเมลหรือเบอร์โทร">อีเมลหรือเบอร์โทร</span><input name="contact" required="" type="text"/></label>
-<label><span data-en="Product category" data-th="ประเภทสินค้า">ประเภทสินค้า</span><input name="category" placeholder="เช่น ประตูหน้าต่าง, งานท่อ, พื้น SPC, สแตนเลสสั่งทำ" type="text"/></label>
-<label><span data-en="Project details" data-th="รายละเอียดที่ต้องการ">รายละเอียดที่ต้องการ</span><textarea name="message" placeholder="ขนาด จำนวน สเปก รูปแบบงาน พื้นที่ติดตั้ง หรือกำหนดส่งมอบ" rows="6"></textarea></label>
-<button class="btn primary full" data-en="Send email request" data-th="ส่งอีเมลเพื่อขอใบเสนอราคา" type="submit">ส่งอีเมลเพื่อขอใบเสนอราคา</button>
-<p class="form-note" data-en="Your email application will open with the details addressed to Blue Ocean Traders." data-th="ระบบจะเปิดอีเมลของอุปกรณ์เพื่อส่งรายละเอียดไปยัง Blue Ocean Traders">ระบบจะเปิดอีเมลของอุปกรณ์เพื่อส่งรายละเอียดไปยัง Blue Ocean Traders</p>
-</form>
-</div>
-</section>
-</main>
-<footer class="site-footer">
-<div class="container footer-grid">
-<div class="footer-brand"><img alt="Blue Ocean Traders" class="footer-logo" src="assets/images/logo-blue-ocean.png"/><p data-en="Import • Export • Special Sourcing • Made to Specification" data-th="นำเข้า • ส่งออก • จัดหาสินค้าพิเศษ • ผลิตตามแบบ">นำเข้า • ส่งออก • จัดหาสินค้าพิเศษ • ผลิตตามแบบ</p></div>
-<div><strong>Blue Ocean Traders Co., Ltd.</strong><span>Somerset Sukhumvit 71, Bangkok</span></div>
-<a href="mailto:admin@blueoceantraders.co.th">admin@blueoceantraders.co.th</a>
-</div>
-</footer>
-<script src="assets/js/main.js"></script>
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <p class="section-kicker" data-i18n="about.kicker">เกี่ยวกับเรา</p>
+          <h2 data-i18n="about.title">ดูแลงานจัดหาสินค้าให้ครบ ตั้งแต่สินค้ามาตรฐานจนถึงงานสั่งผลิตเฉพาะทาง</h2>
+          <p data-i18n="about.p1">Blue Ocean Traders Co., Ltd. เป็นบริษัทเทรดดิ้งที่ให้บริการจัดหา นำเข้า ส่งออก และผลิตสินค้าตามแบบ โดยเน้นการคัดเลือกสินค้าที่เหมาะสมกับการใช้งานจริง คุณภาพ งบประมาณ และระยะเวลาของโครงการ</p>
+          <p data-i18n="about.p2">ลูกค้าสามารถส่งแบบ ขนาด จำนวน ภาพตัวอย่าง หรือสเปกอ้างอิง เพื่อให้ทีมงานช่วยประเมินทางเลือกสินค้าและแนวทางจัดหาที่เหมาะสม</p>
+        </div>
+        <div class="about-panel">
+          <div class="about-stat"><span>01</span><strong data-i18n="about.stat1">สินค้าและวัสดุหลายหมวด</strong></div>
+          <div class="about-stat"><span>02</span><strong data-i18n="about.stat2">จัดหา นำเข้า และผลิตตามแบบ</strong></div>
+          <div class="about-stat"><span>03</span><strong data-i18n="about.stat3">เหมาะกับงานบ้าน อาคาร และโครงการ</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products" id="products">
+      <div class="container">
+        <div class="section-head centered">
+          <p class="section-kicker" data-i18n="products.kicker">สินค้าและบริการ</p>
+          <h2 data-i18n="products.title">วัสดุและสินค้าสำหรับงานก่อสร้าง ตกแต่ง และงานโครงการ</h2>
+          <p data-i18n="products.desc">ส่งสเปก ขนาด จำนวน แบบอ้างอิง หรือภาพตัวอย่าง เพื่อประเมินสินค้าและแนวทางจัดหาที่เหมาะสมกับงานจริง</p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+              <div class="product-image"><img src="assets/cat-steel.jpg" alt="Steel & Structural Materials" loading="lazy" /></div>
+              <div class="product-content">
+                <div class="product-topline"><span>01</span><small data-i18n="products.cardLabel">Product category</small></div>
+                <h3 data-i18n="prod.0.title">เหล็กและวัสดุโครงสร้าง</h3>
+                <p data-i18n="prod.0.desc">เหล็กเส้น เหล็กรูปพรรณ เหล็กแผ่น เหล็กท่อ และวัสดุโครงสร้างสำหรับงานก่อสร้าง งานต่อเติม และงานประกอบตามแบบ</p>
+                <ul><li data-i18n="prod.0.points.0">เหล็กเส้น / H-Beam / I-Beam</li><li data-i18n="prod.0.points.1">Angle / Channel / Steel pipe</li><li data-i18n="prod.0.points.2">จัดหาตามขนาด จำนวน และสเปก</li></ul>
+              </div>
+            </article>
+<article class="product-card">
+              <div class="product-image"><img src="assets/cat-panels.jpg" alt="Wall, Roofing & Board Systems" loading="lazy" /></div>
+              <div class="product-content">
+                <div class="product-topline"><span>02</span><small data-i18n="products.cardLabel">Product category</small></div>
+                <h3 data-i18n="prod.1.title">แผ่นผนัง หลังคา และวัสดุแผ่น</h3>
+                <p data-i18n="prod.1.desc">Sandwich panel, calcium silicate board, aluminium fluted panel และวัสดุแผ่นสำหรับอาคาร ห้องคลีนรูม ผนัง หลังคา และงานตกแต่ง</p>
+                <ul><li data-i18n="prod.1.points.0">Sandwich panel / Roofing panel</li><li data-i18n="prod.1.points.1">Aluminium fluted / Wall panel</li><li data-i18n="prod.1.points.2">เลือกความหนา ผิว และขนาดได้</li></ul>
+              </div>
+            </article>
+<article class="product-card">
+              <div class="product-image"><img src="assets/cat-pipe.jpg" alt="Pipe Systems, Valves & Fittings" loading="lazy" /></div>
+              <div class="product-content">
+                <div class="product-topline"><span>03</span><small data-i18n="products.cardLabel">Product category</small></div>
+                <h3 data-i18n="prod.2.title">งานระบบท่อ วาล์ว และฟิตติ้ง</h3>
+                <p data-i18n="prod.2.desc">ท่อ ฟิตติ้ง หน้าแปลน วาล์ว และอุปกรณ์งานระบบสำหรับอาคาร โรงงาน น้ำ อุตสาหกรรม และงานโครงการ</p>
+                <ul><li data-i18n="prod.2.points.0">Stainless / carbon steel pipes</li><li data-i18n="prod.2.points.1">Valves / Flanges / Fittings</li><li data-i18n="prod.2.points.2">รองรับงานอาคารและโรงงาน</li></ul>
+              </div>
+            </article>
+<article class="product-card">
+              <div class="product-image"><img src="assets/cat-windows.jpg" alt="Doors, Windows & Aluminium Systems" loading="lazy" /></div>
+              <div class="product-content">
+                <div class="product-topline"><span>04</span><small data-i18n="products.cardLabel">Product category</small></div>
+                <h3 data-i18n="prod.3.title">ประตู หน้าต่าง และงานอลูมิเนียม</h3>
+                <p data-i18n="prod.3.desc">ประตู หน้าต่างอลูมิเนียม กระจกนิรภัย กระจกฉนวน ฮาร์ดแวร์ และงานผลิตตามขนาดหน้างาน</p>
+                <ul><li data-i18n="prod.3.points.0">Sliding / Casement / Folding</li><li data-i18n="prod.3.points.1">กระจกและฮาร์ดแวร์ตามแบบ</li><li data-i18n="prod.3.points.2">ผลิตตามขนาดพื้นที่จริง</li></ul>
+              </div>
+            </article>
+<article class="product-card">
+              <div class="product-image"><img src="assets/cat-flooring.jpg" alt="Flooring, Wall & Composite Materials" loading="lazy" /></div>
+              <div class="product-content">
+                <div class="product-topline"><span>05</span><small data-i18n="products.cardLabel">Product category</small></div>
+                <h3 data-i18n="prod.4.title">พื้น ผนัง และวัสดุคอมโพสิต</h3>
+                <p data-i18n="prod.4.desc">SPC / LVT flooring, WPC decking, wall cladding และวัสดุตกแต่งพื้นผิวสำหรับบ้าน คอนโด โรงแรม ร้านค้า และพื้นที่ภายนอก</p>
+                <ul><li data-i18n="prod.4.points.0">SPC / LVT Flooring</li><li data-i18n="prod.4.points.1">WPC Decking / Cladding</li><li data-i18n="prod.4.points.2">ลายไม้ ลายหิน และผิวกันลื่น</li></ul>
+              </div>
+            </article>
+<article class="product-card">
+              <div class="product-image"><img src="assets/cat-wood.jpg" alt="Teak Wood Furniture & Solid Wood Works" loading="lazy" /></div>
+              <div class="product-content">
+                <div class="product-topline"><span>06</span><small data-i18n="products.cardLabel">Product category</small></div>
+                <h3 data-i18n="prod.5.title">เฟอร์นิเจอร์ไม้สักและงานไม้แท้</h3>
+                <p data-i18n="prod.5.desc">เฟอร์นิเจอร์ไม้สัก งานไม้แท้ โต๊ะ ตู้ เตียง ประตู หน้าต่าง ไม้ปาร์เก้ และงานไม้สั่งผลิตสำหรับบ้าน รีสอร์ต ร้านอาหาร และโครงการ</p>
+                <ul><li data-i18n="prod.5.points.0">Ready-made และสั่งผลิต</li><li data-i18n="prod.5.points.1">Solid wood / Teak wood</li><li data-i18n="prod.5.points.2">รองรับงานบ้านและงานโครงการ</li></ul>
+              </div>
+            </article>
+<article class="product-card">
+              <div class="product-image"><img src="assets/cat-sanitary.jpg" alt="Sanitary Ware & Bathroom Solutions" loading="lazy" /></div>
+              <div class="product-content">
+                <div class="product-topline"><span>07</span><small data-i18n="products.cardLabel">Product category</small></div>
+                <h3 data-i18n="prod.6.title">สุขภัณฑ์และอุปกรณ์ห้องน้ำ</h3>
+                <p data-i18n="prod.6.desc">สุขภัณฑ์ ตู้อ่างล้างหน้า bathroom cabinet ก๊อกน้ำ ฝักบัว อ่างล้างมือ และอุปกรณ์ห้องน้ำสำหรับบ้าน โรงแรม คอนโด และโครงการ</p>
+                <ul><li data-i18n="prod.6.points.0">Bathroom cabinet / Basin</li><li data-i18n="prod.6.points.1">Faucet / Shower / Fixtures</li><li data-i18n="prod.6.points.2">คัดรุ่นตามดีไซน์และงบประมาณ</li></ul>
+              </div>
+            </article>
+<article class="product-card">
+              <div class="product-image"><img src="assets/cat-lighting.jpg" alt="Lighting & Electrical Products" loading="lazy" /></div>
+              <div class="product-content">
+                <div class="product-topline"><span>08</span><small data-i18n="products.cardLabel">Product category</small></div>
+                <h3 data-i18n="prod.7.title">แสงสว่างและอุปกรณ์ไฟฟ้า</h3>
+                <p data-i18n="prod.7.desc">LED lighting, downlight, spotlight, pendant light, smart fan light, switch & socket และอุปกรณ์ไฟฟ้าสำหรับงานอาคารและพื้นที่ขาย</p>
+                <ul><li data-i18n="prod.7.points.0">Indoor / Outdoor LED</li><li data-i18n="prod.7.points.1">Spotlight / Downlight / Pendant</li><li data-i18n="prod.7.points.2">Switch, socket และอุปกรณ์ไฟฟ้า</li></ul>
+              </div>
+            </article>
+<article class="product-card">
+              <div class="product-image"><img src="assets/cat-ev.jpg" alt="EV Charger & Energy Solutions" loading="lazy" /></div>
+              <div class="product-content">
+                <div class="product-topline"><span>09</span><small data-i18n="products.cardLabel">Product category</small></div>
+                <h3 data-i18n="prod.8.title">EV Charger และโซลูชันพลังงาน</h3>
+                <p data-i18n="prod.8.desc">AC/DC EV charger, DC fast charger, charging station และโซลูชันพลังงานสำหรับอาคาร พื้นที่จอดรถ โครงการอสังหาริมทรัพย์ และผู้ประกอบการ</p>
+                <ul><li data-i18n="prod.8.points.0">AC Charger / DC Fast Charger</li><li data-i18n="prod.8.points.1">Charging station solutions</li><li data-i18n="prod.8.points.2">รองรับอาคารและพื้นที่จอดรถ</li></ul>
+              </div>
+            </article>
+<article class="product-card">
+              <div class="product-image"><img src="assets/cat-solar.jpg" alt="Solar Screen & Interior Finishing" loading="lazy" /></div>
+              <div class="product-content">
+                <div class="product-topline"><span>10</span><small data-i18n="products.cardLabel">Product category</small></div>
+                <h3 data-i18n="prod.9.title">ม่านกันแสงและงานตกแต่งภายใน</h3>
+                <p data-i18n="prod.9.desc">ม่านม้วนกันแสง Solar Screen, roller blind และงานตกแต่งภายในสำหรับบ้าน คอนโด ออฟฟิศ โรงแรม และพื้นที่ที่ต้องควบคุมแสง</p>
+                <ul><li data-i18n="prod.9.points.0">Solar screen roller blind</li><li data-i18n="prod.9.points.1">ควบคุมแสงและความร้อน</li><li data-i18n="prod.9.points.2">เหมาะกับบ้าน ออฟฟิศ และโรงแรม</li></ul>
+              </div>
+            </article>
+<article class="product-card">
+              <div class="product-image"><img src="assets/cat-acoustic.jpg" alt="Acoustic & Sound Proof Panels" loading="lazy" /></div>
+              <div class="product-content">
+                <div class="product-topline"><span>11</span><small data-i18n="products.cardLabel">Product category</small></div>
+                <h3 data-i18n="prod.10.title">แผงอะคูสติกและวัสดุซับเสียง</h3>
+                <p data-i18n="prod.10.desc">วัสดุซับเสียง แผงอะคูสติก และวัสดุตกแต่งภายในสำหรับห้องประชุม สตูดิโอ ร้านอาหาร ออฟฟิศ และพื้นที่ควบคุมเสียงสะท้อน</p>
+                <ul><li data-i18n="prod.10.points.0">Fabric acoustic panel</li><li data-i18n="prod.10.points.1">สี ผ้า ขนาด และขอบหลายแบบ</li><li data-i18n="prod.10.points.2">รองรับงานตกแต่งและควบคุมเสียง</li></ul>
+              </div>
+            </article>
+<article class="product-card">
+              <div class="product-image"><img src="assets/cat-custom.jpg" alt="Special Sourcing & Made-to-Spec Supply" loading="lazy" /></div>
+              <div class="product-content">
+                <div class="product-topline"><span>12</span><small data-i18n="products.cardLabel">Product category</small></div>
+                <h3 data-i18n="prod.11.title">จัดหาสินค้าพิเศษและผลิตตามแบบ</h3>
+                <p data-i18n="prod.11.desc">สำหรับสินค้าที่ไม่มีในรายการทั่วไป สามารถส่งแบบ ภาพตัวอย่าง ขนาด หรือสเปก เพื่อประเมินแนวทางจัดหา นำเข้า หรือผลิตตามแบบ</p>
+                <ul><li data-i18n="prod.11.points.0">Bespoke / Custom products</li><li data-i18n="prod.11.points.1">ผลิตตามแบบและขนาดที่ต้องการ</li><li data-i18n="prod.11.points.2">ช่วยเทียบตัวเลือกก่อนเสนอราคา</li></ul>
+              </div>
+            </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="process">
+      <div class="container">
+        <div class="section-head centered">
+          <p class="section-kicker" data-i18n="process.kicker">ขั้นตอนการทำงาน</p>
+          <h2 data-i18n="process.title">จาก Requirement ถึงการส่งมอบ</h2>
+          <p data-i18n="process.desc">กระบวนการทำงานถูกออกแบบให้ข้อมูลสินค้า สเปก ราคา และระยะเวลาชัดเจนก่อนเริ่มสั่งผลิตหรือนำเข้า</p>
+        </div>
+        <div class="process-grid">
+          <article><span>01</span><h3 data-i18n="proc.0.title">รับ Requirement และขอบเขตงาน</h3><p data-i18n="proc.0.desc">รับรายละเอียดการใช้งาน ขนาด จำนวน แบบอ้างอิง พื้นที่ติดตั้ง และเงื่อนไขสำคัญของงาน</p></article>
+          <article><span>02</span><h3 data-i18n="proc.1.title">เทียบสเปกและตัวอย่างวัสดุ</h3><p data-i18n="proc.1.desc">คัดรุ่น วัสดุ สี ผิว และตัวเลือกที่เหมาะกับงบประมาณ คุณภาพ และภาพรวมงานออกแบบ</p></article>
+          <article><span>03</span><h3 data-i18n="proc.2.title">จัดหา นำเข้า และเสนอทางเลือก</h3><p data-i18n="proc.2.desc">ประสานแหล่งผลิตหรือคู่ค้า ตรวจความพร้อมสินค้า ราคา ระยะเวลา และเงื่อนไขการส่งมอบ</p></article>
+          <article><span>04</span><h3 data-i18n="proc.3.title">ยืนยันแบบและดำเนินการผลิต</h3><p data-i18n="proc.3.desc">สรุปรายละเอียดก่อนสั่งผลิตหรือนำเข้า เพื่อให้ขนาด รุ่น สี และจำนวนตรงกับงานจริง</p></article>
+          <article><span>05</span><h3 data-i18n="proc.4.title">ส่งมอบและประสานงานปลายทาง</h3><p data-i18n="proc.4.desc">จัดเตรียมสินค้า เอกสาร และการประสานงานส่งมอบให้สอดคล้องกับกำหนดการของงาน</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section highlights" id="highlights">
+      <div class="container">
+        <div class="section-head centered light-head">
+          <p class="section-kicker" data-i18n="high.kicker">ตัวอย่างสินค้าเด่น</p>
+          <h2 data-i18n="high.title">ภาพรวมสินค้าที่เหมาะกับงานโครงการ</h2>
+        </div>
+        <div class="highlight-grid">
+          <article class="highlight-card main-highlight"><img src="assets/cat-windows.jpg" alt="Windows and doors" loading="lazy" /><div><h3 data-i18n="high.1.title">ประตู หน้าต่าง และงานกรอบอลูมิเนียม</h3><p data-i18n="high.1.desc">เหมาะกับอาคาร บ้านพักอาศัย สำนักงาน ร้านค้า และงานโครงการที่ต้องควบคุมคุณภาพการติดตั้ง</p></div></article>
+          <article class="highlight-card"><img src="assets/highlight-fluted.jpg" alt="Fluted aluminium panel" loading="lazy" /><div><h3 data-i18n="high.2.title">แผ่นอลูมิเนียมร่องลายและวัสดุตกแต่งผิว</h3><p data-i18n="high.2.desc">ใช้สำหรับผนัง ฝ้า งานตกแต่งอาคาร และพื้นที่ที่ต้องการผิววัสดุดูเรียบร้อยระดับพรีเมียม</p></div></article>
+          <article class="highlight-card"><img src="assets/highlight-spc.jpg" alt="SPC flooring" loading="lazy" /><div><h3 data-i18n="high.3.title">พื้น SPC / LVT และงานพื้นตกแต่ง</h3><p data-i18n="high.3.desc">ตัวเลือกสำหรับบ้าน คอนโด โรงแรม ร้านค้า และพื้นที่ใช้งานที่ต้องการติดตั้งง่ายและดูแลรักษาง่าย</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why-us" id="why-us">
+      <div class="container why-grid">
+        <div class="section-head">
+          <p class="section-kicker" data-i18n="why.kicker">ทำไมต้อง Blue Ocean Traders</p>
+          <h2 data-i18n="why.title">ช่วยลดเวลาในการค้นหา เปรียบเทียบ และประสานงานสินค้า</h2>
+        </div>
+        <div class="why-cards">
+          <article><span>01</span><h3 data-i18n="why.0.title">เข้าใจสเปกงานจริง</h3><p data-i18n="why.0.desc">พิจารณาการใช้งาน ขนาดพื้นที่ เงื่อนไขติดตั้ง และข้อจำกัดของโครงการ</p></article>
+          <article><span>02</span><h3 data-i18n="why.1.title">มีตัวเลือกหลากหลาย</h3><p data-i18n="why.1.desc">คัดเลือกจากคู่ค้า สินค้ามาตรฐาน หรือการผลิตตามแบบตามความเหมาะสม</p></article>
+          <article><span>03</span><h3 data-i18n="why.2.title">สื่อสารง่ายและชัดเจน</h3><p data-i18n="why.2.desc">สรุปรายละเอียดที่จำเป็นก่อนเสนอราคา เพื่อช่วยลดความคลาดเคลื่อนระหว่างจัดหาและส่งมอบ</p></article>
+          <article><span>04</span><h3 data-i18n="why.3.title">รองรับสินค้าหายาก</h3><p data-i18n="why.3.desc">ช่วยประเมินแนวทางจัดหาสินค้าที่ไม่มีในรายการทั่วไป หรือสินค้าที่ต้องผลิตเฉพาะงาน</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="section-kicker" data-i18n="contact.kicker">ติดต่อเรา</p>
+          <h2 data-i18n="contact.title">ส่งรายละเอียดสินค้า หรือ Requirement ของงานที่ต้องการจัดหา</h2>
+          <p data-i18n="contact.desc">ระบุประเภทสินค้า ขนาด จำนวน แบบอ้างอิง งบประมาณโดยประมาณ และกำหนดเวลาที่ต้องการ เพื่อให้ทีมงานประเมินแนวทางจัดหาได้รวดเร็วขึ้น</p>
+          <div class="contact-actions">
+            <a class="btn primary" href="mailto:oceantradersblue@gmail.com?subject=Product%20Sourcing%20Requirement%20-%20Blue%20Ocean%20Traders" data-i18n="contact.emailBtn">ส่งอีเมลเพื่อขอใบเสนอราคา</a>
+            <a class="btn secondary" href="tel:0838348686" data-i18n="contact.callBtn">โทรสอบถาม</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <img src="assets/logo-blue-ocean.png" alt="Blue Ocean Traders logo" />
+          <dl>
+            <div><dt data-i18n="contact.companyLabel">บริษัท</dt><dd>Blue Ocean Traders Co., Ltd.</dd></div>
+            <div><dt data-i18n="contact.telLabel">โทรศัพท์</dt><dd>083-8348686</dd></div>
+            <div><dt data-i18n="contact.emailLabel">อีเมล</dt><dd><a href="mailto:oceantradersblue@gmail.com">oceantradersblue@gmail.com</a></dd></div>
+            <div><dt data-i18n="contact.taxLabel">เลขประจำตัวผู้เสียภาษี</dt><dd>0-1055-66179-01-0</dd></div>
+            <div><dt data-i18n="contact.addrLabel">ที่อยู่</dt><dd>Somerset Sukhumvit 71, 1015/29 Room 316, Sukhumvit 71 Road, Khlong Tan Nuea, Watthana, Bangkok 10110</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/logo-blue-ocean.png" alt="Blue Ocean Traders Co., Ltd. logo" />
+        <p data-i18n="footer.tagline">นำเข้า • ส่งออก • จัดหาสินค้าพิเศษ • ผลิตตามแบบ</p>
+      </div>
+      <p>© 2026 Blue Ocean Traders Co., Ltd. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+  "nav.home": {
+    "th": "หน้าแรก",
+    "en": "Home"
+  },
+  "nav.about": {
+    "th": "เกี่ยวกับเรา",
+    "en": "About"
+  },
+  "nav.products": {
+    "th": "สินค้า",
+    "en": "Products"
+  },
+  "nav.process": {
+    "th": "ขั้นตอน",
+    "en": "Process"
+  },
+  "nav.why": {
+    "th": "ทำไมต้องเรา",
+    "en": "Why Us"
+  },
+  "nav.contact": {
+    "th": "ติดต่อเรา",
+    "en": "Contact"
+  },
+  "menu": {
+    "th": "เมนู",
+    "en": "Menu"
+  },
+  "hero.kicker": {
+    "th": "Your Professional Trading Partner",
+    "en": "Your Professional Trading Partner"
+  },
+  "hero.title": {
+    "th": "พันธมิตรด้านการจัดหา นำเข้า ส่งออก และผลิตสินค้าตามแบบ",
+    "en": "Professional sourcing, import-export and made-to-spec supply partner"
+  },
+  "hero.desc": {
+    "th": "จัดหาวัสดุก่อสร้าง สินค้าโครงการ และสินค้าพิเศษตามสเปก พร้อมประสานงานตั้งแต่การรับ Requirement จนถึงการส่งมอบ",
+    "en": "We source construction materials, project products and special items to specification, coordinating from requirement review through final delivery."
+  },
+  "hero.cta1": {
+    "th": "ดูสินค้าและบริการ",
+    "en": "View Products"
+  },
+  "hero.cta2": {
+    "th": "ส่ง Requirement",
+    "en": "Send Requirement"
+  },
+  "hero.pill1": {
+    "th": "นำเข้า",
+    "en": "Import"
+  },
+  "hero.pill2": {
+    "th": "ส่งออก",
+    "en": "Export"
+  },
+  "hero.pill3": {
+    "th": "จัดหาสินค้าพิเศษ",
+    "en": "Special Sourcing"
+  },
+  "hero.pill4": {
+    "th": "ผลิตตามแบบ",
+    "en": "Made to Spec"
+  },
+  "about.kicker": {
+    "th": "เกี่ยวกับเรา",
+    "en": "About Us"
+  },
+  "about.title": {
+    "th": "ดูแลงานจัดหาสินค้าให้ครบ ตั้งแต่สินค้ามาตรฐานจนถึงงานสั่งผลิตเฉพาะทาง",
+    "en": "End-to-end product sourcing, from standard catalogue items to made-to-spec special works"
+  },
+  "about.p1": {
+    "th": "Blue Ocean Traders Co., Ltd. เป็นบริษัทเทรดดิ้งที่ให้บริการจัดหา นำเข้า ส่งออก และผลิตสินค้าตามแบบ โดยเน้นการคัดเลือกสินค้าที่เหมาะสมกับการใช้งานจริง คุณภาพ งบประมาณ และระยะเวลาของโครงการ",
+    "en": "Blue Ocean Traders Co., Ltd. is a trading company specializing in sourcing, import-export and made-to-spec supply. We focus on selecting products that fit actual usage, quality expectations, budget and project timeline."
+  },
+  "about.p2": {
+    "th": "ลูกค้าสามารถส่งแบบ ขนาด จำนวน ภาพตัวอย่าง หรือสเปกอ้างอิง เพื่อให้ทีมงานช่วยประเมินทางเลือกสินค้าและแนวทางจัดหาที่เหมาะสม",
+    "en": "Customers can send drawings, dimensions, quantity, reference photos or specifications so our team can review suitable product options and sourcing approaches."
+  },
+  "about.stat1": {
+    "th": "สินค้าและวัสดุหลายหมวด",
+    "en": "Multi-category supply"
+  },
+  "about.stat2": {
+    "th": "จัดหา นำเข้า และผลิตตามแบบ",
+    "en": "Sourcing, import and custom production"
+  },
+  "about.stat3": {
+    "th": "เหมาะกับงานบ้าน อาคาร และโครงการ",
+    "en": "For residential, commercial and project use"
+  },
+  "products.kicker": {
+    "th": "สินค้าและบริการ",
+    "en": "Products & Services"
+  },
+  "products.title": {
+    "th": "วัสดุและสินค้าสำหรับงานก่อสร้าง ตกแต่ง และงานโครงการ",
+    "en": "Materials and products for construction, interiors and project supply"
+  },
+  "products.desc": {
+    "th": "ส่งสเปก ขนาด จำนวน แบบอ้างอิง หรือภาพตัวอย่าง เพื่อประเมินสินค้าและแนวทางจัดหาที่เหมาะสมกับงานจริง",
+    "en": "Send specifications, sizes, quantities, reference drawings or sample photos so we can evaluate products and sourcing options that fit the actual work."
+  },
+  "products.cardLabel": {
+    "th": "หมวดสินค้า",
+    "en": "Product category"
+  },
+  "process.kicker": {
+    "th": "ขั้นตอนการทำงาน",
+    "en": "Working Process"
+  },
+  "process.title": {
+    "th": "จาก Requirement ถึงการส่งมอบ",
+    "en": "From requirement review to delivery"
+  },
+  "process.desc": {
+    "th": "กระบวนการทำงานถูกออกแบบให้ข้อมูลสินค้า สเปก ราคา และระยะเวลาชัดเจนก่อนเริ่มสั่งผลิตหรือนำเข้า",
+    "en": "Our workflow is designed to clarify product details, specifications, price and timeline before production or import begins."
+  },
+  "proc.0.title": {
+    "th": "รับ Requirement และขอบเขตงาน",
+    "en": "Requirement & Scope Review"
+  },
+  "proc.0.desc": {
+    "th": "รับรายละเอียดการใช้งาน ขนาด จำนวน แบบอ้างอิง พื้นที่ติดตั้ง และเงื่อนไขสำคัญของงาน",
+    "en": "Review usage, dimensions, quantity, reference design, installation area and key project conditions."
+  },
+  "proc.1.title": {
+    "th": "เทียบสเปกและตัวอย่างวัสดุ",
+    "en": "Specification & Material Matching"
+  },
+  "proc.1.desc": {
+    "th": "คัดรุ่น วัสดุ สี ผิว และตัวเลือกที่เหมาะกับงบประมาณ คุณภาพ และภาพรวมงานออกแบบ",
+    "en": "Match model, material, color, finish and alternatives with budget, quality and design direction."
+  },
+  "proc.2.title": {
+    "th": "จัดหา นำเข้า และเสนอทางเลือก",
+    "en": "Sourcing, Import & Options"
+  },
+  "proc.2.desc": {
+    "th": "ประสานแหล่งผลิตหรือคู่ค้า ตรวจความพร้อมสินค้า ราคา ระยะเวลา และเงื่อนไขการส่งมอบ",
+    "en": "Coordinate with manufacturers and partners to confirm availability, price, lead time and delivery conditions."
+  },
+  "proc.3.title": {
+    "th": "ยืนยันแบบและดำเนินการผลิต",
+    "en": "Confirmation & Production"
+  },
+  "proc.3.desc": {
+    "th": "สรุปรายละเอียดก่อนสั่งผลิตหรือนำเข้า เพื่อให้ขนาด รุ่น สี และจำนวนตรงกับงานจริง",
+    "en": "Confirm all details before production or import so dimensions, model, color and quantity match the project."
+  },
+  "proc.4.title": {
+    "th": "ส่งมอบและประสานงานปลายทาง",
+    "en": "Delivery & Site Coordination"
+  },
+  "proc.4.desc": {
+    "th": "จัดเตรียมสินค้า เอกสาร และการประสานงานส่งมอบให้สอดคล้องกับกำหนดการของงาน",
+    "en": "Prepare products, documents and delivery coordination aligned with project schedule."
+  },
+  "why.kicker": {
+    "th": "ทำไมต้อง Blue Ocean Traders",
+    "en": "Why Blue Ocean Traders"
+  },
+  "why.title": {
+    "th": "ช่วยลดเวลาในการค้นหา เปรียบเทียบ และประสานงานสินค้า",
+    "en": "Reducing time spent on searching, comparing and coordinating products"
+  },
+  "why.0.title": {
+    "th": "เข้าใจสเปกงานจริง",
+    "en": "Practical specification review"
+  },
+  "why.0.desc": {
+    "th": "พิจารณาการใช้งาน ขนาดพื้นที่ เงื่อนไขติดตั้ง และข้อจำกัดของโครงการ",
+    "en": "We consider real usage, site dimensions, installation conditions and project constraints."
+  },
+  "why.1.title": {
+    "th": "มีตัวเลือกหลากหลาย",
+    "en": "Broad product options"
+  },
+  "why.1.desc": {
+    "th": "คัดเลือกจากคู่ค้า สินค้ามาตรฐาน หรือการผลิตตามแบบตามความเหมาะสม",
+    "en": "We source from partners, standard catalogue products or custom production as appropriate."
+  },
+  "why.2.title": {
+    "th": "สื่อสารง่ายและชัดเจน",
+    "en": "Clear coordination"
+  },
+  "why.2.desc": {
+    "th": "สรุปรายละเอียดที่จำเป็นก่อนเสนอราคา เพื่อช่วยลดความคลาดเคลื่อนระหว่างจัดหาและส่งมอบ",
+    "en": "We clarify required details before quotation to reduce mismatch during sourcing and delivery."
+  },
+  "why.3.title": {
+    "th": "รองรับสินค้าหายาก",
+    "en": "Special-item sourcing"
+  },
+  "why.3.desc": {
+    "th": "ช่วยประเมินแนวทางจัดหาสินค้าที่ไม่มีในรายการทั่วไป หรือสินค้าที่ต้องผลิตเฉพาะงาน",
+    "en": "We help evaluate sourcing approaches for non-standard or special made-to-spec items."
+  },
+  "high.kicker": {
+    "th": "ตัวอย่างสินค้าเด่น",
+    "en": "Selected Highlights"
+  },
+  "high.title": {
+    "th": "ภาพรวมสินค้าที่เหมาะกับงานโครงการ",
+    "en": "Selected product groups suitable for projects"
+  },
+  "high.1.title": {
+    "th": "ประตู หน้าต่าง และงานกรอบอลูมิเนียม",
+    "en": "Doors, windows and aluminium systems"
+  },
+  "high.1.desc": {
+    "th": "เหมาะกับอาคาร บ้านพักอาศัย สำนักงาน ร้านค้า และงานโครงการที่ต้องควบคุมคุณภาพการติดตั้ง",
+    "en": "Suitable for buildings, residences, offices, retail spaces and project installations requiring finish quality."
+  },
+  "high.2.title": {
+    "th": "แผ่นอลูมิเนียมร่องลายและวัสดุตกแต่งผิว",
+    "en": "Fluted aluminium and architectural surface materials"
+  },
+  "high.2.desc": {
+    "th": "ใช้สำหรับผนัง ฝ้า งานตกแต่งอาคาร และพื้นที่ที่ต้องการผิววัสดุดูเรียบร้อยระดับพรีเมียม",
+    "en": "For walls, ceilings, architectural finishes and spaces requiring a refined premium surface."
+  },
+  "high.3.title": {
+    "th": "พื้น SPC / LVT และงานพื้นตกแต่ง",
+    "en": "SPC/LVT flooring and decorative flooring"
+  },
+  "high.3.desc": {
+    "th": "ตัวเลือกสำหรับบ้าน คอนโด โรงแรม ร้านค้า และพื้นที่ใช้งานที่ต้องการติดตั้งง่ายและดูแลรักษาง่าย",
+    "en": "Options for homes, condominiums, hotels, shops and areas needing easy installation and maintenance."
+  },
+  "contact.kicker": {
+    "th": "ติดต่อเรา",
+    "en": "Contact Us"
+  },
+  "contact.title": {
+    "th": "ส่งรายละเอียดสินค้า หรือ Requirement ของงานที่ต้องการจัดหา",
+    "en": "Send product details or sourcing requirements"
+  },
+  "contact.desc": {
+    "th": "ระบุประเภทสินค้า ขนาด จำนวน แบบอ้างอิง งบประมาณโดยประมาณ และกำหนดเวลาที่ต้องการ เพื่อให้ทีมงานประเมินแนวทางจัดหาได้รวดเร็วขึ้น",
+    "en": "Please include product type, dimensions, quantity, reference drawings, approximate budget and required timeline so our team can evaluate options faster."
+  },
+  "contact.companyLabel": {
+    "th": "บริษัท",
+    "en": "Company"
+  },
+  "contact.telLabel": {
+    "th": "โทรศัพท์",
+    "en": "Tel"
+  },
+  "contact.emailLabel": {
+    "th": "อีเมล",
+    "en": "Email"
+  },
+  "contact.taxLabel": {
+    "th": "เลขประจำตัวผู้เสียภาษี",
+    "en": "Tax ID"
+  },
+  "contact.addrLabel": {
+    "th": "ที่อยู่",
+    "en": "Address"
+  },
+  "contact.emailBtn": {
+    "th": "ส่งอีเมลเพื่อขอใบเสนอราคา",
+    "en": "Email for quotation"
+  },
+  "contact.callBtn": {
+    "th": "โทรสอบถาม",
+    "en": "Call now"
+  },
+  "footer.tagline": {
+    "th": "นำเข้า • ส่งออก • จัดหาสินค้าพิเศษ • ผลิตตามแบบ",
+    "en": "Import • Export • Special Sourcing • Made to Spec"
+  },
+  "prod.0.title": {
+    "th": "เหล็กและวัสดุโครงสร้าง",
+    "en": "Steel & Structural Materials"
+  },
+  "prod.0.desc": {
+    "th": "เหล็กเส้น เหล็กรูปพรรณ เหล็กแผ่น เหล็กท่อ และวัสดุโครงสร้างสำหรับงานก่อสร้าง งานต่อเติม และงานประกอบตามแบบ",
+    "en": "Rebar, structural steel, steel plates, pipes and fabrication materials for construction, renovation and made-to-spec works."
+  },
+  "prod.0.points.0": {
+    "th": "เหล็กเส้น / H-Beam / I-Beam",
+    "en": "Rebar / H-Beam / I-Beam"
+  },
+  "prod.0.points.1": {
+    "th": "Angle / Channel / Steel pipe",
+    "en": "Angle / Channel / Steel pipe"
+  },
+  "prod.0.points.2": {
+    "th": "จัดหาตามขนาด จำนวน และสเปก",
+    "en": "Sourced by size, quantity and specification"
+  },
+  "prod.1.title": {
+    "th": "แผ่นผนัง หลังคา และวัสดุแผ่น",
+    "en": "Wall, Roofing & Board Systems"
+  },
+  "prod.1.desc": {
+    "th": "Sandwich panel, calcium silicate board, aluminium fluted panel และวัสดุแผ่นสำหรับอาคาร ห้องคลีนรูม ผนัง หลังคา และงานตกแต่ง",
+    "en": "Sandwich panels, calcium silicate boards, aluminium fluted panels and board systems for buildings, clean rooms, walls, roofing and finishing works."
+  },
+  "prod.1.points.0": {
+    "th": "Sandwich panel / Roofing panel",
+    "en": "Sandwich panel / Roofing panel"
+  },
+  "prod.1.points.1": {
+    "th": "Aluminium fluted / Wall panel",
+    "en": "Aluminium fluted / Wall panel"
+  },
+  "prod.1.points.2": {
+    "th": "เลือกความหนา ผิว และขนาดได้",
+    "en": "Thickness, finish and size options"
+  },
+  "prod.2.title": {
+    "th": "งานระบบท่อ วาล์ว และฟิตติ้ง",
+    "en": "Pipe Systems, Valves & Fittings"
+  },
+  "prod.2.desc": {
+    "th": "ท่อ ฟิตติ้ง หน้าแปลน วาล์ว และอุปกรณ์งานระบบสำหรับอาคาร โรงงาน น้ำ อุตสาหกรรม และงานโครงการ",
+    "en": "Pipes, fittings, flanges, valves and MEP components for buildings, factories, water systems, industrial use and project supply."
+  },
+  "prod.2.points.0": {
+    "th": "Stainless / carbon steel pipes",
+    "en": "Stainless / carbon steel pipes"
+  },
+  "prod.2.points.1": {
+    "th": "Valves / Flanges / Fittings",
+    "en": "Valves / Flanges / Fittings"
+  },
+  "prod.2.points.2": {
+    "th": "รองรับงานอาคารและโรงงาน",
+    "en": "For building and industrial projects"
+  },
+  "prod.3.title": {
+    "th": "ประตู หน้าต่าง และงานอลูมิเนียม",
+    "en": "Doors, Windows & Aluminium Systems"
+  },
+  "prod.3.desc": {
+    "th": "ประตู หน้าต่างอลูมิเนียม กระจกนิรภัย กระจกฉนวน ฮาร์ดแวร์ และงานผลิตตามขนาดหน้างาน",
+    "en": "Aluminium doors and windows, safety glass, insulated glass, hardware and made-to-measure systems for project installation."
+  },
+  "prod.3.points.0": {
+    "th": "Sliding / Casement / Folding",
+    "en": "Sliding / Casement / Folding"
+  },
+  "prod.3.points.1": {
+    "th": "กระจกและฮาร์ดแวร์ตามแบบ",
+    "en": "Glass and hardware by design"
+  },
+  "prod.3.points.2": {
+    "th": "ผลิตตามขนาดพื้นที่จริง",
+    "en": "Made to actual site dimensions"
+  },
+  "prod.4.title": {
+    "th": "พื้น ผนัง และวัสดุคอมโพสิต",
+    "en": "Flooring, Wall & Composite Materials"
+  },
+  "prod.4.desc": {
+    "th": "SPC / LVT flooring, WPC decking, wall cladding และวัสดุตกแต่งพื้นผิวสำหรับบ้าน คอนโด โรงแรม ร้านค้า และพื้นที่ภายนอก",
+    "en": "SPC/LVT flooring, WPC decking, wall cladding and composite surface materials for homes, condos, hotels, retail spaces and outdoor areas."
+  },
+  "prod.4.points.0": {
+    "th": "SPC / LVT Flooring",
+    "en": "SPC / LVT Flooring"
+  },
+  "prod.4.points.1": {
+    "th": "WPC Decking / Cladding",
+    "en": "WPC Decking / Cladding"
+  },
+  "prod.4.points.2": {
+    "th": "ลายไม้ ลายหิน และผิวกันลื่น",
+    "en": "Wood, stone and anti-slip finishes"
+  },
+  "prod.5.title": {
+    "th": "เฟอร์นิเจอร์ไม้สักและงานไม้แท้",
+    "en": "Teak Wood Furniture & Solid Wood Works"
+  },
+  "prod.5.desc": {
+    "th": "เฟอร์นิเจอร์ไม้สัก งานไม้แท้ โต๊ะ ตู้ เตียง ประตู หน้าต่าง ไม้ปาร์เก้ และงานไม้สั่งผลิตสำหรับบ้าน รีสอร์ต ร้านอาหาร และโครงการ",
+    "en": "Teak wood furniture and solid wood works including tables, cabinets, beds, doors, windows, parquet and custom wood items for homes, resorts, restaurants and projects."
+  },
+  "prod.5.points.0": {
+    "th": "Ready-made และสั่งผลิต",
+    "en": "Ready-made and made-to-order"
+  },
+  "prod.5.points.1": {
+    "th": "Solid wood / Teak wood",
+    "en": "Solid wood / Teak wood"
+  },
+  "prod.5.points.2": {
+    "th": "รองรับงานบ้านและงานโครงการ",
+    "en": "For residential and project use"
+  },
+  "prod.6.title": {
+    "th": "สุขภัณฑ์และอุปกรณ์ห้องน้ำ",
+    "en": "Sanitary Ware & Bathroom Solutions"
+  },
+  "prod.6.desc": {
+    "th": "สุขภัณฑ์ ตู้อ่างล้างหน้า bathroom cabinet ก๊อกน้ำ ฝักบัว อ่างล้างมือ และอุปกรณ์ห้องน้ำสำหรับบ้าน โรงแรม คอนโด และโครงการ",
+    "en": "Sanitary ware, bathroom cabinets, faucets, showers, basins and bathroom fixtures for residences, hotels, condominiums and project developments."
+  },
+  "prod.6.points.0": {
+    "th": "Bathroom cabinet / Basin",
+    "en": "Bathroom cabinet / Basin"
+  },
+  "prod.6.points.1": {
+    "th": "Faucet / Shower / Fixtures",
+    "en": "Faucet / Shower / Fixtures"
+  },
+  "prod.6.points.2": {
+    "th": "คัดรุ่นตามดีไซน์และงบประมาณ",
+    "en": "Selected by design and budget"
+  },
+  "prod.7.title": {
+    "th": "แสงสว่างและอุปกรณ์ไฟฟ้า",
+    "en": "Lighting & Electrical Products"
+  },
+  "prod.7.desc": {
+    "th": "LED lighting, downlight, spotlight, pendant light, smart fan light, switch & socket และอุปกรณ์ไฟฟ้าสำหรับงานอาคารและพื้นที่ขาย",
+    "en": "LED lighting, downlights, spotlights, pendant lights, smart fan lights, switches, sockets and electrical accessories for buildings and retail spaces."
+  },
+  "prod.7.points.0": {
+    "th": "Indoor / Outdoor LED",
+    "en": "Indoor / Outdoor LED"
+  },
+  "prod.7.points.1": {
+    "th": "Spotlight / Downlight / Pendant",
+    "en": "Spotlight / Downlight / Pendant"
+  },
+  "prod.7.points.2": {
+    "th": "Switch, socket และอุปกรณ์ไฟฟ้า",
+    "en": "Switches, sockets and accessories"
+  },
+  "prod.8.title": {
+    "th": "EV Charger และโซลูชันพลังงาน",
+    "en": "EV Charger & Energy Solutions"
+  },
+  "prod.8.desc": {
+    "th": "AC/DC EV charger, DC fast charger, charging station และโซลูชันพลังงานสำหรับอาคาร พื้นที่จอดรถ โครงการอสังหาริมทรัพย์ และผู้ประกอบการ",
+    "en": "AC/DC EV chargers, DC fast chargers, charging stations and energy solutions for buildings, parking areas, real estate projects and operators."
+  },
+  "prod.8.points.0": {
+    "th": "AC Charger / DC Fast Charger",
+    "en": "AC Charger / DC Fast Charger"
+  },
+  "prod.8.points.1": {
+    "th": "Charging station solutions",
+    "en": "Charging station solutions"
+  },
+  "prod.8.points.2": {
+    "th": "รองรับอาคารและพื้นที่จอดรถ",
+    "en": "For buildings and parking facilities"
+  },
+  "prod.9.title": {
+    "th": "ม่านกันแสงและงานตกแต่งภายใน",
+    "en": "Solar Screen & Interior Finishing"
+  },
+  "prod.9.desc": {
+    "th": "ม่านม้วนกันแสง Solar Screen, roller blind และงานตกแต่งภายในสำหรับบ้าน คอนโด ออฟฟิศ โรงแรม และพื้นที่ที่ต้องควบคุมแสง",
+    "en": "Solar screen roller blinds and interior finishing products for homes, condominiums, offices, hotels and spaces requiring light and heat control."
+  },
+  "prod.9.points.0": {
+    "th": "Solar screen roller blind",
+    "en": "Solar screen roller blinds"
+  },
+  "prod.9.points.1": {
+    "th": "ควบคุมแสงและความร้อน",
+    "en": "Light and heat control"
+  },
+  "prod.9.points.2": {
+    "th": "เหมาะกับบ้าน ออฟฟิศ และโรงแรม",
+    "en": "For homes, offices and hotels"
+  },
+  "prod.10.title": {
+    "th": "แผงอะคูสติกและวัสดุซับเสียง",
+    "en": "Acoustic & Sound Proof Panels"
+  },
+  "prod.10.desc": {
+    "th": "วัสดุซับเสียง แผงอะคูสติก และวัสดุตกแต่งภายในสำหรับห้องประชุม สตูดิโอ ร้านอาหาร ออฟฟิศ และพื้นที่ควบคุมเสียงสะท้อน",
+    "en": "Acoustic panels, sound-absorbing materials and interior finishing products for meeting rooms, studios, restaurants, offices and echo-controlled spaces."
+  },
+  "prod.10.points.0": {
+    "th": "Fabric acoustic panel",
+    "en": "Fabric acoustic panels"
+  },
+  "prod.10.points.1": {
+    "th": "สี ผ้า ขนาด และขอบหลายแบบ",
+    "en": "Multiple fabric, color, size and edge options"
+  },
+  "prod.10.points.2": {
+    "th": "รองรับงานตกแต่งและควบคุมเสียง",
+    "en": "For interior design and sound control"
+  },
+  "prod.11.title": {
+    "th": "จัดหาสินค้าพิเศษและผลิตตามแบบ",
+    "en": "Special Sourcing & Made-to-Spec Supply"
+  },
+  "prod.11.desc": {
+    "th": "สำหรับสินค้าที่ไม่มีในรายการทั่วไป สามารถส่งแบบ ภาพตัวอย่าง ขนาด หรือสเปก เพื่อประเมินแนวทางจัดหา นำเข้า หรือผลิตตามแบบ",
+    "en": "For non-standard products, customers can send drawings, reference photos, dimensions or specifications for sourcing, import or made-to-spec evaluation."
+  },
+  "prod.11.points.0": {
+    "th": "Bespoke / Custom products",
+    "en": "Bespoke / Custom products"
+  },
+  "prod.11.points.1": {
+    "th": "ผลิตตามแบบและขนาดที่ต้องการ",
+    "en": "Made by required design and size"
+  },
+  "prod.11.points.2": {
+    "th": "ช่วยเทียบตัวเลือกก่อนเสนอราคา",
+    "en": "Option comparison before quotation"
+  }
+};
+    const html = document.documentElement;
+    const body = document.body;
+    const buttons = document.querySelectorAll('[data-lang-switch]');
+    function setLanguage(lang) {
+      body.setAttribute('data-lang', lang);
+      html.setAttribute('lang', lang === 'th' ? 'th' : 'en');
+      document.querySelectorAll('[data-i18n]').forEach((node) => {
+        const key = node.getAttribute('data-i18n');
+        if (translations[key] && translations[key][lang]) {
+          node.textContent = translations[key][lang];
+        }
+      });
+      buttons.forEach((btn) => btn.classList.toggle('is-active', btn.dataset.langSwitch === lang));
+      try { localStorage.setItem('bo-lang', lang); } catch (e) {}
+    }
+    buttons.forEach((btn) => btn.addEventListener('click', () => setLanguage(btn.dataset.langSwitch)));
+    setLanguage((() => { try { return localStorage.getItem('bo-lang') || 'th'; } catch (e) { return 'th'; } })());
+  </script>
 </body>
 </html>
